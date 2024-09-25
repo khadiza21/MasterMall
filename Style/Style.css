@@ -319,9 +319,10 @@ ul {
 .card_stars {
   margin-right: 1rem;
 }
-.container_btn{
-    width: 100%;
-    text-align: center;
+.container_btn {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5rem;
 }
 .container_btn_a {
   background: #ff0084;
@@ -329,5 +330,5 @@ ul {
   background: linear-gradient(to right, #33001b, #ff0084);
   color: var(--colo-white-1);
   padding: 1.6rem 3rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
