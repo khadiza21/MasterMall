@@ -31,6 +31,11 @@ ul {
   margin: 0 auto;
   padding: 0rem 1rem;
 }
+.size-6 {
+  width: 2rem;
+  height: 2rem;
+  fill: orange;
+}
 
 /* top nav */
 .top_nav {
@@ -181,13 +186,16 @@ ul {
   font-size: 2rem;
   padding: 15px 0;
   font-weight: 600;
-  text-decoration: underline;
   margin: 15px 0;
   color: var(--colo-white-1);
   background: -webkit-linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   background: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.header_banner_left span {
+  border-bottom: 1px solid var(--colo-white-2);
+  padding-bottom: 5px;
 }
 .header_banner_left a i {
   padding-left: 10px;
@@ -236,6 +244,7 @@ ul {
 .swiper {
   width: 100%;
   height: 100%;
+  margin-bottom: 5rem;
 }
 
 .swiper-slide {
@@ -247,9 +256,78 @@ ul {
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
+/* cards */
+.card {
+  margin-bottom: 5rem;
+}
+.card_top {
+  width: 100%;
+  height: 22rem;
+  position: relative;
+}
+.card_img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border-radius: 5px;
+}
+.card_tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9;
+  background: #ff0084;
+  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+  background: linear-gradient(to right, #33001b, #ff0084);
+  padding: 0.4rem 0.7rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--colo-white-1);
+  border-radius: 0.5rem;
+}
+.card_top_icons {
+  position: absolute;
+  z-index: 9;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+.card_top_icon {
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 1rem;
+  background-color: var(--colo-white-1);
+  border-radius: 10rem;
+  margin-bottom: 10px;
+}
+.card_body {
+  margin-top: 1rem;
+  text-align: left;
+}
+.card_title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.card_price {
+  margin-bottom: 1rem;
+  color: var(--colo-primary);
+}
+.card_ratings {
+  display: flex;
+}
+.card_stars {
+  margin-right: 1rem;
+}
+.container_btn{
+    width: 100%;
+    text-align: center;
+}
+.container_btn_a {
+  background: #ff0084;
+  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+  background: linear-gradient(to right, #33001b, #ff0084);
+  color: var(--colo-white-1);
+  padding: 1.6rem 3rem;
+  border-radius: .5rem;
 }
