@@ -1,4 +1,5 @@
-var countdownDate = new Date("Sep 30, 2025 15:00:00").getTime();
+var currentDate = new Date();
+var countdownDate = new Date(currentDate.getTime() + 7 * 24 * 60 * 60 * 1000);
 
 var countdownFunction = setInterval(function () {
   var now = new Date().getTime();
