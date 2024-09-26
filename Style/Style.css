@@ -523,7 +523,6 @@ ul {
 }
 
 
-
 @media (max-width: 992px) {
   .service {
     flex: 1 1 calc(50% - 20px);
