@@ -414,3 +414,12 @@ ul {
   color: var(--colo-white-1);
   border-radius: 5px;
 }
+
+
+/* Our Products */
+.products{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-gap: 3rem;
+}
