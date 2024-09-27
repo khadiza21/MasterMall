@@ -259,6 +259,7 @@ ul {
 /* cards */
 .card {
   margin-bottom: 5rem;
+  width: 100%;
 }
 .card_top {
   width: 100%;
@@ -373,18 +374,19 @@ ul {
 
 /* trending */
 .full_section {
-  margin: 10rem 0;
   background: #ff0084;
   background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
-
+  border-radius: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .trending {
-  padding: 8rem 5rem 8rem 0;
+  padding: 8rem 4rem;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-  grid-gap: 3rem;
+  grid-gap: 2rem;
   align-items: center;
 }
 .trending_content {
@@ -404,8 +406,8 @@ ul {
 .trending_title {
   color: var(--colo-white-1);
   font-size: 4rem;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 .trending_btn {
   background: #feac5e;
@@ -529,7 +531,6 @@ ul {
   background: #ff0084;
   background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
-
 }
 .footer_container {
   width: 100%;
@@ -546,7 +547,6 @@ ul {
 }
 .footer_p {
   margin-top: 1.2rem;
-  
 }
 .footer_item_title {
   margin-bottom: 1.2rem;
@@ -570,6 +570,9 @@ ul {
   .service {
     flex: 1 1 calc(50% - 20px);
   }
+  .full_section {
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -577,8 +580,54 @@ ul {
     flex-direction: column;
     gap: 10px;
   }
-
+  .full_section {
+    border-radius: 0;
+  }
   .service {
     flex: 1 1 100%;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  .header_container {
+    flex-direction: column;
+  }
+  .header_filter {
+    display: none;
+  }
+  .full_section {
+    border-radius: 0;
+  }
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.hamburger > svg {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+@media only screen and (max-width: 800px) {
+  .top_nav {
+    display: none;
+  }
+  .nav_list {
+    display: none;
+  }
+  .nav_items {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .full_section {
+    border-radius: 0;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
