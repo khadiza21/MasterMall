@@ -30,6 +30,8 @@ hamburger.addEventListener("click", () => {
   Nav.classList.toggle("mobile_nav_hide");
 });
 
+
+// add to cart 
 const AddToCart = document.querySelectorAll(".add_to_cart");
 
 AddToCart.forEach((button) => {
@@ -40,8 +42,12 @@ AddToCart.forEach((button) => {
     const price = button.getAttribute("data-price");
 
     const cartItem = { id, title, image, price };
+    console.log(cartItem)
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(cart)
     cart.push(cartItem);
     localStorage.setItem("cart", JSON.stringify(cart));
   });
 });
+
+
