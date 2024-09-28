@@ -22,6 +22,8 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
+
+
 // mobile nav
 const hamburger = document.querySelector(".hamburger");
 const Nav = document.querySelector(".mobile_nav");
