@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <title>MasterMall | Home</title>
+    <title>MasterMall | Cart</title>
     <link rel="stylesheet" href="Style/Style.css" />
   </head>
 
@@ -27,11 +23,13 @@
       <div class="container nav_container">
         <a href="" class="nav_logo">Exclusive</a>
         <ul class="nav_list">
+          <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
           <li class="nav_item">
-            <a href="index.html" class="nav_link">Home</a>
+            <a href="about.html" class="nav_link">About</a>
           </li>
-          <li class="nav_item"><a href="about.html" class="nav_link">About</a></li>
-          <li class="nav_item"><a href="contact.html" class="nav_link">Contact</a></li>
+          <li class="nav_item">
+            <a href="contact.html" class="nav_link">Contact</a>
+          </li>
           <li class="nav_item">
             <a href="signUp.html" class="nav_link">Sign Up</a>
           </li>
@@ -46,7 +44,7 @@
             <i class="fa-solid fa-magnifying-glass nav_search"></i>
           </form>
           <div class="nav_heart"><i class="fa-regular fa-heart"></i></div>
-          <a href="/cart.html" class="nav_cart"
+          <a href="cart.html" class="nav_cart"
             ><i class="fa-solid fa-cart-shopping"></i
           ></a>
         </div>
@@ -70,7 +68,7 @@
     <nav class="mobile_nav mobile_nav_hide">
       <ul class="mobile_nav_list">
         <li class="mobile_nav_item">
-          <a href="/index.html" class="mobile_nav_link">Home</a>
+          <a href="index.html" class="mobile_nav_link">Home</a>
         </li>
         <li class="mobile_nav_item">
           <a href="about.html" class="mobile_nav_link">About</a>
@@ -79,49 +77,24 @@
           <a href="contact.html" class="mobile_nav_link">Contact</a>
         </li>
         <li class="mobile_nav_item">
-          <a href="/signUp.html" class="mobile_nav_link">Sign Up</a>
+          <a href="signUp.html" class="mobile_nav_link">Sign Up</a>
         </li>
         <li class="mobile_nav_item">
-          <a href="/cart.html" class="mobile_nav_link">Cart</a>
+          <a href="cart.html" class="mobile_nav_link">Cart</a>
         </li>
       </ul>
     </nav>
-
+   
     <section class="section">
-      <div class="auth_container container">
-        <div class="auth_img">
-          <img src="./image/auth/signup.jpg" alt="" class="auth_image" />
+      <div class="container story_container">
+        <div class="story_content">
+          <h3 class="story_content_title">Our Story</h3>
+          <p class="story_content_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem, sunt praesentium, ducimus itaque consequuntur cum, deleniti porro rerum aliquid corrupti corporis quae voluptas. Animi quia in harum beatae magnam.</p>
+          <p class="story_content_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eos accusantium impedit explicabo aperiam adipisci ipsum dolorum quibusdam quis in.</p>
+          <p class="story_content_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eos accusantium impedit explicabo aperiam adipisci ipsum dolorum quibusdam quis in.</p>
+          
         </div>
-        <div class="auth_content">
-          <form action="" class="auth_form">
-            <h2 class="form_title">Create your account</h2>
-            <p class="auth_p">Enter your details below</p>
-            <div class="form_group">
-              <input type="text" placeholder="Name" class="form_input" />
-            </div>
-            <div class="form_group">
-              <input type="email" placeholder="Email" class="form_input" />
-            </div>
-            <div class="form_group form_pass">
-              <input
-                type="password"
-                placeholder="Password"
-                class="form_input"
-              />
-            </div>
-            <div class="form_group">
-              <button class="form_btn">
-                <a href="#" class="form_link">Create Account</a>
-              </button>
-            </div>
-            <div class="form_group">
-              <span
-                >Already have an account?
-                <a href="login.html" class="form_auth_link">Login</a></span
-              >
-            </div>
-          </form>
-        </div>
+        <div class="story_image"><img src="image/about.webp" alt=""></div>
       </div>
     </section>
 
@@ -176,7 +149,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="JavaScript/Home.js"></script>
+
+    <script src="JavaScript/cart.js"></script>
     <script src="JavaScript/scrollReveal.js"></script>
   </body>
 </html>
