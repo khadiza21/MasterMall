@@ -889,7 +889,7 @@ ul {
 .story_container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
   grid-gap: 6rem;
 }
 
@@ -898,7 +898,7 @@ ul {
   margin-bottom: 3rem;
 }
 
-/* .story_content   */
+
 .story_content_p {
   font-size: 1.7rem;
   font-weight: 500;

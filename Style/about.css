@@ -1,3 +1,36 @@
+.team_header{
+text-align: center;
+margin: 5rem 0;
+}
+.team_header h3{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.team_header span{
+    background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+    background: linear-gradient(to right, #33001b, #ff0084);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.team_header p{
+    color: var(--colo-dark-2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .swiper {
     width: 100%;
     height: 100%;
