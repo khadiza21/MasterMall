@@ -643,6 +643,10 @@ ul {
 }
 
 /* mobile nav */
+.mobile_nav, .nav a{
+text-decoration: none;
+color: var(--colo-dark-1);
+}
 .mobile_nav {
   background-color: var(--colo-white-1);
   position: absolute;
