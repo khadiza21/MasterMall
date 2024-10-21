@@ -1,8 +1,15 @@
 // contact page
+const hamburger = document.querySelector(".hamburger");
+const Nav = document.querySelector(".mobile_nav");
+
+hamburger.addEventListener("click", () => {
+  Nav.classList.toggle("mobile_nav_hide");
+});
+
 // ScrollReveal animations
 ScrollReveal().reveal('.contact_header', { delay: 200, duration: 1200, origin: 'right' });
 ScrollReveal().reveal('.contact-box', { delay: 200, distance: '50px', duration: 1000, origin: 'bottom' });
-ScrollReveal().reveal('.map', { delay: 200, duration: 1200, origin: 'right', distance: '50px' });
+ScrollReveal().reveal('.map', { delay: 200, duration: 1200, origin: 'top', distance: '50px' });
 ScrollReveal().reveal('.form-container', { delay: 200, duration: 1200, origin: 'bottom', distance: '50px' });
 ScrollReveal().reveal('.people', { delay: 200, duration: 1200, origin: 'top', distance: '50px' });
 
@@ -33,3 +40,4 @@ ScrollReveal().reveal('.scroll-reveal', {
     origin: 'bottom',
     interval: 200
 });
+

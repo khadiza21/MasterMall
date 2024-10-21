@@ -1,0 +1,199 @@
+/* General Footer Styles */
+.footer {
+    margin-top: 10rem;
+    background: #ff0084;
+    background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+    background: linear-gradient(to right, #33001b, #ff0084);
+}
+
+.footer_container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.footer_container .col {
+    flex: 1 1 22rem;
+    margin: 1rem;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer_container .col ul li {
+    transition: transform 0.3s ease-in-out;
+    margin-top: 5px;
+}
+
+.footer_container .col ul li:hover {
+    transform: translateX(10px);
+}
+
+.footer_logo {
+    background-image: linear-gradient(to top,
+            #c4c5c7 0%,
+            #dcdddf 52%,
+            #ebebeb 100%);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.footer_logo:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 16px;
+    transform: scale(1.05);
+}
+
+.footer_logo h2 {
+    background: -webkit-linear-gradient(to right, #33001b, #821e57);
+    background: linear-gradient(to right, #33001b, #821e57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-glow 2s infinite alternate;
+}
+
+.footer_logo small {
+    background: -webkit-linear-gradient(to right, #025e64, #6b0377, #c56103);
+    background: linear-gradient(to right, #025e64, #6b0377, #c56103);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer_container h4 {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    color: #eaeaea;
+    border-bottom: 1px solid var(--colo-white-2);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer_container h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.4s ease;
+}
+
+.footer_container h4:hover::after {
+    width: 100%;
+}
+
+.footer_container p,
+.footer_container a {
+    font-size: 1.4rem;
+    color: #ccc;
+    text-decoration: none;
+    line-height: 2rem;
+    transition: color 0.3s ease;
+}
+
+.footer_container a:hover {
+    color: #fff;
+}
+.footer_container .contact ul li {
+    margin: 5px 0;
+}
+.footer_container .icon {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer_container .icon i {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer_container .icon i:hover {
+    color: #fff;
+    transform: rotate(360deg);
+}
+.footer_container .install .pay {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.footer_container .install .pay i {
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-top: 5px;
+    font-size: 4rem;
+    margin-left: 5px;
+}
+.footer_container .install .pay i:hover {
+    transform: scale(1.1);
+}
+.footer_container .install .payment-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 3.5rem;
+    margin: 10px 0.5rem;
+}
+.footer_container .install .payment-icons i {
+    margin-top: 5px;
+    color: var(--colo-white-1);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer_container .install .payment-icons i:hover {
+    color: var(--colo-white-2);
+    transform: scale(1.1);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer_container .col {
+        margin: 2rem 0;
+        min-width: 100%;
+    }
+    .footer_container .install .pay,
+    .footer_container .install .payment-icons {
+        justify-content: start;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_container {
+        padding: 1rem;
+    }
+    .footer_container p,
+    .footer_container a {
+        font-size: 1.2rem;
+    }
+    .footer_container h4 {
+        font-size: 1.4rem;
+    }
+    .footer_container .install .payment-icons {
+        font-size: 2rem;
+    }
+}
+
+.footer_bottom {
+    border-top: 1px solid rgba(128, 128, 128, 0.377);
+}
+.footer_bottom_container {
+    width: 100%;
+    text-align: center;
+}
+.footer_copy {
+    padding: 1rem 0rem;
+    color: var(--colo-white-2);
+}
