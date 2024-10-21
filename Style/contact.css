@@ -164,6 +164,12 @@ ul {
     cursor: pointer;
 }
 
+.nav_heart:hover,
+.nav_cart:hover,
+.nav_user:hover {
+    color: #821e57;
+}
+
 .nav_user {
     position: relative;
     display: inline-block;
@@ -284,7 +290,7 @@ ul {
 /* Contact Details */
 .contact-boxes {
     display: flex;
-    margin: 10rem 0;
+    margin: 5rem 0;
     padding: 5rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -360,7 +366,7 @@ ul {
     width: 100%;
     min-height: 600px;
     border-radius: 10px;
-    margin: 10rem 0;
+    margin: 5rem 0;
 }
 
 /* Contact Form */
@@ -373,6 +379,7 @@ ul {
     border: 1px solid #e1e1e1;
     gap: 5rem;
     text-align: center;
+    margin: 5rem 0;
 }
 
 .form-container h2 {
@@ -399,7 +406,7 @@ ul {
 .contact-form textarea:focus {
     outline: 2px solid #821e57;
     outline-offset: 2px;
-    color: var(--colo-white-1);
+    color: var(--colo-dark-1);
 }
 
 .contact-form button {
@@ -446,8 +453,7 @@ ul {
 
 /* people */
 .people {
-    margin: 10rem 0;
-    padding: 5rem 0;
+    margin: 5rem 0;
     display: flex;
     flex-wrap: wrap;
     gap: 5%;
@@ -459,17 +465,28 @@ ul {
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    padding: 5rem 2rem;
+    padding: 2rem;
     width: 30%;
     transition: color 0.7s ease-in-out, transform 0.7s ease-in-out;
 }
 
 .people .contact-person:hover {
-    border: 2px solid #821e57;
     background: #ff0084;
     background: linear-gradient(to right, #33001b, #ff0084);
     color: white;
     transform: scale(1.1);
+}
+
+.people .contact-person .contact-people-box {
+
+    height: 100%;
+    width: 100%;
+    border: 2px solid #821e57;
+    padding: 1rem;
+}
+
+.people .contact-person .contact-people-box:hover {
+    border: 2px solid var(--colo-white-1);
 }
 
 .people .contact-person i {
@@ -488,13 +505,14 @@ ul {
 .people img {
     border: 3px solid #821e57;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    margin: 2rem 0;
 }
 
 .people img:hover {
     border: 3px solid #6b0377;
+
 }
 
 .people-info {
@@ -541,8 +559,8 @@ ul {
     }
 
     .people img {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
 }
 
