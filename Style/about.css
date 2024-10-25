@@ -1,4 +1,3 @@
-/* contact page header banner part start*/
 .about_header {
   display: flex;
   align-items: center;
@@ -8,7 +7,6 @@
   min-height: 20rem;
   margin: 2rem 0;
   background: #ff0084;
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
   color: white;
   text-align: center;
@@ -22,39 +20,48 @@
 .about_header span {
   margin: 0 2rem;
 }
-
-/* contact page header banner part end */
+.about_header  a {
+  color: var(--colo-white-2);
+}
 
 /* about page */
 .story_container {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
-  grid-gap: 6rem;
+  margin: 10rem 0;
+  display: flex;
+  gap: 3%;
+  flex-wrap: wrap;
 }
 
-.story_content_title {
-  font-size: 3.6rem;
-  margin-bottom: 3rem;
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
-  background: linear-gradient(to right, #33001b, #ff0084);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+.story_content {
+  padding: 2rem 0;
+  width: 56%;
 }
 
 .story_content_img {
   margin-bottom: 1rem;
 }
 
+.story_content_title {
+  font-size: 3.6rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right, #33001b, #ff0084);
+  background-clip: text;
+  color: transparent;
+}
+
+.story_content_p {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: var(--colo-dark-2);
+  padding-right: 1rem;
+  text-align: justify;
+}
+
 .about_stroy_author span {
   font-size: 2.5rem;
   font-weight: 700;
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
-  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
@@ -66,23 +73,60 @@
   color: #33001b;
 }
 
-.story_content_p {
-  font-size: 1.7rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  color: var(--colo-dark-2);
-  padding-right: 1rem;
+.story_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 41%;
 }
 
-.story_image > img {
+.story_image img {
+  margin-top: 5rem;
   width: 100%;
-  height: 100%;
+  height: 60%;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   border-radius: 5px;
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .story_content {
+    width: 100%;
+  }
+
+  .story_content_img {
+    width: 70px;
+  }
+
+  .story_content_p {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .about_stroy_author span {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .about_stroy_author small {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    font-size: 600;
+    color: #33001b;
+  }
+
+  .story_image {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  .story_image img {
+    height: 100%;
+  }
+}
+
+/* about services */
 .about_services {
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +148,6 @@
 
 .about_service:hover {
   background: #ff0084;
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
   cursor: pointer;
 }
@@ -161,12 +204,6 @@
   }
 }
 
-@media (max-width: 400px) {
-  .story_image {
-    width: 95%;
-  }
-}
-
 /* team members */
 
 .team_member {
@@ -184,7 +221,6 @@
 }
 
 .team_header span {
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -252,8 +288,6 @@
 .team-name {
   background: linear-gradient(to right, #33001b, #ff0084);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   color: transparent;
   font-size: 2rem;
   font-weight: bold;
@@ -278,7 +312,6 @@
   display: inline-block;
   transition: transform 0.5s ease, color 0.3s ease;
   background: #ff0084;
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
   cursor: pointer;
   border-radius: 25px;

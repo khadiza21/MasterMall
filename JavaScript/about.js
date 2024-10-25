@@ -1,3 +1,12 @@
+// contact page
+const hamburger = document.querySelector(".hamburger");
+const Nav = document.querySelector(".mobile_nav");
+
+hamburger.addEventListener("click", () => {
+  Nav.classList.toggle("mobile_nav_hide");
+});
+
+
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 4,
   centeredSlides: false,
@@ -39,4 +48,5 @@ ScrollReveal().reveal('.about_header', { delay: 200, duration: 1200, origin: 'le
 ScrollReveal().reveal('.story_container', { delay: 200, distance: '50px', duration: 1000, origin: 'bottom' });
 ScrollReveal().reveal('.aboutService_container', { delay: 200, duration: 1200, origin: 'top', distance: '50px' });
 ScrollReveal().reveal('.team_header', { delay: 200, duration: 1200, origin: 'bottom', distance: '50px' });
+ScrollReveal().reveal('.mySwiper', { delay: 200, duration: 1200, origin: 'right', distance: '50px' });
 ScrollReveal().reveal('.footer_container', { delay: 200, duration: 1200, origin: 'top', distance: '50px' });
