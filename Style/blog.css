@@ -33,12 +33,10 @@
 
 .blog-container .side-area {
     width: 24%;
-    border: 1px solid red;
 }
 
 .blog-container .main {
     width: 74%;
-    border: 1px solid red;
 }
 
 /* side article nav */
@@ -49,7 +47,6 @@
     padding: 1rem 2rem;
     border-radius: 25px;
     margin-bottom: 2rem;
-
 }
 
 /* article-short-view */
@@ -73,8 +70,6 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 320px;
     width: 100%;
-
-
 }
 
 .recent-article:hover {
@@ -141,6 +136,70 @@
     margin-bottom: 5rem;
 }
 
+/* General styling for article categories */
+.article-categories {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.article-category {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.article-category li {
+    padding: 5px 10px;
+    border-left: 3px solid #ff0084;
+    color: var(--colo-dark-1);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.article-category li:hover {
+    border: none;
+    background: #ff0084;
+    background: linear-gradient(to right, #33001b, #ff0084);
+    transform: scale(1.1);
+    color: var(--colo-white-2);
+    border-radius: 10px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.article-category li {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .article-categories {
+        padding: 10px;
+    }
+
+    .article-category li {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
 /* popular article */
 .best-products {
     margin-bottom: 5rem;
@@ -173,7 +232,7 @@
 .best-product-title {
     font-size: 18px;
     color: var(--colo-dark-2);
-    margin: 0;
+    margin-bottom: 1rem;
 }
 
 .best-product-price {
@@ -202,12 +261,12 @@
 
 .swiper-button-next {
     right: -10px;
-    top: 140px;
+    top: 80px;
 }
 
 .swiper-button-prev {
     left: -10px;
-    top: 140px;
+    top: 80px;
 }
 
 /* General Styling */
@@ -233,7 +292,6 @@
     background: linear-gradient(to right, #33001b, #ff0084);
     background-clip: text;
     color: transparent;
-
 }
 
 /* Hover Effects */
@@ -282,7 +340,6 @@
 }
 
 @media (max-width: 480px) {
-
     .social-icon {
         font-size: 20px;
     }
@@ -318,18 +375,32 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.9em;
-    color: #555;
+    color: var(--colo-dark-2);
+}
+
+.article-info a {
+    color: var(--colo-dark-2);
+}
+
+.article-info i {
+    margin-right: .5rem;
+}
+
+.article-info .comment,
+.author {
+    border-left: 2px solid #33001b;
+    padding-left: 1rem;
 }
 
 .article-title {
     font-size: 1.2em;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 1.5rem 0;
 }
 
 .article-description {
     font-size: 1em;
-    color: #333;
+    color: var(--colo-dark-2);
     margin-bottom: 10px;
 }
 
@@ -338,24 +409,29 @@
     color: #777;
     display: flex;
     align-items: center;
+    margin: 1.5rem 0;
+
 }
 
 .article-tag h4 {
-    margin: 0;
     margin-left: 5px;
 }
 
-.article-button button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
+.article-details {
+    margin-top: 1.5rem;
+}
+
+.article-details a {
+    background: linear-gradient(to right, #33001b, #ff0084);
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    border-bottom: 2px solid #33001b;
     cursor: pointer;
-    border-radius: 4px;
     font-size: 1em;
 }
 
-.article-button button:hover {
+.article-details a:hover {
     background-color: #555;
 }
 
@@ -365,7 +441,7 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    margin-top: 20px;
+    margin: 10rem 0;
 }
 
 .pagination button,
@@ -386,13 +462,15 @@
 }
 
 .pagination .page-number.active {
-    background-color: #007bff;
+    background: #ff0084;
+    background: linear-gradient(to right, #33001b, #ff0084);
     color: #fff;
 }
 
 .pagination button:hover,
 .pagination .page-number:hover {
-    background-color: #007bff;
+    background: #ff0084;
+    background: linear-gradient(to right, #33001b, #ff0084);
     color: #fff;
 }
 
