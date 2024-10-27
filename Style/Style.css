@@ -64,7 +64,6 @@ ul {
 .top_nav_wrapper {
   display: flex;
   color: var(--colo-white-1);
-  background: -webkit-linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   background: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,7 +80,6 @@ ul {
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--colo-white-1);
-  background: -webkit-linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   background: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -605,7 +603,6 @@ ul {
 
 .container_btn_a {
   background: #ff0084;
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
   color: var(--colo-white-1);
   padding: 1.6rem 3rem;
@@ -658,7 +655,6 @@ ul {
 /* trending */
 .full_section {
   background: #ff0084;
-  background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
   border-radius: 1rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -685,7 +681,6 @@ ul {
 }
 
 .tending_p {
-  background: -webkit-linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   background: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -700,7 +695,6 @@ ul {
 
 .trending_btn {
   background: #feac5e;
-  background: -webkit-linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   background: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   padding: 1rem 2rem;
   color: var(--colo-white-1);
