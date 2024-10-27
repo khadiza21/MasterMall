@@ -23,7 +23,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-// Array to hold category data
+
 const categoriesData = [
   {
     image: "../image/category/trending.webp",
@@ -69,7 +69,7 @@ const categoriesData = [
   },
 ];
 
-// Function to generate category HTML and append it to the categories class
+
 const categoriesContainer = document.querySelector(".categories");
 
 categoriesData.forEach((category) => {
@@ -92,7 +92,6 @@ categoriesData.forEach((category) => {
 });
 
 // Flash Section
-// Get the swiper-wrapper element
 const swiperWrappers = document.querySelectorAll(".swiper-wrapper");
 
 // Array of card data
@@ -179,7 +178,7 @@ const cardData = [
   },
 ];
 
-// Function to generate stars based on rating
+
 function generateStars(rating) {
   let starsHTML = "";
   for (let i = 1; i <= 5; i++) {
@@ -192,10 +191,10 @@ function generateStars(rating) {
   return starsHTML;
 }
 
-// Generate and append cards based on the cardData array
+
 swiperWrappers.forEach((swiperWrapper) => {
-cardData.forEach((card, index) => {
-  const cardHTML = `
+  cardData.forEach((card, index) => {
+    const cardHTML = `
     <div class="swiper-slide">
       <div class="card">
         <div class="card_top">
@@ -232,8 +231,8 @@ cardData.forEach((card, index) => {
       </div>
     </div>
   `;
-  swiperWrapper.innerHTML += cardHTML;
-});
+    swiperWrapper.innerHTML += cardHTML;
+  });
 });
 
 
@@ -352,16 +351,16 @@ productData.forEach((card, index) => {
       </div>
    
   `;
-  productsData.innerHTML += cardHTML; 
+  productsData.innerHTML += cardHTML;
 });
 
 
 
 // Support 
-// Select the container where the services will be added
+
 const servicesContainer = document.querySelector('.services_container');
 
-// Create an array of services to dynamically generate the content
+
 const services = [
   {
     imgSrc: "image/services/10-credit-card.svg",
@@ -389,11 +388,11 @@ const services = [
   }
 ];
 
-// Iterate through the services array and append each service item to the container
+
 services.forEach(service => {
   const serviceDiv = document.createElement('div');
   serviceDiv.classList.add('service');
-  
+
   serviceDiv.innerHTML = `
     <img src="${service.imgSrc}" alt="${service.altText}" class="service_image" />
     <div class="service_details">
@@ -401,7 +400,7 @@ services.forEach(service => {
       <p class="service_p">${service.description}</p>
     </div>
   `;
-  
+
   servicesContainer.appendChild(serviceDiv);
 });
 
