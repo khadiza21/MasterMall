@@ -17,7 +17,6 @@ ScrollReveal().reveal(".header", {
 });
 ScrollReveal().reveal(".section", {
   origin: "bottom",
-  distance: "20px",
   opacity: 0,
   duration: 1000,
   delay: 100,
