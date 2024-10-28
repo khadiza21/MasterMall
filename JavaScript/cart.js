@@ -80,3 +80,22 @@ function removeItem(index) {
 }
 
 displayCartItems();
+
+
+
+
+
+// Clear cart function
+function clearCart() {
+  localStorage.removeItem("cart"); 
+  displayCartItems(); 
+}
+
+// Navigate to another page function
+function navigateToCheckout() {
+  window.location.href = "checkout.html"; 
+}
+
+// Add event listeners to the buttons
+document.querySelector(".clear-cart-btn button").onclick = clearCart;
+document.querySelector(".check-out-btn button").onclick = navigateToCheckout;

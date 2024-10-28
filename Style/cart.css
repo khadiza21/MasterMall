@@ -97,7 +97,6 @@
 }
 
 .remove-btn {
-
     background-color: transparent;
     color: #33001b;
     border: none;
@@ -109,7 +108,6 @@
     font-weight: 600;
     cursor: pointer;
     transition: color 0.3s ease;
-
 }
 
 .remove-btn:hover {
@@ -137,7 +135,30 @@
     background-clip: text;
     color: transparent;
 }
+.empty-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 4rem;
+}
+.empty-cart h3{
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
 
+}
+.empty-cart p{
+color: var(--colo-dark-2);
+font-weight: 300;
+}
+.empty-cart a{
+    margin-left: .5rem;
+    border-bottom: 1px solid #33001b;
+}
+.empty-cart a:hover{
+    color:#ff0084;
+}
 .cart-buttons {
     margin: 5rem 0;
     padding: 2rem 0;
