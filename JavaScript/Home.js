@@ -21,9 +21,6 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-
-
-
 const categoriesData = [
   {
     image: "../image/category/trending.webp",
@@ -69,7 +66,6 @@ const categoriesData = [
   },
 ];
 
-
 const categoriesContainer = document.querySelector(".categories");
 
 categoriesData.forEach((category) => {
@@ -77,12 +73,12 @@ categoriesData.forEach((category) => {
     <a href="#" class="category_detail">
       <div class="category">
         <img
-          src="${category.image}"
-          alt="${category.alt}"
+          src="${category?.image}"
+          alt="${category?.alt}"
           class="category_image"
         />
-        <p class="category_name">${category.name}</p>
-        <span>(${category.items} items)</span>
+        <p class="category_name">${category?.name}</p>
+        <span>(${category?.items} items)</span>
       </div>
     </a>
   `;
@@ -95,89 +91,169 @@ categoriesData.forEach((category) => {
 const swiperWrappers = document.querySelectorAll(".swiper-wrapper");
 
 // Array of card data
-const cardData = [
+
+const productData = [
   {
+    id:"1",
+    color:"Color Not Avaiable",
     image: "../image/flash/blueshoe_2_600x.webp",
     title: "Men Blue Shoe",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     price: 60,
-    discount: "-40%",
     rating: 4,
     reviews: 150,
   },
   {
+    id:"2",
+    color:"Color Not Avaiable",
     image: "../image/flash/gold-watch_2_600x.webp",
     title: "Women Gold Watch",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     price: 60,
-    discount: "-40%",
     rating: 4,
     reviews: 150,
   },
   {
+    id:"3",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/sunglass_2_600x.webp",
     title: "Uni Sunglass",
     price: 60,
-    discount: "-40%",
     rating: 4,
     reviews: 150,
   },
   {
+    id:"4",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/ment-shirt_2_600x.webp",
     title: "Men Casual T-Shirt",
     price: 100,
-    discount: "-30%",
     rating: 4,
     reviews: 76,
   },
   {
+    id:"5",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/shirt_2_600x.webp",
     title: "Men Formal Shirt",
     price: 150,
-    discount: "-20%",
     rating: 5,
     reviews: 120,
   },
   {
+    id:"6",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/men-coat_2_600x.webp",
     title: "Men Coat",
     price: 90,
-    discount: "-50%",
     rating: 3,
     reviews: 88,
   },
   {
+    id:"7",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/jacket_2_600x.webp",
     title: "Men Winter Jacket",
     price: 110,
-    discount: "-10%",
     rating: 4,
     reviews: 64,
   },
   {
+    id:"8",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/hat_2_600x.webp",
     title: "Men's Hat",
     price: 130,
-    discount: "-15%",
     rating: 5,
     reviews: 90,
   },
   {
+    id:"9",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/jacket_9_600x.webp",
     title: "Kids Winter Jacket",
     price: 50,
-    discount: "-25%",
     rating: 4,
     reviews: 45,
   },
   {
+    id:"10",
+    color:"Color Not Avaiable",
+    discount:"-10",
+    category:"Dress",
+    productType:"",
+    shopType:"",
+    subShopType:"",
+    genderType:"",
+    sellingCaegory:"",
     image: "../image/flash/poloshirt_2_600x.webp",
     title: "Men Polo Shirt",
     price: 85,
-    discount: "-35%",
     rating: 3,
     reviews: 30,
   },
 ];
-
 
 function generateStars(rating) {
   let starsHTML = "";
@@ -191,39 +267,41 @@ function generateStars(rating) {
   return starsHTML;
 }
 
-
 swiperWrappers.forEach((swiperWrapper) => {
-  cardData.forEach((card, index) => {
+  productData.forEach((card, index) => {
     const cardHTML = `
     <div class="swiper-slide">
       <div class="card">
         <div class="card_top">
           <img
-            src="${card.image}"
-            alt="${card.title}"
+            src="${card?.image}"
+            alt="${card?.title}"
             class="card_img"
           />
-          <div class="card_tag"><span>${card.discount}</span></div>
+          <div class="card_tag"><span>${card?.discount}</span></div>
           <div class="card_top_icons">
             <i class="fa-regular fa-heart card_top_icon"></i>
             <i class="fa-regular fa-eye card_top_icon"></i>
           </div>
         </div>
         <div class="card_body">
-          <h3 class="card_title">${card.title}</h3>
-          <p class="card_price">$${card.price}</p>
+          <h3 class="card_title">${card?.title}</h3>
+          <p class="card_price">$${card?.price}.00</p>
+                <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card?.color}</span></p>
           <div class="card_ratings">
             <div class="card_stars">
-              ${generateStars(card.rating)}
+              ${generateStars(card?.rating)}
             </div>
-            <p class="card_rating_numbers">(${card.reviews})</p>
+            <p class="card_rating_numbers">(${card?.reviews})</p>
           </div>
           <button
             class="add_to_cart"
-            data-id="${index + 1}"
-            data-title="${card.title}"
-            data-image="${card.image}"
-            data-price="${card.price}"
+            data-id="${card?.id}"
+            data-title="${card?.title}"
+            data-image="${card?.image}"
+            data-price="${card?.price}"
+            data-color="${card?.color}"
+            
           >
             Add to Cart
           </button>
@@ -235,83 +313,8 @@ swiperWrappers.forEach((swiperWrapper) => {
   });
 });
 
-
-// Our Products Part 
+// Our Products Part
 const productsData = document.querySelector(".products");
-
-const productData = [
-  {
-    image: "../image/flash/blueshoe_2_600x.webp",
-    title: "Men Blue Shoe",
-    price: 60,
-    rating: 4,
-    reviews: 150,
-  },
-  {
-    image: "../image/flash/gold-watch_2_600x.webp",
-    title: "Women Gold Watch",
-    price: 60,
-    rating: 4,
-    reviews: 150,
-  },
-  {
-    image: "../image/flash/sunglass_2_600x.webp",
-    title: "Uni Sunglass",
-    price: 60,
-    rating: 4,
-    reviews: 150,
-  },
-  {
-    image: "../image/flash/ment-shirt_2_600x.webp",
-    title: "Men Casual T-Shirt",
-    price: 100,
-    rating: 4,
-    reviews: 76,
-  },
-  {
-    image: "../image/flash/shirt_2_600x.webp",
-    title: "Men Formal Shirt",
-    price: 150,
-    rating: 5,
-    reviews: 120,
-  },
-  {
-    image: "../image/flash/men-coat_2_600x.webp",
-    title: "Men Coat",
-    price: 90,
-    rating: 3,
-    reviews: 88,
-  },
-  {
-    image: "../image/flash/jacket_2_600x.webp",
-    title: "Men Winter Jacket",
-    price: 110,
-    rating: 4,
-    reviews: 64,
-  },
-  {
-    image: "../image/flash/hat_2_600x.webp",
-    title: "Men's Hat",
-    price: 130,
-    rating: 5,
-    reviews: 90,
-  },
-  {
-    image: "../image/flash/jacket_9_600x.webp",
-    title: "Kids Winter Jacket",
-    price: 50,
-    rating: 4,
-    reviews: 45,
-  },
-  {
-    image: "../image/flash/poloshirt_2_600x.webp",
-    title: "Men Polo Shirt",
-    price: 85,
-    rating: 3,
-    reviews: 30,
-  },
-];
-
 
 productData.forEach((card, index) => {
   const cardHTML = `
@@ -319,8 +322,8 @@ productData.forEach((card, index) => {
       <div class="card">
         <div class="card_top">
           <img
-            src="${card.image}"
-            alt="${card.title}"
+            src="${card?.image}"
+            alt="${card?.title}"
             class="card_img"
           />
         
@@ -330,8 +333,10 @@ productData.forEach((card, index) => {
           </div>
         </div>
         <div class="card_body">
-          <h3 class="card_title">${card.title}</h3>
-          <p class="card_price">$${card.price}</p>
+          <h3 class="card_title">${card?.title}</h3>
+          <p class="card_price">$${card?.price}.00</p>
+          <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card?.color}</span></p>
+
           <div class="card_ratings">
             <div class="card_stars">
               ${generateStars(card.rating)}
@@ -340,10 +345,11 @@ productData.forEach((card, index) => {
           </div>
           <button
             class="add_to_cart"
-            data-id="${index + 1}"
-            data-title="${card.title}"
-            data-image="${card.image}"
-            data-price="${card.price}"
+            data-id="${card?.id}"
+            data-title="${card?.title}"
+            data-image="${card?.image}"
+            data-price="${card?.price}"
+            data-color="${card.color}"
           >
             Add to Cart
           </button>
@@ -354,56 +360,51 @@ productData.forEach((card, index) => {
   productsData.innerHTML += cardHTML;
 });
 
+// Support
 
-
-// Support 
-
-const servicesContainer = document.querySelector('.services_container');
-
+const servicesContainer = document.querySelector(".services_container");
 
 const services = [
   {
     imgSrc: "image/services/10-credit-card.svg",
     altText: "Credit Card",
     title: "Secure Checkout",
-    description: "100% Payment Secure."
+    description: "100% Payment Secure.",
   },
   {
     imgSrc: "image/services/4-track.svg",
     altText: "Free Shipping",
     title: "Free Shipping",
-    description: "On orders over $99."
+    description: "On orders over $99.",
   },
   {
     imgSrc: "image/services/7-support.svg",
     altText: "Online Support",
     title: "Online Support",
-    description: "Ensure the product quality."
+    description: "Ensure the product quality.",
   },
   {
     imgSrc: "image/services/9-money.svg",
     altText: "Money Back",
     title: "Money Back",
-    description: "Money back in 15 days."
-  }
+    description: "Money back in 15 days.",
+  },
 ];
 
-
-services.forEach(service => {
-  const serviceDiv = document.createElement('div');
-  serviceDiv.classList.add('service');
+services.forEach((service) => {
+  const serviceDiv = document.createElement("div");
+  serviceDiv.classList.add("service");
 
   serviceDiv.innerHTML = `
-    <img src="${service.imgSrc}" alt="${service.altText}" class="service_image" />
+    <img src="${service?.imgSrc}" alt="${service?.altText}" class="service_image" />
     <div class="service_details">
-      <h3 class="service_title">${service.title}</h3>
-      <p class="service_p">${service.description}</p>
+      <h3 class="service_title">${service?.title}</h3>
+      <p class="service_p">${service?.description}</p>
     </div>
   `;
 
   servicesContainer.appendChild(serviceDiv);
 });
-
 
 // mobile nav
 const hamburger = document.querySelector(".hamburger");
@@ -422,12 +423,18 @@ AddToCart.forEach((button) => {
     const title = button.getAttribute("data-title");
     const image = button.getAttribute("data-image");
     const price = button.getAttribute("data-price");
+    const color = button.getAttribute("data-color");
 
-    const cartItem = { id, title, image, price };
-    console.log(cartItem);
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log(cart);
-    cart.push(cartItem);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+    if (existingItemIndex !== -1) {
+      cart[existingItemIndex].quantity += 1;
+    } else {
+      const cartItem = { id, title, image, price, color, quantity: 1 };
+      cart.push(cartItem);
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
+
   });
 });
