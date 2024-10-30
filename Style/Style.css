@@ -199,7 +199,7 @@
 
 .header_banner_right {
   padding: 5px;
-  width: 50%;
+  width: 45%;
 }
 
 .header_img {
@@ -398,7 +398,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 25%;
+  top: 30%;
   transform: translateY(-50%) scale(0.4);
   background-color: var(--colo-dark-1);
   font-weight: bold;
@@ -536,17 +536,30 @@
 }
 
 .card_title {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .card_price {
+  font-weight: 600;
   margin-bottom: 1rem;
   color: var(--colo-primary);
 }
-
+.card_color i{
+  background: linear-gradient(to right, #33001b,  #ff0084);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 23x;
+}
+.card_color{
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
 .card_ratings {
   display: flex;
+  margin:1rem 0 ;
 }
 
 .card_stars {
@@ -554,19 +567,64 @@
   color: #feac5e;
 }
 
-.container_btn {
-  width: 100%;
+.add_to_cart {
   text-align: center;
-  margin-bottom: 5rem;
-}
-
-.container_btn_a {
+  margin: 1rem 0;
   background: #ff0084;
   background: linear-gradient(to right, #33001b, #ff0084);
-  color: var(--colo-white-1);
-  padding: 1.6rem 3rem;
+  color: white; 
+  font-weight: 600;
+  padding: 1rem 2rem;
   border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: color 0.4s ease;
 }
+
+.add_to_cart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: left 0.5s ease;
+  transform: skewX(-30deg);
+}
+
+.add_to_cart:hover::before {
+  left: 100%;
+}
+
+.add_to_cart:hover {
+  background: linear-gradient(to right, #ff0084, #33001b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.add_to_cart {
+  animation: bounceIn 0.6s ease-out;
+}
+
+
+
 
 /* categories */
 .categories {

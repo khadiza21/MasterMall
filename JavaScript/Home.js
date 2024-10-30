@@ -29,20 +29,13 @@ document
 document
   .querySelector(".banner-swiper-button-prev")
   .addEventListener("click", prevSlide);
-  
+
 paginationBullets.forEach((bullet, index) => {
   bullet.addEventListener("click", () => {
     currentIndex = index;
     showSlide(currentIndex);
   });
 });
-
-
-
-
-
-
-
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 4,
@@ -74,7 +67,6 @@ var swiper = new Swiper(".mySwiper", {
     },
   },
 });
-
 
 const categoriesData = [
   {
@@ -321,9 +313,13 @@ function generateStars(rating) {
   }
   return starsHTML;
 }
+const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 swiperWrappers.forEach((swiperWrapper) => {
   productData.forEach((card, index) => {
+
+    const isFavorite = favorites.some(fav => fav.id === card.id);
+
     const cardHTML = `
     <div class="swiper-slide">
       <div class="card">
@@ -335,20 +331,24 @@ swiperWrappers.forEach((swiperWrapper) => {
           />
           <div class="card_tag"><span>${card?.discount}</span></div>
           <div class="card_top_icons">
-            <i class="fa-regular fa-heart card_top_icon"></i>
+             <i class="${isFavorite ? 'fa-solid' : 'fa-regular'} fa-heart card_top_icon" data-id="${card?.id}"></i>
             <i class="fa-regular fa-eye card_top_icon"></i>
           </div>
         </div>
         <div class="card_body">
           <h3 class="card_title">${card?.title}</h3>
           <p class="card_price">$${card?.price}.00</p>
-                <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card?.color}</span></p>
+                <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${
+                  card?.color
+                }</span></p>
           <div class="card_ratings">
             <div class="card_stars">
               ${generateStars(card?.rating)}
             </div>
             <p class="card_rating_numbers">(${card?.reviews})</p>
           </div>
+         
+
           <button
             class="add_to_cart"
             data-id="${card?.id}"
@@ -365,6 +365,30 @@ swiperWrappers.forEach((swiperWrapper) => {
     </div>
   `;
     swiperWrapper.innerHTML += cardHTML;
+  });
+
+  swiperWrapper.addEventListener('click', (e) => {
+    if (e.target.classList.contains('card_top_icon')) {
+      const heartIcon = e.target;
+      const cardId = heartIcon.getAttribute('data-id');
+      
+      heartIcon.classList.toggle('fa-regular');
+      heartIcon.classList.toggle('fa-solid');
+
+      const cardData = productData.find(card => card.id == cardId);
+
+      let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      
+      const favoriteIndex = favorites.findIndex(fav => fav.id == cardId);
+      
+      if (favoriteIndex === -1) {
+        favorites.push(cardData);
+      } else {
+        favorites.splice(favoriteIndex, 1);
+      }
+      
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
   });
 });
 
@@ -390,7 +414,9 @@ productData.forEach((card, index) => {
         <div class="card_body">
           <h3 class="card_title">${card?.title}</h3>
           <p class="card_price">$${card?.price}.00</p>
-          <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card?.color}</span></p>
+          <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${
+            card?.color
+          }</span></p>
 
           <div class="card_ratings">
             <div class="card_stars">
@@ -490,6 +516,5 @@ AddToCart.forEach((button) => {
       cart.push(cartItem);
     }
     localStorage.setItem("cart", JSON.stringify(cart));
-
   });
 });
