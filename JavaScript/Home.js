@@ -35,16 +35,6 @@ paginationBullets.forEach((bullet, index) => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 4,
   centeredSlides: false,
@@ -100,7 +90,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Red"
   },
   {
     id: "2",
@@ -116,7 +106,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Black"
   },
   {
     id: "3",
@@ -132,7 +122,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Blue"
   },
   {
     id: "4",
@@ -148,7 +138,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Green"
   },
   {
     id: "5",
@@ -164,7 +154,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Light Pink"
   },
   {
     id: "6",
@@ -180,7 +170,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Light Green"
   },
   {
     id: "7",
@@ -196,7 +186,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Light Blue"
   },
   {
     id: "8",
@@ -212,7 +202,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Grey"
   },
   {
     id: "9",
@@ -228,7 +218,7 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "White"
   },
   {
     id: "10",
@@ -244,10 +234,9 @@ const productData = [
     subShopType: "",
     genderType: "",
     sellingCategory: "",
-    color: "Color Not Available"
+    color: "Light-grey"
   },
 ];
-
 
 swiperWrappers.forEach((swiperWrapper) => {
   productData.forEach((card, index) => {
