@@ -82,9 +82,9 @@ function displayCartItems() {
         <span class="total-amount">$${cartTotal.toFixed(2)}</span>
       </div>
       <div class="cart-buttons">
-        <div class="continue-shopping-btn"><button>Continue Shopping</button></div>
+        <a href="../index.html" class="continue-shopping-btn"><button>Continue Shopping</button></a>
         <div class="clear-cart-btn"><button>Clear Cart</button></div>
-        <div class="check-out-btn"><button>Check Out</button></div>
+        <a href="../checkout.html" class="check-out-btn"><button>Check Out</button></a>
       </div>
     `;
     CartItems.appendChild(cartSummary);
@@ -142,28 +142,16 @@ function removeItem(index) {
   displayCartItems();
 }
 
-// Continue shopping
-function continueShopping() {
-  window.location.href = "index.html";
-}
-
 // Clear cart
 function clearCart() {
   localStorage.removeItem("cart");
   displayCartItems();
 }
 
-// Navigate to checkout
-function navigateToCheckout() {
-  window.location.href = "checkout.html";
-}
-
 // Adding event listeners after the cart is rendered
 function addCartButtonListeners() {
-  document.querySelector(".continue-shopping-btn button").onclick =
-    continueShopping;
+
   document.querySelector(".clear-cart-btn button").onclick = clearCart;
-  document.querySelector(".check-out-btn button").onclick = navigateToCheckout;
 }
 
 // Display cart items on load

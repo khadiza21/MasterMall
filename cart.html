@@ -21,18 +21,13 @@
             <p class="tap_nav_p">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%
             </p>
-            <a class="top_nav_link" href="#"
-              ><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span
-            ></a>
+            <a class="top_nav_link" href="#"><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span></a>
           </div>
         </div>
       </div>
-
       <nav class="nav">
         <div class="container nav_container">
-          <a href="" class="nav_logo"
-            ><img src="image/logo/logo.png" alt=""
-          /></a>
+          <a href="" class="nav_logo"><img src="image/logo/logo.png" alt="" /></a>
           <ul class="nav_list">
             <li class="nav_item">
               <a href="index.html" class="nav_link">Home</a>
@@ -49,36 +44,31 @@
           </ul>
           <div class="nav_items">
             <form action="" class="nav_form">
-              <input
-                type="text"
-                class="nav_input"
-                placeholder="Search here...."
-              />
+              <input type="text" class="nav_input" placeholder="Search here...." />
               <i class="fa-solid fa-magnifying-glass nav_search"></i>
             </form>
-
-            <div class="nav_heart"><i class="fa-regular fa-heart"></i></div>
-            <a href="/cart.html" class="nav_cart"
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
-
+  
+            <a href="/favourite.html" class="nav_heart">
+              <i class="fa-regular fa-heart"></i>
+              <span class="favorite_badge favorite_badge_num">0</span>
+            </a>
+  
+            <a href="/cart.html" class="nav_cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="cart_badge cart_badge_num">0</span>
+            </a>
+  
             <div class="nav_user">
               <a href=""> <i class="fa-solid fa-user"></i></a>
               <ul class="bottom_dropdown">
                 <li>
-                  <a href="profile.html" class="w3-bar-item w3-button"
-                    >My Profile</a
-                  >
+                  <a href="profile.html" class="w3-bar-item w3-button">My Profile</a>
                 </li>
                 <li>
-                  <a href="signUp.html" class="w3-bar-item w3-button"
-                    >Sign Up</a
-                  >
+                  <a href="signUp.html" class="w3-bar-item w3-button">Sign Up</a>
                 </li>
                 <li>
-                  <a href="/index.html" class="w3-bar-item w3-button"
-                    >Log Out</a
-                  >
+                  <a href="/index.html" class="w3-bar-item w3-button">Log Out</a>
                 </li>
               </ul>
             </div>
@@ -88,7 +78,6 @@
           </span>
         </div>
       </nav>
-
       <nav class="mobile_nav mobile_nav_hide">
         <ul class="mobile_nav_list">
           <li class="mobile_nav_item">
@@ -104,7 +93,12 @@
             <a href="signUp.html" class="mobile_nav_link">Sign Up</a>
           </li>
           <li class="mobile_nav_item">
-            <a href="/cart.html" class="mobile_nav_link">Cart</a>
+            <a href="/cart.html" class="mobile_nav_link nav_cart_sm">Cart <span
+                class="cart_badge_sm cart_badge_num">0</span></a>
+          </li>
+          <li class="mobile_nav_item">
+            <a href="/cart.html" class="mobile_nav_link nav_heart_sm">Favorite
+              <span class="favorite_badge_sm favorite_badge_num">0</span></a>
           </li>
         </ul>
       </nav>
@@ -269,6 +263,7 @@
       src="https://kit.fontawesome.com/346effd3c4.js"
       crossorigin="anonymous"
     ></script>
+    <script src="JavaScript/nav.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <script src="JavaScript/cart.js"></script>

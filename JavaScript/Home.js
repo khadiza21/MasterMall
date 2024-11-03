@@ -68,10 +68,6 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
-
-
-
-
 // Array of card data
 const productData = [
   {
@@ -253,14 +249,7 @@ swiperWrappers.forEach((swiperWrapper) => {
           />
           <div class="card_tag"><span>${card.discount}</span></div>
           <div class="card_top_icons">
-           <i 
-           class="add_to_favorite  fa-regular fa-heart card_top_icon favorite-icon" 
-            data-id="${index + 1}"
-            data-title="${card.title}"
-            data-image="${card.image}"
-            data-price="${card.price}"
-             data-color="${card.color}"
-           ></i>
+           <i class="fa-regular fa-heart card_top_icon favorite-icon add_to_favorite" data-id="${card.id}" id="favorite-icon-${card.id}"></i>
             <i class="fa-regular fa-eye card_top_icon"></i>
           </div>
         </div>
@@ -340,11 +329,23 @@ productData.forEach((card, index) => {
   productsData.innerHTML += cardHTML;
 });
 
+function updateFavoriteIcons() {
+  const favoriteList = JSON.parse(localStorage.getItem("favorite")) || [];
+  
+  favoriteList.forEach((item) => {
+    const favoriteIcon = document.getElementById(`favorite-icon-${item.id}`);
+    if (favoriteIcon) {
+      favoriteIcon.classList.remove("fa-regular", "fa-heart");
+      favoriteIcon.classList.add("fa-solid", "fa-heart");
+    }
+  });
+}
 
 // add to cart
-const AddToFavorite = document.querySelectorAll(".add_to_favorite");
+const addToFavorite = document.querySelectorAll(".add_to_favorite");
+// add to favorite
 
-AddToFavorite.forEach((icon) => {
+addToFavorite.forEach((icon) => {
   icon.addEventListener("click", () => {
     const id = icon.getAttribute("data-id");
     const title = icon.getAttribute("data-title");
@@ -356,18 +357,32 @@ AddToFavorite.forEach((icon) => {
     const existingItemIndex = favorite.findIndex((item) => item.id === id);
 
     if (existingItemIndex !== -1) {
-      favorite[existingItemIndex].quantity += 1;
+      // Item is already in favorites, remove it
+      favorite.splice(existingItemIndex, 1);
+      icon.classList.remove("fa-solid", "fa-heart");
+      icon.classList.add("fa-regular", "fa-heart");
     } else {
+      // Item is not in favorites, add it
       const favoriteItem = { id, title, image, price, color, quantity: 1 };
       favorite.push(favoriteItem);
+      icon.classList.remove("fa-regular", "fa-heart");
+      icon.classList.add("fa-solid", "fa-heart");
     }
 
+    // Update local storage with the new favorites list
     localStorage.setItem("favorite", JSON.stringify(favorite));
 
-   
     updateFavoriteBadge();
   });
 });
+
+// Initialize icons on page load based on current favorites
+updateFavoriteIcons();
+
+
+
+
+
 // add to cart
 const AddToCart = document.querySelectorAll(".add_to_cart");
 
