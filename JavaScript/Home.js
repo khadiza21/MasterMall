@@ -332,6 +332,7 @@ productData.forEach((card, index) => {
 
 // add to cart
 const AddToCart = document.querySelectorAll(".add_to_cart");
+
 AddToCart.forEach((button) => {
   button.addEventListener("click", () => {
     const id = button.getAttribute("data-id");
@@ -351,8 +352,12 @@ AddToCart.forEach((button) => {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Update the cart badge to reflect the new quantity without reloading
+    updateCartBadge();
   });
 });
+
 
 
 

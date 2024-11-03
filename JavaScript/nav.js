@@ -1,6 +1,3 @@
-
-
-
 function getCartData() {
     const cartData = JSON.parse(localStorage.getItem("cart"));
     return cartData ? cartData : [];
