@@ -3,7 +3,7 @@ function getCartData() {
     return cartData ? cartData : [];
 }
 function getFavoriteData() {
-    const favoriteData = JSON.parse(localStorage.getItem("favorites"));
+    const favoriteData = JSON.parse(localStorage.getItem("favorite"));
     return favoriteData ? favoriteData : [];
 }
 function getTotalCartQuantity() {

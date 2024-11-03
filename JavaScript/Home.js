@@ -70,8 +70,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-// Flash Section
-const swiperWrappers = document.querySelectorAll(".swiper-wrapper");
+
 
 // Array of card data
 const productData = [
@@ -237,6 +236,9 @@ const productData = [
     color: "Light-grey"
   },
 ];
+// Flash Section
+const swiperWrappers = document.querySelectorAll(".swiper-wrapper");
+
 
 swiperWrappers.forEach((swiperWrapper) => {
   productData.forEach((card, index) => {
@@ -251,7 +253,14 @@ swiperWrappers.forEach((swiperWrapper) => {
           />
           <div class="card_tag"><span>${card.discount}</span></div>
           <div class="card_top_icons">
-            <i class="fa-regular fa-heart card_top_icon"></i>
+           <i 
+           class="add_to_favorite  fa-regular fa-heart card_top_icon favorite-icon" 
+            data-id="${index + 1}"
+            data-title="${card.title}"
+            data-image="${card.image}"
+            data-price="${card.price}"
+             data-color="${card.color}"
+           ></i>
             <i class="fa-regular fa-eye card_top_icon"></i>
           </div>
         </div>
@@ -281,6 +290,8 @@ swiperWrappers.forEach((swiperWrapper) => {
   `;
     swiperWrapper.innerHTML += cardHTML;
   });
+
+
 });
 
 
@@ -298,7 +309,7 @@ productData.forEach((card, index) => {
           />
         
           <div class="card_top_icons">
-            <i class="fa-regular fa-heart card_top_icon"></i>
+          <i class="fa-regular fa-heart card_top_icon favorite-icon add_to_favorite" data-id="${card.id}" id="favorite-icon-${card.id}"></i>
             <i class="fa-regular fa-eye card_top_icon"></i>
           </div>
         </div>
@@ -331,6 +342,33 @@ productData.forEach((card, index) => {
 
 
 // add to cart
+const AddToFavorite = document.querySelectorAll(".add_to_favorite");
+
+AddToFavorite.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    const id = icon.getAttribute("data-id");
+    const title = icon.getAttribute("data-title");
+    const image = icon.getAttribute("data-image");
+    const price = icon.getAttribute("data-price");
+    const color = icon.getAttribute("data-color");
+
+    let favorite = JSON.parse(localStorage.getItem("favorite")) || [];
+    const existingItemIndex = favorite.findIndex((item) => item.id === id);
+
+    if (existingItemIndex !== -1) {
+      favorite[existingItemIndex].quantity += 1;
+    } else {
+      const favoriteItem = { id, title, image, price, color, quantity: 1 };
+      favorite.push(favoriteItem);
+    }
+
+    localStorage.setItem("favorite", JSON.stringify(favorite));
+
+   
+    updateFavoriteBadge();
+  });
+});
+// add to cart
 const AddToCart = document.querySelectorAll(".add_to_cart");
 
 AddToCart.forEach((button) => {
@@ -353,11 +391,10 @@ AddToCart.forEach((button) => {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Update the cart badge to reflect the new quantity without reloading
+   
     updateCartBadge();
   });
 });
-
 
 
 
