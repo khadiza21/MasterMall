@@ -1,4 +1,29 @@
 /* sign up/sign In */
+.account_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  min-height: 20rem;
+  margin: 2rem 0;
+  background: #ff0084;
+  background: linear-gradient(to right, #33001b, #ff0084);
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account_header h2 {
+  margin-bottom: 2rem;
+}
+
+.account_header span {
+  margin: 0 2rem;
+}
+.account_header  a {
+  color: var(--colo-white-2);
+}
 /* General Layout */
 .auth_container {
     display: flex;
