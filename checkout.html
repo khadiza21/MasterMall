@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MasterMall | Cart</title>
+    <title>MasterMall | Checkout</title>
     <link rel="stylesheet" href="Style/nav.css" />
     <link rel="stylesheet" href="Style/checkout.css" />
-
-    <style>
-
-    </style>
 </head>
 
 <body>
+    <!-- header part start -->
     <header>
         <nav>
             <div class="container nav_container">
@@ -105,12 +102,17 @@
             </ul>
         </nav>
     </header>
+    <!-- header part end -->
 
+
+    <!-- main part start -->
     <main>
-      
+
+        <!-- checkout section start -->
         <section class="section">
             <div class="container">
                 <div class="checkout-box-container">
+                    <!-- checkout form  -->
                     <div class="checkout-form">
                         <!-- Contact and Delivery Form Section -->
                         <div>
@@ -193,11 +195,15 @@
                             </p>
                         </div>
                     </div>
+                    <!-- checkout form  -->
 
+                    <!-- side cart order summary  -->
                     <aside class="order-summary">
                         <h2>Order Summary</h2>
-                        <div><div class="spinner" id="loadingSpinner"></div></div>
-                        
+                        <div>
+                            <div class="spinner" id="loadingSpinner"></div>
+                        </div>
+
                         <div class="cart-items"></div>
                         <div class="summary-total">
                             <div class="subtotal-item-summary">
@@ -227,15 +233,19 @@
                         </div>
 
                     </aside>
+                    <!-- side cart order summary  -->
                 </div>
             </div>
         </section>
+        <!-- checkout section end -->
     </main>
+    <!-- main part end -->
 
+
+    <!-- script link up -->
     <script src="https://kit.fontawesome.com/346effd3c4.js" crossorigin="anonymous"></script>
     <script src="JavaScript/nav.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-
     <script src="JavaScript/checkout.js"></script>
     <script src="JavaScript/scrollReveal.js"></script>
 </body>

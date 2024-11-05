@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     totalItemsElement.textContent = totalItems;
     totalPriceElement.textContent = `$${(totalPrice + shippingCost).toFixed(2)}`;
 
-  
+
     spinner.style.display = "none";
   }, 1000);
 });
