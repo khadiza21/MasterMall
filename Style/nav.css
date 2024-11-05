@@ -43,6 +43,7 @@ ul {
   height: 100%;
   padding: 5px 0;
   background-color: var(--colo-dark-1);
+  transition: display 0.3s ease;
 }
 
 .top_nav_container {
@@ -76,6 +77,24 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px; 
+  background-color: #4bc0c8;
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 15px; 
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s; 
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: #c779d0; 
+}
 
 /* navbar */
 header{
@@ -91,7 +110,7 @@ header{
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  transition: top 0.3s ;
+  transition: top 0.3s ease;
 }
 .nav {
   width: 100%;

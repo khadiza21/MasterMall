@@ -1,3 +1,4 @@
+// mobile nav
 const hamburger = document.querySelector(".hamburger");
 const mobileNav = document.querySelector(".mobile_nav");
 const icon = hamburger.querySelector("i");
@@ -14,11 +15,9 @@ hamburger.addEventListener("click", () => {
     }
 });
 
-
 document.addEventListener("click", (event) => {
     const isClickInsideNav = mobileNav.contains(event.target);
     const isClickInsideHamburger = hamburger.contains(event.target);
-
 
     if (!isClickInsideNav && !isClickInsideHamburger && !mobileNav.classList.contains("mobile_nav_hide")) {
         mobileNav.classList.add("mobile_nav_hide");
@@ -28,22 +27,20 @@ document.addEventListener("click", (event) => {
 });
 
 
+// scrolling 
 window.onscroll = function () {
     const topNav = document.querySelector('.top_nav');
     const navbar = document.getElementById('navbar');
-
-
-
     if (window.scrollY > 50) {
         topNav.style.display = 'none';
-        navbar.style.top = '0';
-
+        navbar.style.top = '0'
     } else {
         topNav.style.display = 'flex';
         navbar.style.top = '40px';
     }
 };
 
+// cart data and favorite data
 function getCartData() {
     const cartData = JSON.parse(localStorage.getItem("cart"));
     return cartData ? cartData : [];
@@ -81,6 +78,5 @@ function updateFavoriteBadge() {
 
 updateCartBadge();
 updateFavoriteBadge();
-
 
 
