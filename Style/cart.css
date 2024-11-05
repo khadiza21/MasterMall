@@ -225,7 +225,6 @@
     transition: transform 0.1s ease;
 }
 
-/* .product-image, .product-details, .product-price, .quantity-selector ,total-price*/
 /* Responsive Styles */
 @media (max-width: 768px) and (min-width: 320px) {
     .product-card {

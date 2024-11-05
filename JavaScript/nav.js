@@ -1,3 +1,27 @@
+const hamburger = document.querySelector(".hamburger");
+const Nav = document.querySelector(".mobile_nav");
+
+hamburger.addEventListener("click", () => {
+    Nav.classList.toggle("mobile_nav_hide");
+});
+
+
+window.onscroll = function () {
+    const topNav = document.querySelector('.top_nav');
+    const navbar = document.getElementById('navbar');
+  
+
+
+    if (window.scrollY > 50) {
+        topNav.style.display = 'none';
+        navbar.style.top = '0';
+
+    } else {
+        topNav.style.display = 'flex';
+        navbar.style.top = '40px';
+    }
+};
+
 function getCartData() {
     const cartData = JSON.parse(localStorage.getItem("cart"));
     return cartData ? cartData : [];
@@ -12,7 +36,7 @@ function getTotalCartQuantity() {
 }
 function getTotalFavoriteQuantity() {
     const favoriteData = getFavoriteData();
-    return favoriteData.length; 
+    return favoriteData.length;
 }
 function updateCartBadge() {
     const cartBadges = document.querySelectorAll(".cart_badge_num");
