@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swiper Banner</title>
-    <style>
-   
-      
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MasterMall | Profile</title>
 
-    </style>
+  <!-- start css   -->
+  <style>
+    .container {
 
- 
-  </head>
-  <body>
-    
-    swiperWrappers.forEach((swiperWrapper) => {
-     
-    
-      // Event listener for heart icon click
-     
-    });
-    
-   
-  </body>
+      width: 80%;
+      margin: auto;
+    }
+
+    .coming {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+    }
+
+    h2 {
+      color: #ccc;
+      font-size: 8rem;
+    }
+
+    /* responsive css */
+    @media (max-width: 1100px) {
+      h2 {
+        font-size: 6rem;
+      }
+    }
+
+    @media (max-width: 800px) {
+      h2 {
+        font-size: 4rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 375px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <!-- end css -->
+</head>
+
+<body>
+  <!-- coming soon view -->
+  <section>
+    <div class="container">
+      <div class="coming">
+        <h2>Coming Soon...</h2>
+      </div>
+    </div>
+  </section>
+  <!-- coming soon view -->
+</body>
+
 </html>
