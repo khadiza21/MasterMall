@@ -322,3 +322,39 @@ font-size: 3rem;
     font-size: 1.2rem;
   }
 }
+ .order-summary{
+    position: relative;
+}
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #33001b;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 45%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .spinner {
+      width: 40px;
+      height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spinner {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
