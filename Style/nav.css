@@ -286,13 +286,17 @@ header{
 .hamburger {
   display: none;
   cursor: pointer;
+ 
 }
 
-.hamburger > svg {
-  width: 4.5rem;
-  height: 4.5rem;
+.hamburger i {
+  font-weight: 900; 
+  font-size: 2rem; 
+  transition: transform 0.3s ease;
 }
-
+.hamburger:hover i {
+  transform: scale(1.1); 
+}
 @media (max-width: 992px) {
   .service {
     flex: 1 1 calc(50% - 20px);

@@ -1,15 +1,37 @@
 const hamburger = document.querySelector(".hamburger");
-const Nav = document.querySelector(".mobile_nav");
+const mobileNav = document.querySelector(".mobile_nav");
+const icon = hamburger.querySelector("i");
 
 hamburger.addEventListener("click", () => {
-    Nav.classList.toggle("mobile_nav_hide");
+    mobileNav.classList.toggle("mobile_nav_hide");
+
+    if (icon.classList.contains("fa-bars")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-x");
+    } else {
+        icon.classList.remove("fa-x");
+        icon.classList.add("fa-bars");
+    }
+});
+
+
+document.addEventListener("click", (event) => {
+    const isClickInsideNav = mobileNav.contains(event.target);
+    const isClickInsideHamburger = hamburger.contains(event.target);
+
+
+    if (!isClickInsideNav && !isClickInsideHamburger && !mobileNav.classList.contains("mobile_nav_hide")) {
+        mobileNav.classList.add("mobile_nav_hide");
+        icon.classList.remove("fa-x");
+        icon.classList.add("fa-bars");
+    }
 });
 
 
 window.onscroll = function () {
     const topNav = document.querySelector('.top_nav');
     const navbar = document.getElementById('navbar');
-  
+
 
 
     if (window.scrollY > 50) {
