@@ -217,18 +217,18 @@ ul {
   right: -15px;
   margin: 0 auto;
   font-size: 12px;
-
   display: inline-block;
   font-weight: 600;
-
   color: black;
   padding: 4px 6px;
   text-align: center;
   border-radius: 5px;
+
 }
 
 .cart_badge_sm,
 .favorite_badge_sm {
+
   font-weight: 600;
   background-color: #ff0084;
   color: white;
@@ -318,6 +318,24 @@ ul {
   display: none;
 }
 
+.nav_link.active,
+.mobile_nav_link.active {
+  color: #821e57;
+  border-bottom: 2px solid #821e57;
+  font-weight: bold;
+}
+
+.nav_link:hover,
+.mobile_nav_link:hover {
+  color: #821e57;
+}
+
+.nav_heart_sm,
+.nav_cart_sm {
+  padding: 0;
+
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -346,6 +364,10 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .mobile_nav_link {
+    font-size: small;
+  }
+
   .services_container {
     flex-direction: column;
     gap: 10px;

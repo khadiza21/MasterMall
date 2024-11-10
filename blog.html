@@ -14,7 +14,8 @@
 </head>
 
 <body>
-  <div class="top_nav">
+
+  <section class="top_nav">
     <div class="container top_nav_container">
       <div class="top_nav_wrapper">
         <p class="tap_nav_p">
@@ -23,7 +24,7 @@
         <a class="top_nav_link" href="#"><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span></a>
       </div>
     </div>
-  </div>
+  </section>
 
   <nav id="navbar" class="nav">
     <div class="container nav_container">
@@ -48,8 +49,15 @@
           <i class="fa-solid fa-magnifying-glass nav_search"></i>
         </form>
 
-        <div class="nav_heart"><i class="fa-regular fa-heart"></i></div>
-        <a href="/cart.html" class="nav_cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/favourite.html" class="nav_heart">
+          <i class="fa-regular fa-heart"></i>
+          <span class="favorite_badge favorite_badge_num">0</span>
+        </a>
+
+        <a href="/cart.html" class="nav_cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart_badge cart_badge_num">0</span>
+        </a>
 
         <div class="nav_user">
           <a href=""> <i class="fa-solid fa-user"></i></a>
@@ -72,7 +80,7 @@
     </div>
   </nav>
 
-  <nav class="mobile_nav mobile_nav_hide">
+  <nav id="mobile_navbar" class="mobile_nav mobile_nav_hide">
     <ul class="mobile_nav_list">
       <li class="mobile_nav_item">
         <a href="/index.html" class="mobile_nav_link">Home</a>
@@ -87,11 +95,18 @@
         <a href="signUp.html" class="mobile_nav_link">Sign Up</a>
       </li>
       <li class="mobile_nav_item">
-        <a href="/cart.html" class="mobile_nav_link">Cart</a>
+        <a href="/cart.html" class="mobile_nav_link nav_cart_sm">Cart <span
+            class="cart_badge_sm cart_badge_num">0</span></a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="/cart.html" class="mobile_nav_link nav_heart_sm">Favorite
+          <span class="favorite_badge_sm favorite_badge_num">0</span></a>
       </li>
     </ul>
   </nav>
 
+
+  
   <!-- contact page header banner part start -->
   <section id="section ">
     <div class="container">

@@ -98,3 +98,20 @@ function smoothScrollToTop() {
 
 scrollToTopBtn.onclick = smoothScrollToTop;
 
+// active link 
+const currentPage = window.location.pathname.split("/").pop();
+
+// Function to set active class
+function setActiveLink(selector) {
+  document.querySelectorAll(selector).forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
+
+// Apply active class to desktop and mobile nav links
+setActiveLink(".nav_link");
+setActiveLink(".mobile_nav_link");

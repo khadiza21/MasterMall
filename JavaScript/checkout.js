@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   spinner.className = "spinner";
   document.body.appendChild(spinner);
 
-
   spinner.style.display = "block";
 
 
