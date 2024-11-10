@@ -27,18 +27,7 @@ document.addEventListener("click", (event) => {
 });
 
 
-// scrolling 
-window.onscroll = function () {
-    const topNav = document.querySelector('.top_nav');
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        topNav.style.display = 'none';
-        navbar.style.top = '0'
-    } else {
-        topNav.style.display = 'flex';
-        navbar.style.top = '40px';
-    }
-};
+
 
 // cart data and favorite data
 function getCartData() {
