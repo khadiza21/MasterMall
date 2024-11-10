@@ -99,12 +99,12 @@ function smoothScrollToTop() {
 scrollToTopBtn.onclick = smoothScrollToTop;
 
 // active link 
-const currentPage = window.location.pathname.split("/").pop();
+const currentPageActiveLink = window.location.pathname.split("/").pop();
 
 // Function to set active class
 function setActiveLink(selector) {
   document.querySelectorAll(selector).forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
+    if (link.getAttribute("href") === currentPageActiveLink) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");

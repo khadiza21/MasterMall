@@ -1,6 +1,3 @@
-
-
-
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 4,
   centeredSlides: false,

@@ -344,9 +344,14 @@ header h1 {
 
 /* responsive design  */
 @media (max-width: 768px) {
+  .checkout-box-container {
+    flex-wrap: wrap;
+  }
 
-  .order-summary,
-  .form-control {}
+  .checkout-form,
+  .form-control {
+    width: 100%;
+  }
 
   header h1 {
     font-size: 1.2rem;
@@ -354,6 +359,11 @@ header h1 {
 }
 
 @media (max-width: 424px) {
+
+  .checkout-form,
+  .form-control {
+    width: 100%;
+  }
 
   .item-title,
   .item-price {
