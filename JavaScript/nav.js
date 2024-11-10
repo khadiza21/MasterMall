@@ -69,3 +69,32 @@ updateCartBadge();
 updateFavoriteBadge();
 
 
+
+// Get the button
+let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.classList.add("show");
+    } else {
+        scrollToTopBtn.classList.remove("show");
+    }
+};
+
+
+function smoothScrollToTop() {
+    const scrollDuration = 800;
+    const scrollStep = window.scrollY / (scrollDuration / 15);
+
+    function scrollStepAnimate() {
+        if (window.scrollY > 0) {
+            window.scrollBy(0, -scrollStep);
+            requestAnimationFrame(scrollStepAnimate);
+        }
+    }
+
+    requestAnimationFrame(scrollStepAnimate);
+}
+
+scrollToTopBtn.onclick = smoothScrollToTop;
+
