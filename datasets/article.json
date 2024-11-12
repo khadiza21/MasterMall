@@ -1,7 +1,8 @@
 [
     {
       "id": 1,
-      "image": "../image/blog/blog-1_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Nov 18, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -14,7 +15,8 @@
     },
     {
       "id": 2,
-      "image": "../image/blog/blog-2_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Oct 28, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -27,7 +29,8 @@
     },
     {
       "id": 3,
-      "image": "../image/blog/blog-3_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Oct 12, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -40,7 +43,8 @@
     },
     {
       "id": 4,
-      "image": "../image/blog/blog-4_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Oct 05, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -53,7 +57,8 @@
     },
     {
       "id": 5,
-      "image": "../image/blog/blog-5_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Sep 26, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -66,7 +71,8 @@
     },
     {
       "id": 6,
-      "image": "../image/blog/blog-6_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Sep 18, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -79,7 +85,8 @@
     },
     {
       "id": 7,
-      "image": "../image/blog/blog-1_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Sep 10, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -92,7 +99,8 @@
     },
     {
       "id": 8,
-      "image": "../image/blog/blog-2_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Sep 01, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -105,7 +113,8 @@
     },
     {
       "id": 9,
-      "image": "../image/blog/blog-6_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Aug 21, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -118,7 +127,8 @@
     },
     {
       "id": 10,
-      "image": "../image/blog/blog-4_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Aug 15, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -131,7 +141,8 @@
     },
     {
       "id": 11,
-      "image": "../image/blog/blog-4_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Aug 11, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -144,7 +155,8 @@
     },
     {
       "id": 12,
-      "image": "../image/blog/blog-4_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Aug 03, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -157,7 +169,8 @@
     },
     {
       "id": 13,
-      "image": "../image/blog/blog-4_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Jul 10, 2024",
       "comments": "0 Comment",
       "author": "Black Men",
@@ -170,7 +183,8 @@
     },
     {
       "id": 14,
-      "image": "../image/blog/blog-4_1200x.webp",
+      "image": "../image/blog/dummy_1200x700_ffffff_cccccc.png",
+      "smallImage":"../image/blog/dummy_100x58_ffffff_cccccc.png",
       "date": "Jun 12, 2024",
       "comments": "0 Comment",
       "author": "Black Men",

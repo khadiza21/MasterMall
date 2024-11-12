@@ -1,26 +1,26 @@
 // recent and popular article blog
-let articles = [];
+let popularArticle = [];
 let latestArticles = [];
 fetch('../datasets/article.json')
   .then(response => response.json())
   .then(data => {
 
-    articles = data.map(article => ({ ...article, views: Number(article.views) })).sort((a, b) => b.views - a.views);
+
+    popularArticle = data.map(article => ({ ...article, views: Number(article.views) })).sort((a, b) => b.views - a.views);
     latestArticles = data.map(article => ({
       ...article,
       date: new Date(article.date).toLocaleDateString("en-US", {
-        weekday: "short", 
+        weekday: "short",
         month: "short",
         day: "numeric",
         year: "numeric",
       })
     }))
-    .sort((a, b) => new Date(b.date) - new Date(a.date));;
+      .sort((a, b) => new Date(b.date) - new Date(a.date));;
 
-    console.log()
     displayRecentArticles(latestArticles);
-    displayPopularArticles(articles)
-    displayArticles(articles);
+    displayPopularArticles(popularArticle)
+    displayArticles(latestArticles);
 
   })
   .catch(error => console.error('Error:', error));
@@ -45,14 +45,14 @@ function displaySideArticles(sideArticles, containers) {
 
       articleDiv.innerHTML = `
       <div class="recent-article-img">
-        <img src="${article.image}" alt="" />
+        <img class="clickable-img" src="${article.smallImage}" alt="" />
       </div>
       <div class="recent-article-content">
         <div class="recent-article-title">
-          <h4>${article.title}</h4>
+          <h4 class="clickable-title">${article.title}</h4>
         </div>
         <div class="recent-article-description">
-          <p>${article.shortDescription}</p>
+          <p>${article.shortDescription} <span class="clickable-more">more</span></p>
         </div>
         <div class="article-date">
           <div><i class="fa-solid fa-calendar"></i><span>${article.date}</span></div>
@@ -61,7 +61,19 @@ function displaySideArticles(sideArticles, containers) {
       </div>
     `;
 
-      articleDiv.addEventListener('click', () => {
+      const img = articleDiv.querySelector('.clickable-img');
+      img.addEventListener('click', () => {
+        window.location.href = `article-details.html?id=${article.id}`;
+      });
+
+
+      const title = articleDiv.querySelector('.clickable-title');
+      title.addEventListener('click', () => {
+        window.location.href = `article-details.html?id=${article.id}`;
+      });
+
+      const moreSpan = articleDiv.querySelector('.clickable-more');
+      moreSpan.addEventListener('click', () => {
         window.location.href = `article-details.html?id=${article.id}`;
       });
 
@@ -170,34 +182,52 @@ function displayArticles(articles) {
       articleElement.dataset.id = article.id;
       articleElement.innerHTML = `
         <div class="article-image">
-          <img src="${article.image}" alt="" />
+          <img class="clickable-img" src="${article.image}" alt="" />
         </div>
         <div class="article-content">
           <div class="article-info">
             <div class="date">
               <i class="fa-solid fa-calendar"></i><span>${article.date}</span>
             </div>
-            <div class="comment">
-              <a href="#"><i class="fa-solid fa-comment"></i><span>${article.comments}</span></a>
+            <div class="comments">
+              <a class="clickable-comments comment" ><i class="fa-solid fa-comment"></i><span>${article.comments}</span></a>
             </div>
             <div class="author">
               <i class="fa-solid fa-user"></i><span>${article.author}</span>
             </div>
           </div>
-          <div class="article-title">${article.title}</div>
+          <div class="article-title clickable-title">${article.title}</div>
           <div class="article-description">${article.description}</div>
           <div class="article-tag">
             <i class="fa-solid fa-tag"></i>
             <h4>${article.tags}</h4>
           </div>
           <div class="article-details">
-            <a href="${article.link}">Read more</a>
+            <a class="clickable-more" >Read more</a>
           </div>
         </div>
       `;
 
 
-      articleElement.addEventListener('click', () => {
+    
+      const img = articleElement.querySelector('.clickable-img');
+      img.addEventListener('click', () => {
+        window.location.href = `article-details.html?id=${article.id}`;
+      });
+
+      const comments = articleElement.querySelector('.clickable-comments');
+      comments.addEventListener('click', () => {
+        window.location.href = `article-details.html?id=${article.id}`;
+      });
+
+
+      const title = articleElement.querySelector('.clickable-title');
+      title.addEventListener('click', () => {
+        window.location.href = `article-details.html?id=${article.id}`;
+      });
+
+      const moreSpan = articleElement.querySelector('.clickable-more');
+      moreSpan.addEventListener('click', () => {
         window.location.href = `article-details.html?id=${article.id}`;
       });
 

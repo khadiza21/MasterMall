@@ -1,7 +1,7 @@
 [
     {
       "id": "1",
-      "image": "../image/flash/blueshoe_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Men Blue Shoe",
       "price": 60,
       "discount": "-40%",
@@ -17,7 +17,7 @@
     },
     {
       "id": "2",
-      "image": "../image/flash/gold-watch_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Women Gold Watch",
       "price": 60,
       "discount": "-40%",
@@ -33,7 +33,7 @@
     },
     {
       "id": "3",
-      "image": "../image/flash/sunglass_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Uni Sunglass",
       "price": 60,
       "discount": "-40%",
@@ -49,7 +49,7 @@
     },
     {
       "id": "4",
-      "image": "../image/flash/ment-shirt_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Men Casual T-Shirt",
       "price": 100,
       "discount": "-30%",
@@ -65,7 +65,7 @@
     },
     {
       "id": "5",
-      "image": "../image/flash/shirt_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Men Formal Shirt",
       "price": 150,
       "discount": "-20%",
@@ -81,7 +81,7 @@
     },
     {
       "id": "6",
-      "image": "../image/flash/men-coat_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Men Coat",
       "price": 90,
       "discount": "-50%",
@@ -97,7 +97,7 @@
     },
     {
       "id": "7",
-      "image": "../image/flash/jacket_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Men Winter Jacket",
       "price": 110,
       "discount": "-10%",
@@ -113,7 +113,7 @@
     },
     {
       "id": "8",
-      "image": "../image/flash/hat_2_600x.webp",
+      "image": "../image/flashdummy_600x600_ffffff_cccccc.png/",
       "title": "Men's Hat",
       "price": 130,
       "discount": "-15%",
@@ -129,7 +129,7 @@
     },
     {
       "id": "9",
-      "image": "../image/flash/jacket_9_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Kids Winter Jacket",
       "price": 50,
       "discount": "-25%",
@@ -145,7 +145,7 @@
     },
     {
       "id": "10",
-      "image": "../image/flash/poloshirt_2_600x.webp",
+      "image": "../image/flash/dummy_600x600_ffffff_cccccc.png",
       "title": "Men Polo Shirt",
       "price": 85,
       "discount": "-35%",
