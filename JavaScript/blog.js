@@ -61,21 +61,21 @@ function displaySideArticles(sideArticles, containers) {
       </div>
     `;
 
-      const img = articleDiv.querySelector('.clickable-img');
-      img.addEventListener('click', () => {
-        window.location.href = `article-details.html?id=${article.id}`;
-      });
 
+      function addRedirectOnClick(parentElement, elementSelector, articleId, redirectUrl) {
+        const element = parentElement.querySelector(elementSelector);
+        if (element) {
+          element.addEventListener('click', () => {
+            window.location.href = `${redirectUrl}?id=${articleId}`;
+          });
+        }
+      }
 
-      const title = articleDiv.querySelector('.clickable-title');
-      title.addEventListener('click', () => {
-        window.location.href = `article-details.html?id=${article.id}`;
-      });
+      const redirectUrl = 'article-details.html';
 
-      const moreSpan = articleDiv.querySelector('.clickable-more');
-      moreSpan.addEventListener('click', () => {
-        window.location.href = `article-details.html?id=${article.id}`;
-      });
+      addRedirectOnClick(articleDiv, '.clickable-img', article.id, redirectUrl);
+      addRedirectOnClick(articleDiv, '.clickable-title', article.id, redirectUrl);
+      addRedirectOnClick(articleDiv, '.clickable-more', article.id, redirectUrl);
 
       container.appendChild(articleDiv);
     });
@@ -209,27 +209,22 @@ function displayArticles(articles) {
       `;
 
 
-    
-      const img = articleElement.querySelector('.clickable-img');
-      img.addEventListener('click', () => {
-        window.location.href = `article-details.html?id=${article.id}`;
-      });
+      function addRedirectOnClick(parentElement, elementSelector, articleId, redirectUrl) {
+        const element = parentElement.querySelector(elementSelector);
+        if (element) {
+          element.addEventListener('click', () => {
+            window.location.href = `${redirectUrl}?id=${articleId}`;
+          });
+        }
+      }
 
-      const comments = articleElement.querySelector('.clickable-comments');
-      comments.addEventListener('click', () => {
-        window.location.href = `article-details.html?id=${article.id}`;
-      });
+      const redirectUrl = 'article-details.html';
 
+      addRedirectOnClick(articleElement, '.clickable-img', article.id, redirectUrl);
+      addRedirectOnClick(articleElement, '.clickable-comments', article.id, redirectUrl);
+      addRedirectOnClick(articleElement, '.clickable-title', article.id, redirectUrl);
+      addRedirectOnClick(articleElement, '.clickable-more', article.id, redirectUrl);;
 
-      const title = articleElement.querySelector('.clickable-title');
-      title.addEventListener('click', () => {
-        window.location.href = `article-details.html?id=${article.id}`;
-      });
-
-      const moreSpan = articleElement.querySelector('.clickable-more');
-      moreSpan.addEventListener('click', () => {
-        window.location.href = `article-details.html?id=${article.id}`;
-      });
 
 
       articleContainer.appendChild(articleElement);
