@@ -349,8 +349,9 @@ header h1 {
   }
 
   .checkout-form,
-  .form-control {
+  .order-summary {
     width: 100%;
+
   }
 
   header h1 {
@@ -361,7 +362,7 @@ header h1 {
 @media (max-width: 424px) {
 
   .checkout-form,
-  .form-control {
+  .order-summary {
     width: 100%;
   }
 

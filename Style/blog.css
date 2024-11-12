@@ -13,6 +13,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
 .blog_header h2 {
   margin-bottom: 2rem;
 }
@@ -73,7 +74,7 @@
 }
 
 .recent-article:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
@@ -153,40 +154,22 @@
 
 .article-category li {
   padding: 5px 10px;
-  border-left: 3px solid #ff0084;
   color: var(--colo-dark-1);
   font-weight: bold;
   text-transform: uppercase;
-  transition: transform 0.3s, background-color 0.3s;
+  background: #fff;
+  transition: 0.4s ease-in-out;
   cursor: pointer;
+  border-left: 3px solid #ff0084;
 }
 
 /* Hover effect */
 .article-category li:hover {
-  border: none;
-  background: #ff0084;
   background: linear-gradient(to right, #33001b, #ff0084);
-  transform: scale(1.1);
-  color: var(--colo-white-2);
-  border-radius: 10px;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.article-category li {
-  animation: fadeIn 0.5s ease-in-out;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -261,12 +244,12 @@
 
 .swiper-button-next {
   right: -10px;
-  top: 80px;
+  top: 120px;
 }
 
 .swiper-button-prev {
   left: -10px;
-  top: 80px;
+  top: 120px;
 }
 
 /* General Styling */

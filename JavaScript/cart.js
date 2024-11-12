@@ -1,5 +1,3 @@
-// ScrollReveal animations
-// Initializing ScrollReveal animations
 ScrollReveal().reveal(".product-cart-box", {
   delay: 200,
   duration: 1200,
@@ -12,7 +10,8 @@ let cartTotal = 0;
 
 function displayCartItems() {
   cartTotal = 0;
-  const items = JSON.parse(localStorage.getItem("cart")) || [];
+  const items = getCartData();
+  // const items = JSON.parse(localStorage.getItem("cart")) || [];
 
   // Clear existing cart items display
   CartItems.innerHTML = "";
@@ -80,12 +79,16 @@ function displayCartItems() {
       </div>
     `;
     CartItems.appendChild(cartSummary);
+
+
+    document.querySelector(".clear-cart-btn button").onclick = clearCart;
   }
 }
 
 // Update quantity
 function updateQuantity(index, change, newValue) {
-  const items = JSON.parse(localStorage.getItem("cart")) || [];
+  // const items = JSON.parse(localStorage.getItem("cart")) || [];
+  const items = getCartData();
   const item = items[index];
 
   // Update the item's quantity
@@ -112,8 +115,10 @@ function updateQuantity(index, change, newValue) {
   updateCartTotal();
 }
 
+
 function updateCartTotal() {
-  const items = JSON.parse(localStorage.getItem("cart")) || [];
+  // const items = JSON.parse(localStorage.getItem("cart")) || [];
+  const items = getCartData();
   let cartTotal = items.reduce((total, item) => {
     const price = parseFloat(item.price) || 0;
     const quantity = parseInt(item.quantity) || 1;
@@ -128,7 +133,8 @@ function updateCartTotal() {
 
 // Remove item
 function removeItem(index) {
-  const items = JSON.parse(localStorage.getItem("cart")) || [];
+  // const items = JSON.parse(localStorage.getItem("cart")) || [];
+  const items = getCartData();
   items.splice(index, 1);
   localStorage.setItem("cart", JSON.stringify(items));
   displayCartItems();
@@ -145,6 +151,10 @@ function addCartButtonListeners() {
 
   document.querySelector(".clear-cart-btn button").onclick = clearCart;
 }
+
+// Add event listener to the clear cart button dynamically
+
+
 
 // Display cart items on load
 displayCartItems();

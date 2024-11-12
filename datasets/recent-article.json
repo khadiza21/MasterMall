@@ -1,0 +1,27 @@
+[
+    {
+      "id": "article1",
+      "imgSrc": "image/blog/blog-1_100x.webp",
+      "title": "Influential Women in the Fashion Industry-1",
+      "description": "Lorem ipsum dolor sit ...",
+      "date": "Nov 18, 2018",
+      "fullContent": "Full content for article 1 goes here..."
+    },
+    {
+      "id": "article2",
+      "imgSrc": "image/blog/blog-2_100x.webp",
+      "title": "Influential Women in the Fashion Industry-2",
+      "description": "Lorem ipsum dolor sit ...",
+      "date": "Nov 18, 2018",
+      "fullContent": "Full content for article 2 goes here..."
+    },
+    {
+      "id": "article3",
+      "imgSrc": "image/blog/blog-3_100x.webp",
+      "title": "Influential Women in the Fashion Industry-3",
+      "description": "Lorem ipsum dolor sit ...",
+      "date": "Nov 18, 2018",
+      "fullContent": "Full content for article 3 goes here..."
+    }
+  ]
+  
