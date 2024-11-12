@@ -1,36 +1,62 @@
 // recent and popular article blog
-let recentArticles = [];
-fetch('../datasets/recent-article.json')
+let articles = [];
+let latestArticles = [];
+fetch('../datasets/article.json')
   .then(response => response.json())
   .then(data => {
-    recentArticles = data;
-    displayRecentArticles(recentArticles);
+
+    articles = data.map(article => ({ ...article, views: Number(article.views) })).sort((a, b) => b.views - a.views);
+    latestArticles = data.map(article => ({
+      ...article,
+      date: new Date(article.date).toLocaleDateString("en-US", {
+        weekday: "short", 
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })
+    }))
+    .sort((a, b) => new Date(b.date) - new Date(a.date));;
+
+    console.log()
+    displayRecentArticles(latestArticles);
+    displayPopularArticles(articles)
+    displayArticles(articles);
+
   })
   .catch(error => console.error('Error:', error));
 
-  
 
-function displayRecentArticles(recentArticles) {
+
+function displayRecentArticles(articles) {
   const containers = document.querySelectorAll('.recent-article-card');
+  displaySideArticles(articles, containers);
+}
+function displayPopularArticles(articles) {
+  const containers = document.querySelectorAll('.popular-article-card');
+  displaySideArticles(articles, containers);
+}
+
+function displaySideArticles(sideArticles, containers) {
   containers.forEach(container => {
-    recentArticles.forEach(article => {
+    sideArticles.slice(0, 3).forEach(article => {
       const articleDiv = document.createElement('div');
       articleDiv.classList.add('recent-article');
       articleDiv.dataset.id = article.id;
 
       articleDiv.innerHTML = `
       <div class="recent-article-img">
-        <img src="${article.imgSrc}" alt="" />
+        <img src="${article.image}" alt="" />
       </div>
       <div class="recent-article-content">
         <div class="recent-article-title">
           <h4>${article.title}</h4>
         </div>
         <div class="recent-article-description">
-          <p>${article.description}</p>
+          <p>${article.shortDescription}</p>
         </div>
         <div class="article-date">
-          <i class="fa-solid fa-calendar"></i><span>${article.date}</span>
+          <div><i class="fa-solid fa-calendar"></i><span>${article.date}</span></div>
+          <div><i class="fa-solid fa-eye"></i><span>${article.views}</span></div>
         </div>
       </div>
     `;
@@ -126,21 +152,8 @@ function displayProducts(products) {
 
 
 // articles container with pagination
-let articles = [];
-fetch('../datasets/article.json')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    articles = data;
-    console.log(articles)
-    displayArticles(articles);
-  })
-  .catch(error => console.error('Error:', error));
-
 function displayArticles(articles) {
   const articleContainer = document.querySelector('.article-container');
-
-
   const articlesPerPage = 6;
   let currentPage = 1;
 
@@ -148,13 +161,8 @@ function displayArticles(articles) {
   function renderArticles() {
     const start = (currentPage - 1) * articlesPerPage;
     const end = start + articlesPerPage;
-
-
     articleContainer.innerHTML = '';
-
-
     const articlesToDisplay = articles.slice(start, end);
-
 
     articlesToDisplay.forEach(article => {
       const articleElement = document.createElement('div');

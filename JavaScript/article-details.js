@@ -1,37 +1,38 @@
-// Parse the URL query parameter
 const urlParams = new URLSearchParams(window.location.search);
-const articleId = urlParams.get('id');
+console.log(urlParams, 'url')
+const articleId = Number(urlParams.get('id'));
 
-// Find the article by ID
-const articles = [
-  {
-    id: 'article1',
-    title: 'Influential Women in the Fashion Industry',
-    date: 'Nov 18, 2018',
-    fullContent: 'Full content for article 1 goes here...'
-  },
-  {
-    id: 'article2',
-    title: 'Influential Women in the Fashion Industry',
-    date: 'Nov 18, 2018',
-    fullContent: 'Full content for article 2 goes here...'
-  },
-  {
-    id: 'article3',
-    title: 'Influential Women in the Fashion Industry',
-    date: 'Nov 18, 2018',
-    fullContent: 'Full content for article 3 goes here...'
+console.log(articleId, 'id')
+
+let articles = [];
+fetch('../datasets/article.json')
+  .then(response => response.json())
+  .then(data => {
+    articles = data;
+    console.log(articles, 'article')
+    displayArticles(articles)
+
+  })
+  .catch(error => console.error('Error:', error));
+
+
+  function displayArticles(articles) {
+    console.log(articles);
+
+    const articleIdAsNumber = Number(articleId);
+  
+    // Find the article using the correct data type
+    const article = articles.find(a => a.id === articleId || a.id === articleIdAsNumber);
+    console.log(article, 'i');
+  
+    if (article) {
+      document.querySelector('.article-detail').innerHTML = `
+            <h2>${article.title}</h2>
+            <p>${article.fullContent}</p>
+            <span><i class="fa-solid fa-calendar"></i> ${article.date}</span>
+          `;
+    } else {
+      document.querySelector('.article-detail').innerHTML = '<p>Article not found.</p>';
+    }
   }
-];
-
-const article = articles.find(a => a.id === articleId);
-
-if (article) {
-  document.querySelector('.article-detail').innerHTML = `
-    <h2>${article.title}</h2>
-    <p>${article.fullContent}</p>
-    <span><i class="fa-solid fa-calendar"></i> ${article.date}</span>
-  `;
-} else {
-  document.querySelector('.article-detail').innerHTML = '<p>Article not found.</p>';
-}
+  
