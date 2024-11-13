@@ -62,7 +62,7 @@ const contactData = [
 
   const peopleData = [
     {
-      imgSrc: './image/about/team1.webp',
+      imgSrc: '../image/contact/dummy_150x150_ffffff_cccccc.png',
       alt: 'John Doe',
       name: 'John Doe',
       position: 'Senior Marketing Manager',
@@ -70,7 +70,7 @@ const contactData = [
       email: 'contact@example.com'
     },
     {
-      imgSrc: './image/about/team3.webp',
+      imgSrc: '../image/contact/dummy_150x150_ffffff_cccccc.png',
       alt: 'John Doe',
       name: 'John Doe',
       position: 'Senior Marketing Manager',
@@ -78,7 +78,7 @@ const contactData = [
       email: 'contact@example.com'
     },
     {
-      imgSrc: './image/about/team2.webp',
+      imgSrc: '../image/contact/dummy_150x150_ffffff_cccccc.png',
       alt: 'John Doe',
       name: 'John Doe',
       position: 'Senior Marketing Manager',

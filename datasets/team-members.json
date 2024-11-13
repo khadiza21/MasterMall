@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "img": "dummy_800x800_ffffff_cccccc.png",
+        "name": "Emily",
+        "role": "Designer"
+    },
+    {
+        "id": 2,
+        "img": "dummy_800x800_ffffff_cccccc.png",
+        "name": "John",
+        "role": "Developer"
+    },
+    {
+        "id": 3,
+        "img": "dummy_800x800_ffffff_cccccc.png",
+        "name": "Sophia",
+        "role": "Marketing Specialist"
+    },
+    {
+        "id": 4,
+        "img": "dummy_800x800_ffffff_cccccc.png",
+        "name": "Michael",
+        "role": "Product Manager"
+    },
+    {
+        "id": 5,
+        "img": "dummy_800x800_ffffff_cccccc.png",
+        "name": "Linda",
+        "role": "Content Writer"
+    },
+    {
+        "id": 6,
+        "img": "dummy_800x800_ffffff_cccccc.png",
+        "name": "James",
+        "role": "SEO Expert"
+    },
+    {
+        "id": 7,
+        "img": "dummy_800x800_ffffff_cccccc.png",
+        "name": "Olivia",
+        "role": "UX Researcher"
+    }
+]

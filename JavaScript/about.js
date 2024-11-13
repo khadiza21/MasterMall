@@ -41,3 +41,33 @@ ScrollReveal().reveal('.aboutService_container', { delay: 200, duration: 1200, o
 ScrollReveal().reveal('.team_header', { delay: 200, duration: 1200, origin: 'bottom'});
 ScrollReveal().reveal('.mySwiper', { delay: 200, duration: 1200, origin: 'right',  });
 ScrollReveal().reveal('.footer_container', { delay: 200, duration: 1200, origin: 'top', distance: '50px' });
+
+
+fetch('../datasets/team-members.json')
+  .then(response => response.json())
+  .then(teamMembers => {
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+    swiperWrapper.innerHTML = teamMembers.map(member => `
+      <div class="swiper-slide">
+        <div class="team-member-wrapper">
+          <div class="image-container">
+            <img  src="../image/about/${member.img}" alt="Team Member" class="team-img"/>
+            <div class="overlay">
+              <div class="team-member-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member-about">
+            <h4 class="team-name">${member.name}</h4>
+            <p class="team-role">${member.role}</p>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  })
+  .catch(error => console.error('Error loading team members:', error));
+

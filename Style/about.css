@@ -135,21 +135,38 @@
 }
 
 .about_service {
+  position: relative;
   flex: 1 1 calc(33.333% - 20px);
   background-color: #fff;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   height: 250px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition:  color 0.3s ease;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  cursor: pointer;
+}
+.about_service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #33001b, #ff0084);
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+  border-radius: 5px; 
+  z-index: 0;
+}
+.about_service:hover::before {
+  opacity: 1;
 }
 
-.about_service:hover {
-  background: #ff0084;
-  background: linear-gradient(to right, #33001b, #ff0084);
-  cursor: pointer;
+.about_service * {
+  position: relative;
+  z-index: 1; 
 }
 
 .service_box {
@@ -409,8 +426,6 @@
   background: linear-gradient(to right, #33001b, #ff0084);
 }
 
-@media (min-width: 1200px) {
-}
 
 /* Medium Screens (Tablets, 768px - 1200px) */
 @media (max-width: 1200px) {
@@ -422,6 +437,12 @@
 
 /* Small Screens (Mobile Phones, 480px - 768px) */
 @media (max-width: 768px) {
+  
+.story_content_title {
+  font-size: 3rem;
+
+}
+
   .image-container {
     width: 150px;
     height: 150px;
@@ -445,6 +466,18 @@
 
 /* Extra Small Screens (Tiny Devices, 320px - 480px) */
 @media (max-width: 480px) {
+  .about_stroy_author span {
+    font-size: 1.5rem;
+  }
+
+  .about_stroy_author small {
+    font-size: 1.2rem;
+  }
+  .story_content_title ,  .team_header h3{
+    font-size: 2.5rem;
+  
+  }
+
   .image-container {
     width: 150px;
     height: 150px;
@@ -473,6 +506,18 @@
 }
 
 @media (max-width: 320px) {
+  .story_content_title ,  .team_header h3{
+    font-size: 2rem;
+  
+  }
+  .about_stroy_author span {
+    font-size: 1.5rem;
+  }
+
+  .about_stroy_author small {
+    font-size: 1.2rem;
+  }
+
   .image-container {
     width: 150px;
     height: 150px;
@@ -492,7 +537,7 @@
     height: 10px;
     width: 10px;
   }
-
+ 
   .swiper:hover > .swiper-button-next,
   .swiper:hover > .swiper-button-prev {
     display: none;
