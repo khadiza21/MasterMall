@@ -1,18 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MasterMall | Blog</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="Style/nav.css" />
+    <link rel="stylesheet" href="Style/article-detail.css">
+    <link rel="stylesheet" href="Style/footer.css" />
 </head>
+
 <body>
-    
-ssss
-<div class="article-detail">
-    
-</div>
+
+    <section class="top_nav">
+        <div class="container top_nav_container">
+            <div class="top_nav_wrapper">
+                <p class="tap_nav_p">
+                    Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%
+                </p>
+                <a class="top_nav_link" href="#"><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span></a>
+            </div>
+        </div>
+    </section>
+
+    <nav id="navbar" class="nav">
+        <div class="container nav_container">
+            <a href="https://master-mall-bk.netlify.app/" class="nav_logo"><img src="image/logo/logo.png" alt="" /></a>
+            <ul class="nav_list">
+                <li class="nav_item">
+                    <a href="index.html" class="nav_link">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="blog.html" class="nav_link">Blog</a>
+                </li>
+                <li class="nav_item">
+                    <a href="about.html" class="nav_link">About</a>
+                </li>
+                <li class="nav_item">
+                    <a href="contact.html" class="nav_link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav_items">
+                <form action="" class="nav_form">
+                    <input type="text" class="nav_input" placeholder="Search here...." />
+                    <i class="fa-solid fa-magnifying-glass nav_search"></i>
+                </form>
+
+                <a href="/favourite.html" class="nav_heart">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="favorite_badge favorite_badge_num">0</span>
+                </a>
+
+                <a href="/cart.html" class="nav_cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart_badge cart_badge_num">0</span>
+                </a>
+
+                <div class="nav_user">
+                    <a href=""> <i class="fa-solid fa-user"></i></a>
+                    <ul class="bottom_dropdown">
+                        <li>
+                            <a href="profile.html" class="w3-bar-item w3-button">My Profile</a>
+                        </li>
+                        <li>
+                            <a href="signUp.html" class="w3-bar-item w3-button">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="/index.html" class="w3-bar-item w3-button">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <span class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+        </div>
+    </nav>
+
+    <nav id="mobile_navbar" class="mobile_nav mobile_nav_hide">
+        <ul class="mobile_nav_list">
+            <li class="mobile_nav_item">
+                <a href="/index.html" class="mobile_nav_link">Home</a>
+            </li>
+            <li class="mobile_nav_item">
+                <a href="about.html" class="mobile_nav_link">About</a>
+            </li>
+            <li class="mobile_nav_item">
+                <a href="contact.html" class="mobile_nav_link">Contact</a>
+            </li>
+            <li class="mobile_nav_item">
+                <a href="signUp.html" class="mobile_nav_link">Sign Up</a>
+            </li>
+            <li class="mobile_nav_item">
+                <a href="/cart.html" class="mobile_nav_link nav_cart_sm">Cart <span
+                        class="cart_badge_sm cart_badge_num">0</span></a>
+            </li>
+            <li class="mobile_nav_item">
+                <a href="/cart.html" class="mobile_nav_link nav_heart_sm">Favorite
+                    <span class="favorite_badge_sm favorite_badge_num">0</span></a>
+            </li>
+        </ul>
+    </nav>
 
 
+
+
+
+    <main>
+        <section>
+            <div>
+                <button id="scrollToTopBtn"><i class="fa-solid fa-angle-up"></i></button>
+            </div>
+        </section>
+
+        <!-- contact page header banner part start -->
+        <section id="section ">
+            <div class="container">
+                <div class="article-detail-header">
+                    <h2 class="article-details-title">Title</h2>
+                    <p>
+                        <a href="https://master-mall-bk.netlify.app/">Home</a>
+                        <span>/</span>
+                        <a href="/blog.html">Blogs</a>
+                        <span>/</span>
+                        <small class="article-details-title title">Title</small>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- contact page header banner part end -->
+
+        <section>
+            <div class="container">
+                <div class="article-detail"></div>
+            </div>
+        </section>
+
+
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_container">
+                <div class="col">
+                    <div class="footer_logo">
+                        <h2>MasterMall</h2>
+                        <small>One Stop Every Need</small>
+                    </div>
+
+                    <h4>Contact</h4>
+                    <div class="contact">
+                        <ul>
+                            <li>
+                                <p>
+                                    <strong><i class="fa-solid fa-location-dot"></i> Address:</strong>
+                                    Dhaka, Bangladesh.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong><i class="fa-solid fa-phone"></i> Phone:</strong>
+                                    092 3434 3434
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong><i class="fa-solid fa-clock"></i> Hours:</strong>
+                                    10:00 - 18:00, Mon - Sat
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="follow">
+                        <h4>Follow us</h4>
+                        <div class="icon">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-pinterest-p"></i>
+                            <i class="fab fa-youtube"></i>
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h4>About</h4>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> About Us</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Delivery
+                                Information</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Terms &
+                                Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4>My Account</h4>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Sign In</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> View Cart</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> My Wishlist</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Track My Order</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Help</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col install">
+                    <h4>Install App</h4>
+                    <p>From App Store or Google Play</p>
+                    <div class="pay row">
+                        <i class="fab fa-apple"></i>
+                        <i class="fab fa-google-play"></i>
+                    </div>
+                    <p>Secured Payment Gateway</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-amex"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container footer_bottom_container">
+                <p class="footer_copy">&copy; Exclusive 2024. All right reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/346effd3c4.js" crossorigin="anonymous"></script>
+
+
+    <script src="JavaScript/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="JavaScript/article-details.js"></script>
+    <script src="JavaScript/scrollReveal.js"></script>
+
 </body>
+
 </html>
