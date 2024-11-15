@@ -429,7 +429,7 @@ function generateStars(rating) {
 // category section
 const categoriesData = [
   {
-    image: "../image/category/trending.webp",
+    image: "../image/category/dummy_600x600_ffffff_cccccc.png",
     name: "Trending",
     alt: "Trending",
     items: 5,
@@ -472,24 +472,29 @@ const categoriesData = [
   },
 ];
 const categoriesContainer = document.querySelector(".categories");
-categoriesData.forEach((category) => {
-  const categoryHTML = `
-    <a href="#" class="category_detail">
-      <div class="category">
-        <img
-          src="${category.image}"
-          alt="${category.alt}"
-          class="category_image"
-        />
-        <p class="category_name">${category.name}</p>
-        <span>(${category.items} items)</span>
-      </div>
-    </a>
-  `;
 
-  // Append category HTML to categories container
-  categoriesContainer.innerHTML += categoryHTML;
-});
+fetch('../datasets/categories.json')
+  .then(response => response.json())
+  .then(categoriesData => {
+    categoriesData.forEach(category => {
+      const categoryHTML = `
+        <a href="#" class="category_detail">
+          <div class="category">
+            <img
+              src="${category.image}"
+              alt="${category.alt}"
+              class="category_image"
+            />
+            <p class="category_name">${category.name}</p>
+            <span>(${category.items} items)</span>
+          </div>
+        </a>
+      `;
+      categoriesContainer.innerHTML += categoryHTML;
+    });
+  })
+  .catch(error => console.error('Error loading categories:', error));
+
 // Support 
 const servicesContainer = document.querySelector('.services_container');
 const services = [
