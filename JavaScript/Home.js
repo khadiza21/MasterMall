@@ -34,7 +34,6 @@ paginationBullets.forEach((bullet, index) => {
   });
 });
 
-
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 4,
   centeredSlides: false,
@@ -67,227 +66,113 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-
 // Array of card data
-const productData = [
-  {
-    id: "1",
-    image: "../image/flash/blueshoe_2_600x.webp",
-    title: "Men Blue Shoe",
-    price: 60,
-    discount: "-40%",
-    rating: 4,
-    reviews: 150,
-    discount: "-10",
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Red"
-  },
-  {
-    id: "2",
-    image: "../image/flash/gold-watch_2_600x.webp",
-    title: "Women Gold Watch",
-    price: 60,
-    discount: "-40%",
-    rating: 4,
-    reviews: 150,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Black"
-  },
-  {
-    id: "3",
-    image: "../image/flash/sunglass_2_600x.webp",
-    title: "Uni Sunglass",
-    price: 60,
-    discount: "-40%",
-    rating: 4,
-    reviews: 150,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Blue"
-  },
-  {
-    id: "4",
-    image: "../image/flash/ment-shirt_2_600x.webp",
-    title: "Men Casual T-Shirt",
-    price: 100,
-    discount: "-30%",
-    rating: 4,
-    reviews: 76,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Green"
-  },
-  {
-    id: "5",
-    image: "../image/flash/shirt_2_600x.webp",
-    title: "Men Formal Shirt",
-    price: 150,
-    discount: "-20%",
-    rating: 5,
-    reviews: 120,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Light Pink"
-  },
-  {
-    id: "6",
-    image: "../image/flash/men-coat_2_600x.webp",
-    title: "Men Coat",
-    price: 90,
-    discount: "-50%",
-    rating: 3,
-    reviews: 88,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Light Green"
-  },
-  {
-    id: "7",
-    image: "../image/flash/jacket_2_600x.webp",
-    title: "Men Winter Jacket",
-    price: 110,
-    discount: "-10%",
-    rating: 4,
-    reviews: 64,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Light Blue"
-  },
-  {
-    id: "8",
-    image: "../image/flash/hat_2_600x.webp",
-    title: "Men's Hat",
-    price: 130,
-    discount: "-15%",
-    rating: 5,
-    reviews: 90,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Grey"
-  },
-  {
-    id: "9",
-    image: "../image/flash/jacket_9_600x.webp",
-    title: "Kids Winter Jacket",
-    price: 50,
-    discount: "-25%",
-    rating: 4,
-    reviews: 45,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "White"
-  },
-  {
-    id: "10",
-    image: "../image/flash/poloshirt_2_600x.webp",
-    title: "Men Polo Shirt",
-    price: 85,
-    discount: "-35%",
-    rating: 3,
-    reviews: 30,
-    category: "Dress",
-    productType: "",
-    shopType: "",
-    subShopType: "",
-    genderType: "",
-    sellingCategory: "",
-    color: "Light-grey"
-  },
-];
+let productDataset = [];
+let flashSellingProducts = [];
+let bestSellingProducts = [];
+fetch("../datasets/products.json")
+  .then((response) => response.json())
+  .then((data) => {
+
+    flashSellingProducts = data.filter((product) => product.isFlashSale);
+    bestSellingProducts = data.filter(product => product.reviews > 100).sort((a, b) => b.reviews - a.reviews);
+    productDataset = data;
+
+    displayFlashSellingProducts(flashSellingProducts);
+    displayBestSellingProducts(bestSellingProducts);
+    displayProducts(productDataset);
+  })
+  .catch((error) => console.error("Error:", error));
+
 // Flash Section
-const swiperWrappers = document.querySelectorAll(".swiper-wrapper");
+function displayFlashSellingProducts(products) {
+  const flashSellingProductsContainer = document.querySelector(".flash-selling-products");
+
+  if (!flashSellingProductsContainer) {
+    console.error("Flash Selling Products container not found.");
+    return;
+  }
 
 
-swiperWrappers.forEach((swiperWrapper) => {
-  productData.forEach((card, index) => {
-    const cardHTML = `
-    <div class="swiper-slide">
-      <div class="card">
-        <div class="card_top">
-          <img
-            src="${card.image}"
-            alt="${card.title}"
-            class="card_img"
-          />
-          <div class="card_tag"><span>${card.discount}</span></div>
-          <div class="card_top_icons">
-           <i class="fa-regular fa-heart card_top_icon favorite-icon add_to_favorite" data-id="${card.id}" id="favorite-icon-${card.id}"></i>
-            <i class="fa-regular fa-eye card_top_icon"></i>
-          </div>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">${card.title}</h3>
-          <p class="card_price">$${card.price}</p>
-          <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card.color}</span></p>
-          <div class="card_ratings">
-            <div class="card_stars">
-              ${generateStars(card.rating)}
+  swiperProducts(products, flashSellingProductsContainer);
+  console.log(products)
+
+}
+function displayBestSellingProducts(products) {
+  const bestSellingProductsContainer = document.querySelector(".best-selling-products");
+
+
+  if (!bestSellingProductsContainer) {
+    console.error("Best Selling Products container not found.");
+    return;
+  }
+
+  swiperProducts(products, bestSellingProductsContainer);
+  console.log("Best Selling Products:", products);
+
+}
+
+function swiperProducts(products, swiperWrappers) {
+  // Ensure swiperWrappers is an array
+  if (!Array.isArray(swiperWrappers) && !(swiperWrappers instanceof NodeList)) {
+    swiperWrappers = [swiperWrappers]; // Wrap single element in an array
+  }
+
+  swiperWrappers.forEach((swiperWrapper) => {
+    let cardsHTML = "";
+    products.slice(0, 6).forEach((card, index) => {
+      const cardHTML = `
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="card_top">
+              <img
+                src="${card.image}"
+                alt="${card.title}"
+                class="card_img"
+              />
+              <div class="card_tag"><span>${card.discount}</span></div>
+              <div class="card_top_icons">
+                <i class="fa-regular fa-heart card_top_icon favorite-icon add_to_favorite" data-id="${card.id}" id="favorite-icon-${card.id}"></i>
+                <i class="fa-regular fa-eye card_top_icon"></i>
+              </div>
             </div>
-            <p class="card_rating_numbers">(${card.reviews})</p>
+            <div class="card_body">
+              <h3 class="card_title">${card.title}</h3>
+              <p class="card_price">$${card.price}</p>
+              <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card.color}</span></p>
+              <div class="card_ratings">
+                <div class="card_stars">
+                  ${generateStars(card.rating)}
+                </div>
+                <p class="card_rating_numbers">(${card.reviews})</p>
+              </div>
+              <button
+                class="add_to_cart"
+                data-id="${index + 1}"
+                data-title="${card.title}"
+                data-image="${card.image}"
+                data-price="${card.price}"
+                data-color="${card.color}"
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
-          <button
-            class="add_to_cart"
-            data-id="${index + 1}"
-            data-title="${card.title}"
-            data-image="${card.image}"
-            data-price="${card.price}"
-             data-color="${card.color}"
-          >
-            Add to Cart
-          </button>
         </div>
-      </div>
-    </div>
-  `;
-    swiperWrapper.innerHTML += cardHTML;
+      `;
+      cardsHTML += cardHTML;
+    });
+    swiperWrapper.innerHTML = cardsHTML;
   });
+}
 
 
-});
+// Our Products Part
 
-
-// Our Products Part 
-const productsData = document.querySelector(".products");
-productData.forEach((card, index) => {
-  const cardHTML = `
+function displayProducts(products) {
+  const productsData = document.querySelector(".products");
+  products.slice(0, 10).forEach((card, index) => {
+    const cardHTML = `
 
       <div class="card">
         <div class="card_top">
@@ -298,14 +183,16 @@ productData.forEach((card, index) => {
           />
         
           <div class="card_top_icons">
-          <i class="fa-regular fa-heart card_top_icon favorite-icon add_to_favorite" data-id="${card.id}" id="favorite-icon-${card.id}"></i>
+          <i class="fa-regular fa-heart card_top_icon favorite-icon add_to_favorite" data-id="${card.id
+      }" id="favorite-icon-${card.id}"></i>
             <i class="fa-regular fa-eye card_top_icon"></i>
           </div>
         </div>
         <div class="card_body">
           <h3 class="card_title">${card.title}</h3>
           <p class="card_price">$${card.price}</p>
-             <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card.color}</span></p>
+             <p class="card_color"><i class="fa-solid fa-droplet"></i> <span>${card.color
+      }</span></p>
           <div class="card_ratings">
             <div class="card_stars">
               ${generateStars(card.rating)}
@@ -326,12 +213,14 @@ productData.forEach((card, index) => {
       </div>
    
   `;
-  productsData.innerHTML += cardHTML;
-});
+    productsData.innerHTML += cardHTML;
+  });
+}
+
 
 function updateFavoriteIcons() {
   const favoriteList = JSON.parse(localStorage.getItem("favorite")) || [];
-  
+
   favoriteList.forEach((item) => {
     const favoriteIcon = document.getElementById(`favorite-icon-${item.id}`);
     if (favoriteIcon) {
@@ -379,10 +268,6 @@ addToFavorite.forEach((icon) => {
 // Initialize icons on page load based on current favorites
 updateFavoriteIcons();
 
-
-
-
-
 // add to cart
 const AddToCart = document.querySelectorAll(".add_to_cart");
 
@@ -406,12 +291,9 @@ AddToCart.forEach((button) => {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-   
     updateCartBadge();
   });
 });
-
-
 
 // star generate
 function generateStars(rating) {
@@ -473,10 +355,10 @@ const categoriesData = [
 ];
 const categoriesContainer = document.querySelector(".categories");
 
-fetch('../datasets/categories.json')
-  .then(response => response.json())
-  .then(categoriesData => {
-    categoriesData.forEach(category => {
+fetch("../datasets/categories.json")
+  .then((response) => response.json())
+  .then((categoriesData) => {
+    categoriesData.forEach((category) => {
       const categoryHTML = `
         <a href="#" class="category_detail">
           <div class="category">
@@ -493,39 +375,39 @@ fetch('../datasets/categories.json')
       categoriesContainer.innerHTML += categoryHTML;
     });
   })
-  .catch(error => console.error('Error loading categories:', error));
+  .catch((error) => console.error("Error loading categories:", error));
 
-// Support 
-const servicesContainer = document.querySelector('.services_container');
+// Support
+const servicesContainer = document.querySelector(".services_container");
 const services = [
   {
     imgSrc: "image/services/10-credit-card.svg",
     altText: "Credit Card",
     title: "Secure Checkout",
-    description: "100% Payment Secure."
+    description: "100% Payment Secure.",
   },
   {
     imgSrc: "image/services/4-track.svg",
     altText: "Free Shipping",
     title: "Free Shipping",
-    description: "On orders over $99."
+    description: "On orders over $99.",
   },
   {
     imgSrc: "image/services/7-support.svg",
     altText: "Online Support",
     title: "Online Support",
-    description: "Ensure the product quality."
+    description: "Ensure the product quality.",
   },
   {
     imgSrc: "image/services/9-money.svg",
     altText: "Money Back",
     title: "Money Back",
-    description: "Money back in 15 days."
-  }
+    description: "Money back in 15 days.",
+  },
 ];
-services.forEach(service => {
-  const serviceDiv = document.createElement('div');
-  serviceDiv.classList.add('service');
+services.forEach((service) => {
+  const serviceDiv = document.createElement("div");
+  serviceDiv.classList.add("service");
 
   serviceDiv.innerHTML = `
     <img src="${service.imgSrc}" alt="${service.altText}" class="service_image" />
