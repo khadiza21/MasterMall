@@ -711,6 +711,7 @@ width: 100%;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(8, 4vw);
   grid-gap: 1.5rem;
+  margin-bottom: 10rem;
 }
 
 .gallery_item {
@@ -797,7 +798,107 @@ width: 100%;
   gap: 20px;
   margin: 5rem auto;
 }
+/* blogs */
 
+/* Container for columns */
+.blogs-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Styling for each column */
+.blogs-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Styling for rows inside columns */
+.article {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+.article-img {
+  width: 100px;
+  padding-left: 1rem;
+
+}
+
+.article-img img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.article:hover .recent-article-img img {
+  transform: scale(1.1);
+}
+
+.article-content {
+  padding: 1rem;
+  flex: 1;
+}
+
+.article-title h4 {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.article-title h4:hover,
+.article-description p span:hover {
+  background: linear-gradient(to right, #33001b, #ff0084);
+  background-clip: text;
+  color: transparent;
+}
+
+.article-description p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+  text-align: justify;
+
+}
+
+.article-description p span {
+  border-bottom: 1px solid #555;
+  cursor: pointer;
+}
+.article-date {
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.article-date i {
+  margin-right: 0.3rem;
+  color: #888;
+}
+
+/* blogs */
 .service {
   flex: 1 1 calc(25% - 20px);
   background-color: #fff;
@@ -917,6 +1018,11 @@ width: 100%;
     width: 100%;
     height: 100%;
   }
+  .blogs-container{
+    flex-direction: column;
+    gap: 10px;
+  }
+
 }
 
 @media (max-width: 567px) and (min-width: 480px) {
@@ -1010,6 +1116,10 @@ width: 100%;
     width: 70%;
     height: 70%;
     padding-left: 5rem;
+  }
+  .blogs-container{
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -1119,5 +1229,8 @@ width: 100%;
     padding-left: 5rem;
   }
 
-
+  .blogs-container{
+    flex-direction: column;
+    gap: 10px;
+  }
 }

@@ -1,0 +1,27 @@
+[
+    {
+      "imgSrc": "../image/services/10-credit-card.svg",
+      "altText": "Credit Card",
+      "title": "Secure Checkout",
+      "description": "100% Payment Secure."
+    },
+    {
+      "imgSrc": "../image/services/4-track.svg",
+      "altText": "Free Shipping",
+      "title": "Free Shipping",
+      "description": "On orders over $99."
+    },
+    {
+      "imgSrc": "../image/services/7-support.svg",
+      "altText": "Online Support",
+      "title": "Online Support",
+      "description": "Ensure the product quality."
+    },
+    {
+      "imgSrc": "../image/services/9-money.svg",
+      "altText": "Money Back",
+      "title": "Money Back",
+      "description": "Money back in 15 days."
+    }
+  ]
+  

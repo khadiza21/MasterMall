@@ -113,14 +113,21 @@ function displayBestSellingProducts(products) {
 }
 
 function swiperProducts(products, swiperWrappers) {
-  // Ensure swiperWrappers is an array
-  if (!Array.isArray(swiperWrappers) && !(swiperWrappers instanceof NodeList)) {
-    swiperWrappers = [swiperWrappers]; // Wrap single element in an array
+  // Ensure swiperWrappers is a valid NodeList or HTMLElement
+
+  // Normalize swiperWrappers to be an array
+  if (!(swiperWrappers instanceof NodeList) && !Array.isArray(swiperWrappers)) {
+    swiperWrappers = [swiperWrappers];
   }
 
   swiperWrappers.forEach((swiperWrapper) => {
+    if (!(swiperWrapper instanceof HTMLElement)) {
+      console.error("Invalid element in swiperWrappers.");
+      return;
+    }
+
     let cardsHTML = "";
-    products.slice(0, 6).forEach((card, index) => {
+    products.slice(0, 6).forEach((card) => {
       const cardHTML = `
         <div class="swiper-slide">
           <div class="card">
@@ -148,7 +155,7 @@ function swiperProducts(products, swiperWrappers) {
               </div>
               <button
                 class="add_to_cart"
-                data-id="${index + 1}"
+                data-id="${card.id}"
                 data-title="${card.title}"
                 data-image="${card.image}"
                 data-price="${card.price}"
@@ -162,17 +169,22 @@ function swiperProducts(products, swiperWrappers) {
       `;
       cardsHTML += cardHTML;
     });
+
+    // Inject generated HTML into the swiper wrapper
     swiperWrapper.innerHTML = cardsHTML;
   });
 }
 
-
 // Our Products Part
-
 function displayProducts(products) {
   const productsData = document.querySelector(".products");
+  if(!productsData){
+    console.error("Products container not found.");
+    return;
+  }
+ let cardHTML = '';
   products.slice(0, 10).forEach((card, index) => {
-    const cardHTML = `
+    const singleCardHTML = `
 
       <div class="card">
         <div class="card_top">
@@ -213,88 +225,82 @@ function displayProducts(products) {
       </div>
    
   `;
-    productsData.innerHTML += cardHTML;
+  cardHTML += singleCardHTML;
+  
+  }); 
+ productsData.innerHTML += cardHTML;
+ attachEventListeners()
+}
+// function updateFavoriteIcons() {
+//   const favoriteList = JSON.parse(localStorage.getItem("favorite")) || [];
+//   favoriteList.forEach((item) => {
+//     const favoriteIcon = document.getElementById(`favorite-icon-${item.id}`);
+//     if (favoriteIcon) {
+//       favoriteIcon.classList.remove("fa-regular", "fa-heart");
+//       favoriteIcon.classList.add("fa-solid", "fa-heart");
+//     }
+//   });
+// }
+function attachEventListeners() {
+
+  const addToFavorite = document.querySelectorAll(".add_to_favorite");
+  addToFavorite.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      const id = icon.getAttribute("data-id");
+      const title = icon.getAttribute("data-title");
+      const image = icon.getAttribute("data-image");
+      const price = icon.getAttribute("data-price");
+      const color = icon.getAttribute("data-color");
+
+      let favorite = JSON.parse(localStorage.getItem("favorite")) || [];
+      const existingItemIndex = favorite.findIndex((item) => item.id === id);
+
+      if (existingItemIndex !== -1) {
+
+        favorite.splice(existingItemIndex, 1);
+        icon.classList.remove("fa-solid", "fa-heart");
+        icon.classList.add("fa-regular", "fa-heart");
+      } else {
+       
+        const favoriteItem = { id, title, image, price, color, quantity: 1 };
+        favorite.push(favoriteItem);
+        icon.classList.remove("fa-regular", "fa-heart");
+        icon.classList.add("fa-solid", "fa-heart");
+      }
+
+ 
+      localStorage.setItem("favorite", JSON.stringify(favorite));
+
+      updateFavoriteBadge();
+    });
+  });
+
+  // Add to cart functionality
+  const addToCartButtons = document.querySelectorAll(".add_to_cart");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-id");
+      const title = button.getAttribute("data-title");
+      const image = button.getAttribute("data-image");
+      const price = button.getAttribute("data-price");
+      const color = button.getAttribute("data-color");
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+      if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += 1;
+      } else {
+        const cartItem = { id, title, image, price, color, quantity: 1 };
+        cart.push(cartItem);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      updateCartBadge();
+    });
   });
 }
-
-
-function updateFavoriteIcons() {
-  const favoriteList = JSON.parse(localStorage.getItem("favorite")) || [];
-
-  favoriteList.forEach((item) => {
-    const favoriteIcon = document.getElementById(`favorite-icon-${item.id}`);
-    if (favoriteIcon) {
-      favoriteIcon.classList.remove("fa-regular", "fa-heart");
-      favoriteIcon.classList.add("fa-solid", "fa-heart");
-    }
-  });
-}
-
-// add to cart
-const addToFavorite = document.querySelectorAll(".add_to_favorite");
-// add to favorite
-
-addToFavorite.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    const id = icon.getAttribute("data-id");
-    const title = icon.getAttribute("data-title");
-    const image = icon.getAttribute("data-image");
-    const price = icon.getAttribute("data-price");
-    const color = icon.getAttribute("data-color");
-
-    let favorite = JSON.parse(localStorage.getItem("favorite")) || [];
-    const existingItemIndex = favorite.findIndex((item) => item.id === id);
-
-    if (existingItemIndex !== -1) {
-      // Item is already in favorites, remove it
-      favorite.splice(existingItemIndex, 1);
-      icon.classList.remove("fa-solid", "fa-heart");
-      icon.classList.add("fa-regular", "fa-heart");
-    } else {
-      // Item is not in favorites, add it
-      const favoriteItem = { id, title, image, price, color, quantity: 1 };
-      favorite.push(favoriteItem);
-      icon.classList.remove("fa-regular", "fa-heart");
-      icon.classList.add("fa-solid", "fa-heart");
-    }
-
-    // Update local storage with the new favorites list
-    localStorage.setItem("favorite", JSON.stringify(favorite));
-
-    updateFavoriteBadge();
-  });
-});
-
-// Initialize icons on page load based on current favorites
-updateFavoriteIcons();
-
-// add to cart
-const AddToCart = document.querySelectorAll(".add_to_cart");
-
-AddToCart.forEach((button) => {
-  button.addEventListener("click", () => {
-    const id = button.getAttribute("data-id");
-    const title = button.getAttribute("data-title");
-    const image = button.getAttribute("data-image");
-    const price = button.getAttribute("data-price");
-    const color = button.getAttribute("data-color");
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingItemIndex = cart.findIndex((item) => item.id === id);
-
-    if (existingItemIndex !== -1) {
-      cart[existingItemIndex].quantity += 1;
-    } else {
-      const cartItem = { id, title, image, price, color, quantity: 1 };
-      cart.push(cartItem);
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    updateCartBadge();
-  });
-});
-
 // star generate
 function generateStars(rating) {
   let starsHTML = "";
@@ -308,51 +314,12 @@ function generateStars(rating) {
   return starsHTML;
 }
 
+
+
+
+
+
 // category section
-const categoriesData = [
-  {
-    image: "../image/category/dummy_600x600_ffffff_cccccc.png",
-    name: "Trending",
-    alt: "Trending",
-    items: 5,
-  },
-  {
-    image: "../image/category/bestSelling.webp",
-    name: "Best Selling",
-    alt: "Best Selling",
-    items: 7,
-  },
-  {
-    image: "../image/category/kids.webp",
-    name: "Kids",
-    alt: "Kids",
-    items: 8,
-  },
-  {
-    image: "../image/category/winter-fashion.webp",
-    name: "Winter",
-    alt: "Winter",
-    items: 5,
-  },
-  {
-    image: "../image/category/ment-tshirt.webp",
-    name: "Men T-Shirt",
-    alt: "Men T-Shirt",
-    items: 23,
-  },
-  {
-    image: "../image/category/featured_jewelry.webp",
-    name: "Featured Jewelry",
-    alt: "Featured Jewelry",
-    items: 13,
-  },
-  {
-    image: "../image/category/f_fashion.webp",
-    name: "Featured Fashion",
-    alt: "Featured Fashion",
-    items: 34,
-  },
-];
 const categoriesContainer = document.querySelector(".categories");
 
 fetch("../datasets/categories.json")
@@ -377,46 +344,112 @@ fetch("../datasets/categories.json")
   })
   .catch((error) => console.error("Error loading categories:", error));
 
-// Support
-const servicesContainer = document.querySelector(".services_container");
-const services = [
-  {
-    imgSrc: "image/services/10-credit-card.svg",
-    altText: "Credit Card",
-    title: "Secure Checkout",
-    description: "100% Payment Secure.",
-  },
-  {
-    imgSrc: "image/services/4-track.svg",
-    altText: "Free Shipping",
-    title: "Free Shipping",
-    description: "On orders over $99.",
-  },
-  {
-    imgSrc: "image/services/7-support.svg",
-    altText: "Online Support",
-    title: "Online Support",
-    description: "Ensure the product quality.",
-  },
-  {
-    imgSrc: "image/services/9-money.svg",
-    altText: "Money Back",
-    title: "Money Back",
-    description: "Money back in 15 days.",
-  },
-];
-services.forEach((service) => {
-  const serviceDiv = document.createElement("div");
-  serviceDiv.classList.add("service");
 
-  serviceDiv.innerHTML = `
-    <img src="${service.imgSrc}" alt="${service.altText}" class="service_image" />
-    <div class="service_details">
-      <h3 class="service_title">${service.title}</h3>
-      <p class="service_p">${service.description}</p>
-    </div>
-  `;
 
-  servicesContainer.appendChild(serviceDiv);
-});
-// mobile nav
+// blogs
+let latestArticles = [];
+fetch('../datasets/article.json')
+  .then(response => response.json())
+  .then(data => {
+
+    latestArticles = data.map(article => ({
+      ...article,
+      date: new Date(article.date).toLocaleDateString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })
+    }))
+      .sort((a, b) => new Date(b.date) - new Date(a.date));;
+
+  displayLatestArticles(latestArticles,2);
+    console.log(latestArticles)
+
+
+  })
+  .catch(error => console.error('Error:', error));
+
+
+  function displayLatestArticles(articles, columns = 2) {
+    const blogsContainer = document.querySelector('.blogs-container');
+    const columnsArray = Array.from({ length: columns }, () => []);
+    
+
+    articles.slice(0, 6).forEach((article, index) => {
+      columnsArray[index % columns].push(article);   
+    });
+  
+
+    blogsContainer.innerHTML = columnsArray.map(columnArticles => `
+      <div class="blogs-column">
+        ${columnArticles.map(article => `
+          <div class="article">
+            <div class="article-img">
+              <img class="clickable-img" data-id="${article.id}" src="${article.smallImage}" alt="${article.title}" />
+            </div>
+            <div class="article-content">
+              <div class="article-title">
+                <h4 class="clickable-title" data-id="${article.id}">${article.title}</h4>
+              </div>
+              <div class="article-description">
+                <p>${article.description} <span class="clickable-more" data-id="${article.id}">more</span></p>
+              </div>
+              <div class="article-date">
+                <div><i class="fa-solid fa-calendar"></i><span>${article.date}</span></div>
+                <div><i class="fa-solid fa-eye"></i><span>${article.views}</span></div>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `).join('');
+  
+
+    const redirectUrl = '../article-details.html';
+
+
+    document.querySelectorAll('.clickable-img, .clickable-title, .clickable-more').forEach(element => {
+      element.addEventListener('click', event => {
+        const articleId = event.target.getAttribute('data-id');
+        if (articleId) {
+          window.location.href = `${redirectUrl}?id=${articleId}`;
+        }
+      });
+    });
+  }
+  
+
+  // Support
+  const servicesContainer = document.querySelector(".services_container");
+  if (servicesContainer) {
+    fetch("../datasets/services.json")
+      .then((response) =>  response.json() )
+      .then((services) => {
+        let servicesHTML = "";
+
+  
+        services.forEach((service) => {
+          servicesHTML += `
+            <div class="service">
+              <img src="${service.imgSrc}" alt="${service.altText}" class="service_image" />
+              <div class="service_details">
+                <h3 class="service_title">${service.title}</h3>
+                <p class="service_p">${service.description}</p>
+              </div>
+            </div>
+          `;
+        });
+  
+ 
+        servicesContainer.innerHTML = servicesHTML;
+       
+      })
+      .catch((error) => console.error("Error loading services:", error));
+  } else {
+    console.error("Error: `.services_container` not found in the DOM.");
+  }
+  
+
+
+
