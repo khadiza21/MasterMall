@@ -4,20 +4,18 @@ ScrollReveal().reveal(".product-cart-box", {
   origin: "bottom",
 });
 
-// Selecting the cart container
+
 const CartItems = document.querySelector(".cart-container");
 let cartTotal = 0;
 
 function displayCartItems() {
   cartTotal = 0;
   const items = getCartData();
-  // const items = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Clear existing cart items display
   CartItems.innerHTML = "";
 
   if (items.length === 0) {
-    // Display "empty cart" message
+
     const emptyCartMessage = document.createElement("div");
     emptyCartMessage.className = "empty-cart";
     emptyCartMessage.innerHTML = `
@@ -32,15 +30,14 @@ function displayCartItems() {
       const quantity = parseInt(item.quantity) || 1;
       const itemTotalPrice = price * quantity;
 
-      // Create individual cart item structure
+
       const cartItem = document.createElement("div");
       cartItem.className = "product-cart-box";
       cartItem.innerHTML = `
         <div class="product-card">
           <div class="product-image">
-            <img src="${
-              item.image || "image/cart/dummy_150x150_ffffff_cccccc.png"
-            }" alt="${item.title}">
+            <img src="${item.image || "image/cart/dummy_150x150_ffffff_cccccc.png"
+        }" alt="${item.title}">
           </div>
           <div class="product-details">
             <h2 class="product-title">${item.title}</h2>
@@ -53,18 +50,18 @@ function displayCartItems() {
             <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
           </div> 
           <div class="total-price"><span>$${itemTotalPrice.toFixed(
-            2
-          )}</span></div>
+          2
+        )}</span></div>
           <div class="remove-btn" onclick="removeItem(${index})"><span>×</span></div>
         </div>
       `;
       CartItems.appendChild(cartItem);
 
-      // Update total price
+
       cartTotal += itemTotalPrice;
     });
 
-    // Cart summary section
+
     const cartSummary = document.createElement("div");
     cartSummary.className = "cart-summary";
     cartSummary.innerHTML = `
@@ -87,37 +84,37 @@ function displayCartItems() {
 
 // Update quantity
 function updateQuantity(index, change, newValue) {
-  // const items = JSON.parse(localStorage.getItem("cart")) || [];
+
   const items = getCartData();
   const item = items[index];
 
-  // Update the item's quantity
   if (change !== 0) {
     item.quantity = Math.max(1, (item.quantity || 1) + change);
   } else {
     item.quantity = Math.max(1, parseInt(newValue) || 1);
   }
 
-  // Update local storage
+
   localStorage.setItem("cart", JSON.stringify(items));
 
-  // Update the quantity display and total for this specific item
+
   const cartItem = document.querySelectorAll(".product-cart-box")[index];
   const quantityInput = cartItem.querySelector(".quantity-input");
   const totalPriceElement = cartItem.querySelector(".total-price span");
 
-  // Set new values in the DOM
+
   quantityInput.value = item.quantity;
   const itemTotalPrice = (parseFloat(item.price) || 0) * item.quantity;
   totalPriceElement.textContent = `$${itemTotalPrice.toFixed(2)}`;
 
-  // Update the overall cart total without re-rendering
+
   updateCartTotal();
+  updateCartBadge();
 }
 
 
 function updateCartTotal() {
-  // const items = JSON.parse(localStorage.getItem("cart")) || [];
+
   const items = getCartData();
   let cartTotal = items.reduce((total, item) => {
     const price = parseFloat(item.price) || 0;
@@ -125,7 +122,6 @@ function updateCartTotal() {
     return total + price * quantity;
   }, 0);
 
-  // Update the total display in the DOM
   document.querySelector(".total-amount").textContent = `$${cartTotal.toFixed(
     2
   )}`;
@@ -133,29 +129,27 @@ function updateCartTotal() {
 
 // Remove item
 function removeItem(index) {
-  // const items = JSON.parse(localStorage.getItem("cart")) || [];
+
   const items = getCartData();
   items.splice(index, 1);
   localStorage.setItem("cart", JSON.stringify(items));
   displayCartItems();
+  updateCartBadge()
 }
 
 // Clear cart
 function clearCart() {
   localStorage.removeItem("cart");
   displayCartItems();
+  updateCartBadge();
 }
 
-// Adding event listeners after the cart is rendered
 function addCartButtonListeners() {
 
   document.querySelector(".clear-cart-btn button").onclick = clearCart;
 }
 
-// Add event listener to the clear cart button dynamically
-
-
-
 // Display cart items on load
 displayCartItems();
+updateCartBadge();
 addCartButtonListeners();

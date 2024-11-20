@@ -96,6 +96,7 @@ function smoothScrollToTop() {
     requestAnimationFrame(scrollStepAnimate);
 }
 
+
 scrollToTopBtn.onclick = smoothScrollToTop;
 
 // active link 
