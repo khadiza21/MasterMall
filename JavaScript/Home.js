@@ -250,18 +250,19 @@ function displayProducts(products) {
   attachEventListeners();
 }
 
+  // Add to cart functionality
+
+
 function attachEventListeners() {
   const addToFavorite = document.querySelectorAll(".add_to_favorite");
   addToFavorite.forEach((icon) => {
     icon.addEventListener("click", () => {
       const id = icon.getAttribute("data-id");
 
-      // Retrieve favorite data from localStorage
       let favorite = JSON.parse(localStorage.getItem("favorite")) || [];
       const existingItemIndex = favorite.findIndex((item) => item.id === id);
 
       if (existingItemIndex !== -1) {
-        // If item exists, remove it
         favorite.splice(existingItemIndex, 1);
       } else {
         // Otherwise, add it
@@ -298,6 +299,33 @@ function attachEventListeners() {
       updateFavoriteBadge();
     });
   });
+
+
+  const addToCartButtons = document.querySelectorAll(".add_to_cart");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-id");
+      const title = button.getAttribute("data-title");
+      const image = button.getAttribute("data-image");
+      const price = button.getAttribute("data-price");
+      const color = button.getAttribute("data-color");
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+      if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += 1;
+      } else {
+        const cartItem = { id, title, image, price, color, quantity: 1 };
+        cart.push(cartItem);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      updateCartBadge();
+    });
+  });
+
 }
 
 function updateFavoriteIcons(id, isFavorite) {
