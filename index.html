@@ -59,7 +59,7 @@
             <i class="fa-solid fa-magnifying-glass nav_search"></i>
           </form>
 
-          <a href="/favourite.html" class="nav_heart">
+          <a  class="nav_heart">
             <i class="fa-regular fa-heart"></i>
             <span class="favorite_badge favorite_badge_num">0</span>
           </a>
@@ -121,6 +121,32 @@
     </nav>
 
     <main>
+
+    <section>
+      <div id="favoriteModal" class="favorite_modal">
+        <div class="favorite_modal_content">
+          <span class="close_modal">&times;</span>
+          <h2>Cart</h2>
+          <ul id="favoriteList" class="favorite_list">
+            <!-- Favorite items will be appended here dynamically -->
+          </ul>
+          <div class="subtotal">
+            <p>Subtotal: <span id="subtotalAmount">Tk 0.00</span></p>
+          </div>
+          <div class="modal_buttons">
+            <button class="view_cart_btn">View Cart</button>
+            <button class="checkout_btn">Checkout</button>
+          </div>
+          <p class="free_shipping_notice">
+            Free Shipping on All Orders Over $100!
+          </p>
+        </div>
+      </div>
+      
+    </section>
+
+      
+
       <section>
         <div class="container">
           <button id="scrollToTopBtn">

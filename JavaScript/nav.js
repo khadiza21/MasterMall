@@ -116,3 +116,75 @@ function setActiveLink(selector) {
 // Apply active class to desktop and mobile nav links
 setActiveLink(".nav_link");
 setActiveLink(".mobile_nav_link");
+
+
+
+// js
+document.addEventListener("DOMContentLoaded", () => {
+    const favoriteModal = document.getElementById("favoriteModal");
+    const closeModal = document.querySelector(".close_modal");
+    const favoriteIcon = document.querySelector(".nav_heart");
+  
+    // Function to populate favorite modal with items
+    const populateFavoriteList = () => {
+      const favoriteItems = JSON.parse(localStorage.getItem("favorite")) || [];
+      const favoriteList = document.getElementById("favoriteList");
+      const subtotalAmount = document.getElementById("subtotalAmount");
+      favoriteList.innerHTML = ""; // Clear the list
+      let subtotal = 0;
+  
+      if (favoriteItems.length === 0) {
+        favoriteList.innerHTML = "<p>No items in the favorite list.</p>";
+        subtotalAmount.textContent = "Tk 0.00";
+        return;
+      }
+  
+      favoriteItems.forEach((item) => {
+        subtotal += item.quantity * item.price;
+  
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" />
+          <div>
+            <p>${item.title} - ${item.size || ""} / ${item.color || ""}</p>
+            <p>${item.quantity} x Tk ${item.price.toLocaleString()}</p>
+          </div>
+          <span class="remove_item" data-id="${item.id}">&times;</span>
+        `;
+        favoriteList.appendChild(li);
+      });
+  
+      subtotalAmount.textContent = `Tk ${subtotal.toLocaleString()}`;
+    };
+  
+    // Show the modal
+    favoriteIcon.addEventListener("click", () => {
+      populateFavoriteList();
+      favoriteModal.classList.add("active");
+    });
+  
+    // Hide the modal when the cross icon is clicked
+    closeModal.addEventListener("click", () => {
+      favoriteModal.classList.remove("active");
+    });
+  
+    // Hide the modal when clicking outside the modal content
+    window.addEventListener("click", (event) => {
+      if (event.target === favoriteModal) {
+        favoriteModal.classList.remove("active");
+      }
+    });
+  
+    // Remove item from favorite list
+    const favoriteList = document.getElementById("favoriteList");
+    favoriteList.addEventListener("click", (e) => {
+      if (e.target.classList.contains("remove_item")) {
+        const itemId = e.target.dataset.id;
+        let favoriteItems = JSON.parse(localStorage.getItem("favorite")) || [];
+        favoriteItems = favoriteItems.filter((item) => item.id !== itemId);
+        localStorage.setItem("favorite", JSON.stringify(favoriteItems));
+        populateFavoriteList();
+      }
+    });
+  });
+  

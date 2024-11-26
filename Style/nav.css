@@ -109,7 +109,7 @@ ul {
   background-color: #821e57;
   color: var(--colo-white-1);
 }
-
+/*  */
 
 
 /* navbar */
@@ -336,6 +336,127 @@ ul {
 
 }
 
+
+
+/* nav heart  */
+.favorite_modal {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 350px;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+.favorite_modal{
+ border-top-left-radius: 2rem;
+ border-bottom-left-radius: 2rem;
+}
+.favorite_modal.active {
+  right: 0;
+}
+
+.favorite_modal_content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.close_modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.favorite_list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.favorite_list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.favorite_list img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.favorite_list div {
+  flex-grow: 1;
+}
+
+.favorite_list .remove_item {
+  cursor: pointer;
+  font-size: 18px;
+  color: red;
+}
+
+.subtotal {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.view_cart_btn,
+.checkout_btn {
+  padding: 10px 15px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.free_shipping_notice {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .favorite_modal {
+    width: 100%;
+  }
+
+  .favorite_list img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .view_cart_btn,
+  .checkout_btn {
+    flex-grow: 1;
+    margin: 0 5px;
+  }
+}
+
+
+/* nav heart */
 /* Hamburger */
 .hamburger {
   display: none;
