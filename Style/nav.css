@@ -446,6 +446,7 @@ ul {
   right: 15px;
   font-size: 20px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .favorite_list {
@@ -478,7 +479,8 @@ ul {
 .favorite_list .remove_item {
   cursor: pointer;
   font-size: 18px;
-  color: red;
+  color: #ff0084;
+  font-weight: bold;
 }
 
 .subtotal {

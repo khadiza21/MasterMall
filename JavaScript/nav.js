@@ -121,9 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const favoriteModal = document.getElementById("favoriteModal");
   const modalBackdrop = document.getElementById("modalBackdrop");
   const closeModal = document.querySelector(".close_modal");
-  const favoriteIcon = document.querySelector(".nav_heart_modal");
   const clearButton = document.querySelector(".checkout_btn");
-
+  const favoriteIcons = document.querySelectorAll(".nav_heart_modal");
 
   // Function to open the modal
   const openModal = () => {
@@ -137,8 +136,15 @@ document.addEventListener("DOMContentLoaded", () => {
     modalBackdrop.classList.remove("active");
   };
 
-  // Event listener for opening the modal
-  favoriteIcon.addEventListener("click", openModal);
+
+  favoriteIcons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      console.log("Favorite modal opening...");
+      openModal();
+      populateFavoriteList();
+    });
+  });
+
 
   // Event listener for closing the modal
   closeModal.addEventListener("click", closeModalFn);
@@ -233,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  favoriteIcon.addEventListener("click", populateFavoriteList);
+  // favoriteIcons.addEventListener("click", populateFavoriteList);
 
 });
 
