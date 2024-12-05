@@ -83,7 +83,7 @@ ul {
 
 #scrollToTopBtn {
   position: fixed;
-  bottom: 5rem;
+  bottom: 10rem;
   right: 10rem;
   opacity: 0;
   visibility: hidden;
@@ -392,7 +392,9 @@ ul {
   font-size: 0.8rem;
   margin-left: 5px;
 }
-
+.nav_heart_modal{
+  cursor: pointer;
+}
 
 
 /* nav heart  */

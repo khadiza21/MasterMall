@@ -13,6 +13,19 @@ hamburger.addEventListener("click", () => {
     icon.classList.add("fa-bars");
   }
 });
+
+// JavaScript for Click-to-Toggle Dropdown Menu
+document.querySelectorAll('.mobile_menu_dropdown_toggle').forEach((toggle) => {
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const dropdownMenu = toggle.nextElementSibling;
+    dropdownMenu.style.display =
+      dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+
+
 document.addEventListener("click", (event) => {
   const isClickInsideNav = mobileNav.contains(event.target);
   const isClickInsideHamburger = hamburger.contains(event.target);
@@ -108,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const favoriteModal = document.getElementById("favoriteModal");
   const modalBackdrop = document.getElementById("modalBackdrop");
   const closeModal = document.querySelector(".close_modal");
-  const favoriteIcon = document.querySelector(".nav_heart");
+  const favoriteIcon = document.querySelector(".nav_heart_modal");
   const clearButton = document.querySelector(".checkout_btn");
 
 
