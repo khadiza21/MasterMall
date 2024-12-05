@@ -2,7 +2,6 @@
 const hamburger = document.querySelector(".hamburger");
 const mobileNav = document.querySelector(".mobile_nav");
 const icon = hamburger.querySelector("i");
-
 hamburger.addEventListener("click", () => {
   mobileNav.classList.toggle("mobile_nav_hide");
 
@@ -14,7 +13,6 @@ hamburger.addEventListener("click", () => {
     icon.classList.add("fa-bars");
   }
 });
-
 document.addEventListener("click", (event) => {
   const isClickInsideNav = mobileNav.contains(event.target);
   const isClickInsideHamburger = hamburger.contains(event.target);
@@ -29,8 +27,6 @@ document.addEventListener("click", (event) => {
     icon.classList.add("fa-bars");
   }
 });
-
-// cart data and favorite data
 function getCartData() {
   const cartData = JSON.parse(localStorage.getItem("cart"));
   return cartData ? cartData : [];
@@ -67,13 +63,9 @@ function updateFavoriteBadge() {
     badge.style.display = "inline-block";
   });
 }
-
 updateCartBadge();
 updateFavoriteBadge();
-
-// Get the button
 let scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
 window.onscroll = function () {
   if (
     document.body.scrollTop > 100 ||
@@ -84,7 +76,6 @@ window.onscroll = function () {
     scrollToTopBtn.classList.remove("show");
   }
 };
-
 function smoothScrollToTop() {
   const scrollDuration = 800;
   const scrollStep = window.scrollY / (scrollDuration / 15);
@@ -98,13 +89,9 @@ function smoothScrollToTop() {
 
   requestAnimationFrame(scrollStepAnimate);
 }
-
 scrollToTopBtn.onclick = smoothScrollToTop;
-
-// active link
 const currentPageActiveLink = window.location.pathname.split("/").pop();
 
-// Function to set active class
 function setActiveLink(selector) {
   document.querySelectorAll(selector).forEach((link) => {
     if (link.getAttribute("href") === currentPageActiveLink) {
@@ -114,16 +101,39 @@ function setActiveLink(selector) {
     }
   });
 }
-
-// Apply active class to desktop and mobile nav links
 setActiveLink(".nav_link");
 setActiveLink(".mobile_nav_link");
 
-// js
 document.addEventListener("DOMContentLoaded", () => {
   const favoriteModal = document.getElementById("favoriteModal");
+  const modalBackdrop = document.getElementById("modalBackdrop");
   const closeModal = document.querySelector(".close_modal");
   const favoriteIcon = document.querySelector(".nav_heart");
+  const clearButton = document.querySelector(".checkout_btn");
+
+
+  // Function to open the modal
+  const openModal = () => {
+    favoriteModal.classList.add("active");
+    modalBackdrop.classList.add("active");
+  };
+
+  // Function to close the modal
+  const closeModalFn = () => {
+    favoriteModal.classList.remove("active");
+    modalBackdrop.classList.remove("active");
+  };
+
+  // Event listener for opening the modal
+  favoriteIcon.addEventListener("click", openModal);
+
+  // Event listener for closing the modal
+  closeModal.addEventListener("click", closeModalFn);
+
+  // Close modal on outside click
+  modalBackdrop.addEventListener("click", closeModalFn);
+
+
 
   // Function to populate favorite modal with items
   const populateFavoriteList = () => {
@@ -149,9 +159,13 @@ document.addEventListener("DOMContentLoaded", () => {
          <div>
         <p>${item.title} - ${item.size || ""} / ${item.color || ""}</p>
         <p>${item.quantity} x Tk ${item.price.toLocaleString()}</p>
-        <button class="add_to_cart_from_favorite" data-id="${
-          item.id
-        }">Add to Cart</button>
+        <button class="add_to_cart_from_favorite" data-id="${item.id}"
+             
+                data-title="${item.title}"
+                data-image="${item.image}"
+                data-price="${item.price}"
+                data-color="${item.color}"
+        >Add to Cart</button>
       </div>
           <span class="remove_item" data-id="${item.id}">&times;</span>
         `;
@@ -161,27 +175,41 @@ document.addEventListener("DOMContentLoaded", () => {
     subtotalAmount.textContent = `Tk ${subtotal.toLocaleString()}`;
   };
 
-  // Show the modal
-  favoriteIcon.addEventListener("click", () => {
+  clearButton.addEventListener("click", () => {
+    localStorage.removeItem("favorite");
     populateFavoriteList();
-    favoriteModal.classList.add("active");
+    updateFavoriteBadge();
   });
 
-  // Hide the modal when the cross icon is clicked
-  closeModal.addEventListener("click", () => {
-    favoriteModal.classList.remove("active");
-  });
 
-  // Hide the modal when clicking outside the modal content
-  window.addEventListener("click", (event) => {
-    if (event.target === favoriteModal) {
-      favoriteModal.classList.remove("active");
-    }
-  });
 
   // Remove item from favorite list
   const favoriteList = document.getElementById("favoriteList");
   favoriteList.addEventListener("click", (e) => {
+
+    if (e.target.classList.contains("add_to_cart_from_favorite")) {
+      const button = e.target;
+      const id = button.getAttribute("data-id");
+      const title = button.getAttribute("data-title");
+      const image = button.getAttribute("data-image");
+      const price = parseFloat(button.getAttribute("data-price"));
+      const color = button.getAttribute("data-color");
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+      if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += 1;
+      } else {
+        const cartItem = { id, title, image, price, color, quantity: 1 };
+        cart.push(cartItem);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartBadge();
+    }
+
+
+
     if (e.target.classList.contains("remove_item")) {
       const itemId = e.target.dataset.id;
       let favoriteItems = JSON.parse(localStorage.getItem("favorite")) || [];
@@ -192,6 +220,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-
+  favoriteIcon.addEventListener("click", populateFavoriteList);
 
 });
+
+
+
