@@ -331,9 +331,66 @@ ul {
 }
 
 .nav_heart_sm,
-.nav_cart_sm {
+.nav_cart_sm, .nav_user_sm {
   padding: 0;
 
+}
+
+
+/* Dropdown Menu Styles */
+.mobile_menu_dropdown {
+  position: relative;
+  background-color: var(--colo-white-1);
+  transition: visibility 4s, opacity 0.8s ease;
+
+}
+
+.mobile_menu_dropdown_list {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 150px;
+}
+
+.mobile_menu_dropdown_item {
+  color: var(--colo-dark-1);
+  display: block;
+  font-size: 1.4rem;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+}
+.mobile_menu_dropdown_list li{
+  list-style: none;
+}
+.mobile_menu_dropdown_item:hover {
+  padding-left: 20px;
+  border-left: 4px solid #821e57;
+  color: #821e57;
+  font-weight: 600;
+}
+
+/* Show dropdown menu on hover */
+.mobile_menu_dropdown:hover .mobile_menu_dropdown_list {
+  display: block;
+}
+
+/* Optional: For better mobile UX, enable click-to-toggle */
+.mobile_menu_dropdown_toggle {
+  cursor: pointer;
+}
+
+.mobile_menu_dropdown_toggle::after {
+  content: " ▼";
+  font-size: 0.8rem;
+  margin-left: 5px;
 }
 
 
