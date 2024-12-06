@@ -341,7 +341,34 @@ header h1 {
   font-size: 1.2rem;
 }
 
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 10rem;
+  right: 10rem;
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px 12px;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #d3d1d1;
+  color: var(--colo-dark-1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: 0.4s ease;
+}
 
+#scrollToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #821e57;
+  color: var(--colo-white-1);
+}
 /* responsive design  */
 @media (max-width: 768px) {
   .checkout-box-container {
@@ -383,3 +410,29 @@ header h1 {
 }
 
 /* end */
+@media (max-width: 768px) {
+  #scrollToTopBtn {
+    bottom: 5rem;
+    right: 2rem;
+    padding: 6px 8px;
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  #scrollToTopBtn {
+    bottom: 6rem;
+    right: 3rem;
+    padding: 8px 10px;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #scrollToTopBtn {
+    bottom: 5rem;
+    right: 2rem;
+    padding: 6px 8px;
+    font-size: 1.5rem;
+  }
+}
