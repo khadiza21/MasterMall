@@ -117,6 +117,32 @@
 
   <main>
     <section>
+      <div id="modalBackdrop" class="modal_backdrop"></div>
+      <div id="favoriteModal" class="favorite_modal">
+        <div class="favorite_modal_content">
+          <span class="close_modal">&times;</span>
+          <h2>Your Favorite</h2>
+          <ul id="favoriteList" class="favorite_list">
+            <!-- Favorite items will be appended here dynamically -->
+          </ul>
+          <div class="subtotal">
+            <p>Subtotal: <span id="subtotalAmount">Tk 0.00</span></p>
+          </div>
+          <div class="modal_buttons">
+            <button class="view_cart_btn"><a href="./cart.html">View Cart</a></button>
+            <button class="clear_favorite_modal_btn">Clear</button>
+          </div>
+          <p class="free_shipping_notice">
+            Free Shipping on All Orders Over $20!
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section>
       <div>
         <button id="scrollToTopBtn"><i class="fa-solid fa-angle-up"></i></button>
       </div>
