@@ -84,36 +84,69 @@
   .form_input:focus {
     border-color: #ff0084;
   }
-  
   .form_btn {
-    width: 100%;
-    padding: 1.2rem;
-    background: linear-gradient(to right, #33001b, #ff0084);
-   
-    border: none;
-    outline: none;
+    text-align: center;
     margin: 1rem 0;
-
-    border-radius: 5px;
-    font-size: 1.1rem;
+    background: #ff0084;
+    background: linear-gradient(to right, #33001b, #ff0084);
+    color: white;
     font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    transition: color 0.4s ease;
+    width: 100%;
+  }
+  
+  .form_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.5s ease;
+    transform: skewX(-30deg);
+  }
+  
+  .form_btn:hover::before {
+    left: 100%;
   }
   
   .form_btn:hover {
+    background: linear-gradient(to right, #ff0084, #33001b);
     transform: translateY(-2px);
-    border: 2px solid #ff0084;
-    background: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
   
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
   }
-  .form_btn:hover .form_link{
-    color: var(--colo-dark-1);
+  
+  .form_btn {
+    animation: bounceIn 0.6s ease-out;
   }
+
   .form_link {
     color: var(--colo-white-2);
     text-decoration: none;
-  }
+  } 
   
   .form_group > span {
     display: block;

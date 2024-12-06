@@ -4,6 +4,7 @@
   display: flex;
   margin-top: 4rem;
 }
+
 .header_filter {
   display: flex;
   flex-direction: column;
@@ -15,28 +16,30 @@
   border-radius: 5px;
   min-width: 20rem;
 }
+
 .header_filter_link {
   color: var(--colo-white-2);
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(128, 128, 128, 0.253);
+  border-top: 1px solid var(--colo-dark-2);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   display: flex;
   align-items: center;
   padding-left: 1rem;
+  transition: color 0.3s ease , background-color 0.3s ease;
 }
 
 .header_filter_link:hover {
-  color: var(--colo-white-2);
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(128, 128, 128, 0.253);
-  display: flex;
-  align-items: center;
-  padding-left: 5px;
+  color: var(--colo-dark-1);
+  background-color: var(--colo-white-1);
+  border: 1px solid #ddd;
+
+
 }
 
 .header_banner {
-width: 100%;
+  width: 100%;
   background: #ff0084;
   background: -webkit-linear-gradient(to right, #33001b, #ff0084);
   background: linear-gradient(to right, #33001b, #ff0084);
@@ -197,7 +200,7 @@ width: 100%;
   width: 100%;
   overflow: hidden;
   background-color: var(--colo-white-2);
-  box-shadow: rgba(50, 50, 93,0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0,0.1) 0px 18px 36px -18px inset;
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
   border-radius: 33px;
   padding: 12px 20px 8px;
   font-size: 14px;
@@ -689,6 +692,7 @@ width: 100%;
   height: 100%;
   padding-left: 5rem;
 }
+
 /* trending section end */
 
 
@@ -700,6 +704,7 @@ width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 3rem;
 }
+
 /* Our Products  showing section end */
 
 
@@ -798,6 +803,7 @@ width: 100%;
   gap: 20px;
   margin: 5rem auto;
 }
+
 /* blogs */
 
 /* Container for columns */
@@ -885,6 +891,7 @@ width: 100%;
   border-bottom: 1px solid #555;
   cursor: pointer;
 }
+
 .article-date {
   font-size: 0.8rem;
   color: #888;
@@ -925,6 +932,7 @@ width: 100%;
   font-size: 14px;
   color: #777;
 }
+
 /* Service  section end */
 
 
@@ -1018,7 +1026,8 @@ width: 100%;
     width: 100%;
     height: 100%;
   }
-  .blogs-container{
+
+  .blogs-container {
     flex-direction: column;
     gap: 10px;
   }
@@ -1117,7 +1126,8 @@ width: 100%;
     height: 70%;
     padding-left: 5rem;
   }
-  .blogs-container{
+
+  .blogs-container {
     flex-direction: column;
     gap: 10px;
   }
@@ -1229,7 +1239,7 @@ width: 100%;
     padding-left: 5rem;
   }
 
-  .blogs-container{
+  .blogs-container {
     flex-direction: column;
     gap: 10px;
   }

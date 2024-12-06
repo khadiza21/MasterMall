@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const favoriteModal = document.getElementById("favoriteModal");
   const modalBackdrop = document.getElementById("modalBackdrop");
   const closeModal = document.querySelector(".close_modal");
-  const clearButton = document.querySelector(".checkout_btn");
+  const clearButton = document.querySelector(".clear_favorite_modal_btn");
   const favoriteIcons = document.querySelectorAll(".nav_heart_modal");
 
   // Function to open the modal
