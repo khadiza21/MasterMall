@@ -25,7 +25,7 @@
   
     <nav id="navbar" class="nav">
       <div class="container nav_container">
-        <a href="" class="nav_logo"><img src="image/logo/logo.png" alt="" /></a>
+        <a href="https://master-mall-bk.netlify.app/" class="nav_logo"><img src="image/logo/logo.png" alt="" /></a>
         <ul class="nav_list">
           <li class="nav_item">
             <a href="index.html" class="nav_link">Home</a>
@@ -45,17 +45,14 @@
             <input type="text" class="nav_input" placeholder="Search here...." />
             <i class="fa-solid fa-magnifying-glass nav_search"></i>
           </form>
-  
-          <a href="/favourite.html" class="nav_heart">
+          <a class="nav_heart nav_heart_modal">
             <i class="fa-regular fa-heart"></i>
             <span class="favorite_badge favorite_badge_num">0</span>
           </a>
-  
           <a href="/cart.html" class="nav_cart">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="cart_badge cart_badge_num">0</span>
           </a>
-  
           <div class="nav_user">
             <a href=""> <i class="fa-solid fa-user"></i></a>
             <ul class="bottom_dropdown">
@@ -83,25 +80,39 @@
           <a href="/index.html" class="mobile_nav_link">Home</a>
         </li>
         <li class="mobile_nav_item">
-          <a href="about.html" class="mobile_nav_link">About</a>
+          <a href="/about.html" class="mobile_nav_link">About</a>
         </li>
         <li class="mobile_nav_item">
-          <a href="contact.html" class="mobile_nav_link">Contact</a>
+          <a href="/contact.html" class="mobile_nav_link">Contact</a>
         </li>
         <li class="mobile_nav_item">
-          <a href="signUp.html" class="mobile_nav_link">Sign Up</a>
+          <a href="/signUp.html" class="mobile_nav_link">Sign Up</a>
         </li>
         <li class="mobile_nav_item">
           <a href="/cart.html" class="mobile_nav_link nav_cart_sm">Cart <span
               class="cart_badge_sm cart_badge_num">0</span></a>
         </li>
         <li class="mobile_nav_item">
-          <a href="/cart.html" class="mobile_nav_link nav_heart_sm">Favorite
+          <a  class="mobile_nav_link nav_heart_sm nav_heart_modal">Favorite
             <span class="favorite_badge_sm favorite_badge_num">0</span></a>
+        </li>
+        <li class="mobile_nav_item  mobile_menu_dropdown">
+          <a href="#" class="nav_user_sm mobile_nav_link nav_heart_sm mobile_menu_dropdown_toggle">User</a>
+          <ul class="mobile_menu_dropdown_list">
+            <li>
+              <a href="profile.html" class="mobile_menu_dropdown_item">My Profile</a>
+            </li>
+            <li>
+              <a href="signUp.html" class="mobile_menu_dropdown_item">Sign Up</a>
+            </li>
+            <li>
+              <a href="/index.html" class="mobile_menu_dropdown_item">Log Out</a>
+            </li>
+          </ul>
+  
         </li>
       </ul>
     </nav>
-
   <main>
            <!-- contact page header banner part start -->
            <section id="section ">

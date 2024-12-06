@@ -109,6 +109,7 @@ ul {
   background-color: #821e57;
   color: var(--colo-white-1);
 }
+
 /*  */
 
 
@@ -330,7 +331,8 @@ ul {
 }
 
 .nav_heart_sm,
-.nav_cart_sm, .nav_user_sm {
+.nav_cart_sm,
+.nav_user_sm {
   padding: 0;
 
 }
@@ -366,9 +368,11 @@ ul {
   color: #000;
   transition: all 0.3s ease;
 }
-.mobile_menu_dropdown_list li{
+
+.mobile_menu_dropdown_list li {
   list-style: none;
 }
+
 .mobile_menu_dropdown_item:hover {
   padding-left: 20px;
   border-left: 4px solid #821e57;
@@ -391,7 +395,8 @@ ul {
   font-size: 0.8rem;
   margin-left: 5px;
 }
-.nav_heart_modal{
+
+.nav_heart_modal {
   cursor: pointer;
 }
 
@@ -405,8 +410,10 @@ ul {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 999; /* Just below the modal */
-  display: none; /* Initially hidden */
+  z-index: 999;
+  /* Just below the modal */
+  display: none;
+  /* Initially hidden */
 }
 
 .modal_backdrop.active {
@@ -418,16 +425,19 @@ ul {
   top: 0;
   right: -100%;
   height: 100%;
-  width: 400px;
+ max-width: 95%;
+ min-width: 20%;
   background: #fff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease-in-out;
   z-index: 1000;
 }
-.favorite_modal{
- border-top-left-radius: 2rem;
- border-bottom-left-radius: 2rem;
+
+.favorite_modal {
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
+
 .favorite_modal.active {
   right: 0;
 }
@@ -461,19 +471,68 @@ ul {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
 }
 
-.favorite_list img {
+.favorite_list li div:nth-of-type(1) {
+  flex-grow: 1;
+}
+
+.favorite_list li div:nth-of-type(2) {
+  flex-grow: 3;
+
+}
+
+.favorite_list li div:nth-of-type(3) {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+
+.favorite_list li:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.favorite_modal_li_box_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  font-weight: bold;
   width: 80px;
-  height: 80px;
+  gap: 5px;
+  font-size: smaller;
+
+}
+
+.favorite_modal_li_box_left img {
+  width: 70px;
+  height: 70px;
   margin-right: 10px;
   border-radius: 5px;
 }
-
-.favorite_list div {
-  flex-grow: 1;
+.favorite_modal_li_box_left small i{
+  background: linear-gradient(to right, #33001b, #ff0084);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+
+.favorite_modal_li_box_right h5{
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #33001b, #ff0084);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+.favorite_modal_li_box_right h6{
+color: #33001b;
+font-weight: bold;
+}
+
 
 .favorite_list .remove_item {
   cursor: pointer;
@@ -492,31 +551,37 @@ ul {
 
 .modal_buttons {
   display: flex;
-gap:10px;
+  gap: 10px;
   margin: 15px 0;
 }
 
-.modal_buttons button, .add_to_cart_from_favorite {
+.modal_buttons button,
+.add_to_cart_from_favorite {
   color: var(--colo-dark-1);
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  padding: 10px 15px;
-  margin-top: 1rem ;
+  padding: 6px 8px;
+  margin-top: 1rem;
 }
-.modal_buttons button a{
+
+.modal_buttons button a {
   color: var(--colo-dark-1);
 }
-.modal_buttons button:hover, .add_to_cart_from_favorite:hover{
+
+.modal_buttons button:hover,
+.add_to_cart_from_favorite:hover {
   background: #ff0084;
   background: linear-gradient(to right, #33001b, #ff0084);
   color: #fff;
 }
+
 .modal_buttons button:hover a {
   color: #fff;
 }
+
 .free_shipping_notice {
   text-align: center;
   font-size: 12px;
@@ -524,21 +589,6 @@ gap:10px;
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  .favorite_modal {
-    width: 100%;
-  }
-
-  .favorite_list img {
-    width: 40px;
-    height: 40px;
-  }
-  .modal_buttons button {
-    flex-grow: 1;
-    margin: 0 5px;
-  }
-}
-
 
 /* nav heart */
 /* Hamburger */

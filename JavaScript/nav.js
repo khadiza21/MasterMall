@@ -174,24 +174,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const li = document.createElement("li");
       li.innerHTML = `
-          <img src="${item.image}" alt="${item.title}" />
-         <div>
-        <p>${item.title} - ${item.size || ""} / ${item.color || ""}</p>
-        <p>${item.quantity} x Tk ${item.price.toLocaleString()}</p>
+      <div class="favorite_modal_li_box_left">
+       <img src="${item.image}" alt="${item.title}" />
+       <small><i class="fa-solid fa-droplet"></i> ${item.color || ""}</small>
+      </div>
+         
+         <div class="favorite_modal_li_box_right">
+         <h5>${item.title} </h5>
+        <h6> $ ${item.price.toLocaleString() || 0.00}</h6>
         <button class="add_to_cart_from_favorite" data-id="${item.id}"
              
                 data-title="${item.title}"
                 data-image="${item.image}"
                 data-price="${item.price}"
                 data-color="${item.color}"
-        >Add to Cart</button>
-      </div>
-          <span class="remove_item" data-id="${item.id}">&times;</span>
+        >Add to Cart</button></div>
+
+        <div><span class="remove_item" data-id="${item.id}">&times;</span></div>
+          
         `;
       favoriteList.appendChild(li);
     });
 
-    subtotalAmount.textContent = `Tk ${subtotal.toLocaleString()}`;
+    subtotalAmount.textContent = `$ ${subtotal.toLocaleString()}`;
   };
 
   clearButton.addEventListener("click", () => {
