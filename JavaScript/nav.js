@@ -159,19 +159,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const favoriteItems = JSON.parse(localStorage.getItem("favorite")) || [];
     console.log(localStorage.getItem("favorite"), "...");
     const favoriteList = document.getElementById("favoriteList");
-    const subtotalAmount = document.getElementById("subtotalAmount");
-    favoriteList.innerHTML = ""; // Clear the list
-    let subtotal = 0;
 
+    favoriteList.innerHTML = ""; // Clear the list
     if (favoriteItems.length === 0) {
       favoriteList.innerHTML = "<p>No items in the favorite list.</p>";
-      subtotalAmount.textContent = "Tk 0.00";
       return;
     }
 
     favoriteItems.forEach((item) => {
-      subtotal += item.quantity * item.price;
-
+      console.log(item);
       const li = document.createElement("li");
       li.innerHTML = `
       <div class="favorite_modal_li_box_left">
@@ -183,20 +179,14 @@ document.addEventListener("DOMContentLoaded", () => {
          <h5>${item.title} </h5>
         <h6> $ ${item.price.toLocaleString() || 0.00}</h6>
         <button class="add_to_cart_from_favorite" data-id="${item.id}"
-             
                 data-title="${item.title}"
                 data-image="${item.image}"
                 data-price="${item.price}"
                 data-color="${item.color}"
         >Add to Cart</button></div>
-
-        <div><span class="remove_item" data-id="${item.id}">&times;</span></div>
-          
         `;
       favoriteList.appendChild(li);
     });
-
-    subtotalAmount.textContent = `$ ${subtotal.toLocaleString()}`;
   };
 
   clearButton.addEventListener("click", () => {
@@ -232,19 +222,9 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCartBadge();
     }
 
-
-
-    if (e.target.classList.contains("remove_item")) {
-      const itemId = e.target.dataset.id;
-      let favoriteItems = JSON.parse(localStorage.getItem("favorite")) || [];
-      favoriteItems = favoriteItems.filter((item) => item.id !== itemId);
-      localStorage.setItem("favorite", JSON.stringify(favoriteItems));
-      populateFavoriteList();
-    }
   });
 
 
-  // favoriteIcons.addEventListener("click", populateFavoriteList);
 
 });
 

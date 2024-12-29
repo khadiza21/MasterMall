@@ -254,52 +254,6 @@ function displayProducts(products) {
 
 
 function attachEventListeners() {
-  const addToFavorite = document.querySelectorAll(".add_to_favorite");
-  addToFavorite.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      const id = icon.getAttribute("data-id");
-
-      let favorite = JSON.parse(localStorage.getItem("favorite")) || [];
-      const existingItemIndex = favorite.findIndex((item) => item.id === id);
-
-      if (existingItemIndex !== -1) {
-        favorite.splice(existingItemIndex, 1);
-      } else {
-        // Otherwise, add it
-        const title = icon.getAttribute("data-title");
-        const image = icon.getAttribute("data-image");
-        const price = icon.getAttribute("data-price");
-        const color = icon.getAttribute("data-color");
-        const rating = icon.getAttribute("data-rating");
-        const reviews = icon.getAttribute("data-reviews");
-        const category = icon.getAttribute("data-category");
-
-        const favoriteItem = {
-          id,
-          title,
-          image,
-          price,
-          color,
-          quantity: 1,
-          rating,
-          reviews,
-          category,
-        };
-        favorite.push(favoriteItem);
-      }
-
-      // Update localStorage
-      localStorage.setItem("favorite", JSON.stringify(favorite));
-
-      // Update all icons dynamically
-      updateFavoriteIcons(
-        id,
-        favorite.some((item) => item.id === id)
-      );
-      updateFavoriteBadge();
-    });
-  });
-
 
   const addToCartButtons = document.querySelectorAll(".add_to_cart");
   addToCartButtons.forEach((button) => {
@@ -326,33 +280,79 @@ function attachEventListeners() {
     });
   });
 
-}
+  const addToFavorite = document.querySelectorAll(".add_to_favorite");
+  addToFavorite.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      const id = icon.getAttribute("data-id");
 
-function updateFavoriteIcons(id, isFavorite) {
-  const allFavoriteIcons = document.querySelectorAll(
-    `.favorite-icon[data-id="${id}"]`
-  );
-  allFavoriteIcons.forEach((icon) => {
-    if (isFavorite) {
-      icon.classList.remove("fa-regular", "fa-heart");
-      icon.classList.add("fa-solid", "fa-heart");
-    } else {
-      icon.classList.remove("fa-solid", "fa-heart");
-      icon.classList.add("fa-regular", "fa-heart");
-    }
-  });
-}
-function initializeFavoriteIcons() {
-  const favorite = JSON.parse(localStorage.getItem("favorite")) || [];
-  favorite.forEach((item) => {
-    const allFavoriteIcons = document.querySelectorAll(
-      `.favorite-icon[data-id="${item.id}"]`
-    );
-    allFavoriteIcons.forEach((icon) => {
-      icon.classList.remove("fa-regular", "fa-heart");
-      icon.classList.add("fa-solid", "fa-heart");
+      let favorite = JSON.parse(localStorage.getItem("favorite")) || [];
+      const existingItemIndex = favorite.findIndex((item) => item.id === id);
+
+      if (existingItemIndex !== -1) {
+        // Remove the item if it exists
+        favorite.splice(existingItemIndex, 1);
+      } else {
+        // Add the item if it doesn't exist
+        const favoriteItem = {
+          id,
+          title: icon.getAttribute("data-title"),
+          image: icon.getAttribute("data-image"),
+          price: icon.getAttribute("data-price"),
+          color: icon.getAttribute("data-color"),
+          rating: icon.getAttribute("data-rating"),
+          reviews: icon.getAttribute("data-reviews"),
+          category: icon.getAttribute("data-category"),
+        };
+        favorite.push(favoriteItem);
+      }
+
+      // Update localStorage
+      localStorage.setItem("favorite", JSON.stringify(favorite));
+
+      // Toggle the heart icon dynamically
+      toggleFavoriteIcon(id);
+      updateFavoriteBadge();
     });
   });
+}
+
+function toggleFavoriteIcon(id) {
+  const allFavoriteIcons = document.querySelectorAll(`.favorite-icon[data-id="${id}"]`);
+  const favorite = JSON.parse(localStorage.getItem("favorite")) || [];
+  const isInFavorites = favorite.some((item) => item.id === id);
+
+  allFavoriteIcons.forEach((icon) => {
+    icon.classList.toggle("fa-solid", isInFavorites);
+    icon.classList.toggle("fa-regular", !isInFavorites);
+    icon.classList.toggle("fa-heart", true);
+  });
+}
+
+function initializeFavoriteIcons() {
+  const favorite = JSON.parse(localStorage.getItem("favorite")) || [];
+  favorite.forEach((item) => toggleFavoriteIcon(item.id));
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  initializeFavoriteIcons(); 
+  attachEventListeners();    
+});
+
+
+
+
+
+
+
+
+
+
+// Example of dynamically re-attaching listeners for new cards:
+function updateDOMWithNewCards(newCardsHTML) {
+  const productsContainer = document.querySelector(".products");
+  productsContainer.innerHTML += newCardsHTML;
+  attachEventListeners(); // Reattach listeners for newly added cards
 }
 
 // star generate
