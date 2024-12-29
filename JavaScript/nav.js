@@ -14,7 +14,7 @@ hamburger.addEventListener("click", () => {
   }
 });
 
-// JavaScript for Click-to-Toggle Dropdown Menu
+
 document.querySelectorAll('.mobile_menu_dropdown_toggle').forEach((toggle) => {
   toggle.addEventListener('click', (e) => {
     e.preventDefault();
@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       localStorage.setItem("cart", JSON.stringify(cart));
       updateCartBadge();
+      displayCartItems();
     }
 
   });
