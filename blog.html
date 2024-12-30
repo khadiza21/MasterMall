@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MasterMall | Blog</title>
+  <title>MasterMall | Blogs</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -14,8 +14,7 @@
 </head>
 
 <body>
-
-  <section class="top_nav">
+  <div class="top_nav">
     <div class="container top_nav_container">
       <div class="top_nav_wrapper">
         <p class="tap_nav_p">
@@ -24,11 +23,11 @@
         <a class="top_nav_link" href="#"><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span></a>
       </div>
     </div>
-  </section>
+  </div>
 
   <nav id="navbar" class="nav">
     <div class="container nav_container">
-      <a href="https://master-mall-bk.netlify.app/" class="nav_logo"><img src="image/logo/logo.png" alt="" /></a>
+      <a href="https://master-mall-bk.netlify.app/" class="nav_logo"><img src="image/logo/logo.png" alt="navLogo" /></a>
       <ul class="nav_list">
         <li class="nav_item">
           <a href="index.html" class="nav_link">Home</a>
@@ -44,7 +43,7 @@
         </li>
       </ul>
       <div class="nav_items">
-        <form action="" class="nav_form">
+        <form action="/" class="nav_form">
           <input type="text" class="nav_input" placeholder="Search here...." />
           <i class="fa-solid fa-magnifying-glass nav_search"></i>
         </form>
@@ -60,7 +59,7 @@
           <a href=""> <i class="fa-solid fa-user"></i></a>
           <ul class="bottom_dropdown">
             <li>
-              <a href="profile.html" class="w3-bar-item w3-button">My Profile</a>
+              <a href="comingSoon.html" class="w3-bar-item w3-button">My Profile</a>
             </li>
             <li>
               <a href="signUp.html" class="w3-bar-item w3-button">Sign Up</a>
@@ -83,6 +82,9 @@
         <a href="/index.html" class="mobile_nav_link">Home</a>
       </li>
       <li class="mobile_nav_item">
+        <a href="/blog.html" class="mobile_nav_link">Blog</a>
+      </li>
+      <li class="mobile_nav_item">
         <a href="/about.html" class="mobile_nav_link">About</a>
       </li>
       <li class="mobile_nav_item">
@@ -96,14 +98,14 @@
             class="cart_badge_sm cart_badge_num">0</span></a>
       </li>
       <li class="mobile_nav_item">
-        <a  class="mobile_nav_link nav_heart_sm nav_heart_modal">Favorite
+        <a class="mobile_nav_link nav_heart_sm nav_heart_modal">Favorite
           <span class="favorite_badge_sm favorite_badge_num">0</span></a>
       </li>
-      <li class="mobile_nav_item  mobile_menu_dropdown">
+      <li class="mobile_nav_item mobile_menu_dropdown">
         <a href="#" class="nav_user_sm mobile_nav_link nav_heart_sm mobile_menu_dropdown_toggle">User</a>
         <ul class="mobile_menu_dropdown_list">
           <li>
-            <a href="profile.html" class="mobile_menu_dropdown_item">My Profile</a>
+            <a href="comingSoon.html" class="w3-bar-item w3-button">My Profile</a>
           </li>
           <li>
             <a href="signUp.html" class="mobile_menu_dropdown_item">Sign Up</a>
@@ -112,16 +114,11 @@
             <a href="/index.html" class="mobile_menu_dropdown_item">Log Out</a>
           </li>
         </ul>
-
       </li>
     </ul>
   </nav>
 
-
-
-
   <main>
-
     <section>
       <div id="modalBackdrop" class="modal_backdrop"></div>
       <div id="favoriteModal" class="favorite_modal">
@@ -131,9 +128,12 @@
           <ul id="favoriteList" class="favorite_list">
             <!-- Favorite items will be appended here dynamically -->
           </ul>
-        
+
           <div class="modal_buttons">
-            <button class="view_cart_btn"><a href="./cart.html">View Cart</a></button>
+            <button class="cart_btn" onclick="window.location.href='./cart.html';">
+              View Cart
+            </button>
+
             <button class="clear_favorite_modal_btn">Clear</button>
           </div>
           <p class="free_shipping_notice">
@@ -141,17 +141,22 @@
           </p>
         </div>
       </div>
-
     </section>
 
-    <section>
+    <div>
       <div>
-        <button id="scrollToTopBtn"><i class="fa-solid fa-angle-up"></i></button>
+        <button id="scrollToTopBtn">
+          <i class="fa-solid fa-angle-up"></i>
+        </button>
       </div>
-    </section>
+    </div>
+
+
+
+
 
     <!-- contact page header banner part start -->
-    <section id="section ">
+    <section>
       <div class="container">
         <div class="blog_header">
           <h2>Blogs</h2>
@@ -237,18 +242,18 @@
         </div>
       </aside>
 
-      <section class="main">
+      <div class="main">
         <div class="article-container"> </div>
 
-        <section>
+ 
           <div class="pagination">
             <button>&laquo;</button>
             <div class="page-number active">1</div>
             <div class="page-number">2</div>
             <button>&raquo;</button>
           </div>
-        </section>
-      </section>
+      
+        </div>
     </div>
 
   </main>

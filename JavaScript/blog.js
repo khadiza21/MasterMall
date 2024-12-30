@@ -13,7 +13,7 @@ fetch('../datasets/article.json')
         weekday: "short",
         month: "short",
         day: "numeric",
-        year: "numeric",
+        year: "numeric"
       })
     }))
       .sort((a, b) => new Date(b.date) - new Date(a.date));;
@@ -111,12 +111,12 @@ var swiper = new Swiper(".mySwiper", {
   effect: "flip",
   grabCursor: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination"
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+    prevEl: ".swiper-button-prev"
+  }
 });
 // products
 let products = [];

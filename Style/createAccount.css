@@ -143,9 +143,9 @@
     animation: bounceIn 0.6s ease-out;
   }
 
-  .form_link {
+  .form_button_text {
     color: var(--colo-white-2);
-    text-decoration: none;
+    
   } 
   
   .form_group > span {

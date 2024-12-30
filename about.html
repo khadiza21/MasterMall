@@ -15,7 +15,7 @@
 <body>
 
 
-  <section class="top_nav">
+  <div class="top_nav">
     <div class="container top_nav_container">
       <div class="top_nav_wrapper">
         <p class="tap_nav_p">
@@ -24,7 +24,7 @@
         <a class="top_nav_link" href="#"><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span></a>
       </div>
     </div>
-  </section>
+  </div>
 
   <nav id="navbar" class="nav">
     <div class="container nav_container">
@@ -44,7 +44,7 @@
         </li>
       </ul>
       <div class="nav_items">
-        <form action="" class="nav_form">
+        <form action="/" class="nav_form">
           <input type="text" class="nav_input" placeholder="Search here...." />
           <i class="fa-solid fa-magnifying-glass nav_search"></i>
         </form>
@@ -60,7 +60,7 @@
           <a href=""> <i class="fa-solid fa-user"></i></a>
           <ul class="bottom_dropdown">
             <li>
-              <a href="profile.html" class="w3-bar-item w3-button">My Profile</a>
+              <a href="comingSoon.html" class="w3-bar-item w3-button">My Profile</a>
             </li>
             <li>
               <a href="signUp.html" class="w3-bar-item w3-button">Sign Up</a>
@@ -83,6 +83,9 @@
         <a href="/index.html" class="mobile_nav_link">Home</a>
       </li>
       <li class="mobile_nav_item">
+        <a href="/blog.html" class="mobile_nav_link">Blog</a>
+      </li>
+      <li class="mobile_nav_item">
         <a href="/about.html" class="mobile_nav_link">About</a>
       </li>
       <li class="mobile_nav_item">
@@ -103,7 +106,7 @@
         <a href="#" class="nav_user_sm mobile_nav_link nav_heart_sm mobile_menu_dropdown_toggle">User</a>
         <ul class="mobile_menu_dropdown_list">
           <li>
-            <a href="profile.html" class="mobile_menu_dropdown_item">My Profile</a>
+            <a href="comingSoon.html" class="w3-bar-item w3-button">My Profile</a>
           </li>
           <li>
             <a href="signUp.html" class="mobile_menu_dropdown_item">Sign Up</a>
@@ -130,7 +133,9 @@
             <!-- Favorite items will be appended here dynamically -->
           </ul>
           <div class="modal_buttons">
-            <button class="view_cart_btn"><a href="./cart.html">View Cart</a></button>
+            <button class="cart_btn" onclick="window.location.href='./cart.html';">View Cart</button>
+
+
             <button class="clear_favorite_modal_btn">Clear</button>
           </div>
           <p class="free_shipping_notice">
@@ -143,13 +148,13 @@
 
 
 
-    <section>
+    <div>
       <div class="container">
         <button id="scrollToTopBtn"><i class="fa-solid fa-angle-up"></i></button>
       </div>
-    </section>
+    </div>
 
-    <section id="section ">
+    <section id="section">
       <div class="container">
         <div class="about_header">
           <h2>About us</h2>
@@ -230,7 +235,7 @@
           <p>Explore about us.</p>
         </div>
 
-        <div #swiperRef="" class="swiper mySwiper">
+        <div  class="swiper mySwiper">
           <div class="swiper-wrapper">
 
           </div>

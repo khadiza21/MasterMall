@@ -1,7 +1,7 @@
 ScrollReveal().reveal(".product-cart-box", {
   delay: 200,
   duration: 1200,
-  origin: "bottom",
+  origin: "bottom"
 });
 
 

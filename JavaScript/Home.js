@@ -40,30 +40,30 @@ var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination",
-    clickable: true,
+    clickable: true
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    prevEl: ".swiper-button-prev"
   },
   breakpoints: {
     300: {
       slidesPerView: 1,
-      spaceBetween: 10,
+      spaceBetween: 10
     },
     400: {
       slidesPerView: 2,
-      spaceBetween: 10,
+      spaceBetween: 10
     },
     768: {
       slidesPerView: 3,
-      spaceBetween: 10,
+      spaceBetween: 10
     },
     1240: {
       slidesPerView: 4,
-      spaceBetween: 10,
-    },
-  },
+      spaceBetween: 10
+    }
+  }
 });
 
 // Array of card data
@@ -301,7 +301,7 @@ function attachEventListeners() {
           color: icon.getAttribute("data-color"),
           rating: icon.getAttribute("data-rating"),
           reviews: icon.getAttribute("data-reviews"),
-          category: icon.getAttribute("data-category"),
+          category: icon.getAttribute("data-category")
         };
         favorite.push(favoriteItem);
       }
@@ -338,13 +338,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeFavoriteIcons(); 
   attachEventListeners();    
 });
-
-
-
-
-
-
-
 
 
 
@@ -405,7 +398,7 @@ fetch("../datasets/article.json")
           weekday: "short",
           month: "short",
           day: "numeric",
-          year: "numeric",
+          year: "numeric"
         }),
       }))
       .sort((a, b) => new Date(b.date) - new Date(a.date));

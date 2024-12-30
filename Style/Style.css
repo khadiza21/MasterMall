@@ -190,41 +190,38 @@
 }
 
 /* Hero  section end*/
-
-
-
-
 /* marquee  section start*/
 .marquee_container {
-  margin: 2rem 0;
-  width: 100%;
+ background-color: var(--colo-white-2);
+ box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
+ border-radius: 33px;
+
+}
+
+.marquee_container .marquee {
+  width: 96%;
+  margin: 2rem 2%;
   overflow: hidden;
-  background-color: var(--colo-white-2);
-  box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
-  border-radius: 33px;
-  padding: 12px 20px 8px;
+  padding: 10px 0;
   font-size: 14px;
   color: var(--colo-dark-1);
   min-height: 40px;
+ 
 }
-
-.marquee_container marquee {
-  margin: 0 5%;
-  width: 90%;
+.marquee_container .marquee span{
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite; /* Ensure smooth animation */
 }
 
 @keyframes marquee {
   0% {
     transform: translateX(100%);
   }
-
   100% {
     transform: translateX(-100%);
   }
 }
-
-/* marquee  section end*/
-
 
 /* product showing section start */
 .section {
@@ -410,7 +407,6 @@
   padding: 1rem;
   background-color: rgba(2, 2, 2, 0.533);
   color: var(--colo-white-1);
-  padding-left: -1px;
   border-radius: 10rem;
   margin-bottom: 10px;
 }
@@ -448,7 +444,6 @@
   background: linear-gradient(to right, #33001b, #ff0084);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-right: 23x;
 }
 
 .card_tag {
