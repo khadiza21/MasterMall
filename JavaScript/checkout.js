@@ -5,13 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalItemsElement = document.querySelector(".total-items");
   const totalPriceElement = document.querySelector(".total-price");
 
-
   const spinner = document.createElement("div");
   spinner.className = "spinner";
   document.body.appendChild(spinner);
 
   spinner.style.display = "block";
-
 
   setTimeout(() => {
     const cartData = JSON.parse(localStorage.getItem("cart")) || [];
@@ -38,7 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
         <div>
-          <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+          <span class="item-price">$${(item.price * item.quantity).toFixed(
+            2
+          )}</span>
         </div>
       `;
       cartItemsContainer.appendChild(cartItem);
@@ -47,8 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     subTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
     shippingPrice.textContent = `$${shippingCost.toFixed(2)}`;
     totalItemsElement.textContent = totalItems;
-    totalPriceElement.textContent = `$${(totalPrice + shippingCost).toFixed(2)}`;
-
+    totalPriceElement.textContent = `$${(totalPrice + shippingCost).toFixed(
+      2
+    )}`;
 
     spinner.style.display = "none";
   }, 1000);

@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   padding-left: 1rem;
-  transition: color 0.3s ease , background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .header_filter_link:hover {
@@ -192,9 +192,9 @@
 /* Hero  section end*/
 /* marquee  section start*/
 .marquee_container {
- background-color: var(--colo-white-2);
- box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
- border-radius: 33px;
+  background-color: var(--colo-white-2);
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
+  border-radius: 33px;
 
 }
 
@@ -206,18 +206,21 @@
   font-size: 14px;
   color: var(--colo-dark-1);
   min-height: 40px;
- 
+
 }
-.marquee_container .marquee span{
+
+.marquee_container .marquee span {
   display: inline-block;
   white-space: nowrap;
-  animation: marquee 20s linear infinite; /* Ensure smooth animation */
+  animation: marquee 20s linear infinite;
+  /* Ensure smooth animation */
 }
 
 @keyframes marquee {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }

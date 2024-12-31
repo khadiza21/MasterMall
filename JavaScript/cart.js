@@ -1,9 +1,8 @@
 ScrollReveal().reveal(".product-cart-box", {
   delay: 200,
   duration: 1200,
-  origin: "bottom"
+  origin: "bottom",
 });
-
 
 const CartItems = document.querySelector(".cart-container");
 let cartTotal = 0;
@@ -15,7 +14,6 @@ function displayCartItems() {
   CartItems.innerHTML = "";
 
   if (items.length === 0) {
-
     const emptyCartMessage = document.createElement("div");
     emptyCartMessage.className = "empty-cart";
     emptyCartMessage.innerHTML = `
@@ -30,14 +28,14 @@ function displayCartItems() {
       const quantity = parseInt(item.quantity) || 1;
       const itemTotalPrice = price * quantity;
 
-
       const cartItem = document.createElement("div");
       cartItem.className = "product-cart-box";
       cartItem.innerHTML = `
         <div class="product-card">
           <div class="product-image">
-            <img src="${item.image || "image/cart/dummy_150x150_ffffff_cccccc.png"
-        }" alt="${item.title}">
+            <img src="${
+              item.image || "image/cart/dummy_150x150_ffffff_cccccc.png"
+            }" alt="${item.title}">
           </div>
           <div class="product-details">
             <h2 class="product-title">${item.title}</h2>
@@ -50,17 +48,15 @@ function displayCartItems() {
             <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
           </div> 
           <div class="total-price"><span>$${itemTotalPrice.toFixed(
-          2
-        )}</span></div>
+            2
+          )}</span></div>
           <div class="remove-btn" onclick="removeItem(${index})"><span>×</span></div>
         </div>
       `;
       CartItems.appendChild(cartItem);
 
-
       cartTotal += itemTotalPrice;
     });
-
 
     const cartSummary = document.createElement("div");
     cartSummary.className = "cart-summary";
@@ -77,14 +73,12 @@ function displayCartItems() {
     `;
     CartItems.appendChild(cartSummary);
 
-
     document.querySelector(".clear-cart-btn button").onclick = clearCart;
   }
 }
 
 // Update quantity
 function updateQuantity(index, change, newValue) {
-
   const items = getCartData();
   const item = items[index];
 
@@ -94,27 +88,21 @@ function updateQuantity(index, change, newValue) {
     item.quantity = Math.max(1, parseInt(newValue) || 1);
   }
 
-
   localStorage.setItem("cart", JSON.stringify(items));
-
 
   const cartItem = document.querySelectorAll(".product-cart-box")[index];
   const quantityInput = cartItem.querySelector(".quantity-input");
   const totalPriceElement = cartItem.querySelector(".total-price span");
 
-
   quantityInput.value = item.quantity;
   const itemTotalPrice = (parseFloat(item.price) || 0) * item.quantity;
   totalPriceElement.textContent = `$${itemTotalPrice.toFixed(2)}`;
-
 
   updateCartTotal();
   updateCartBadge();
 }
 
-
 function updateCartTotal() {
-
   const items = getCartData();
   let cartTotal = items.reduce((total, item) => {
     const price = parseFloat(item.price) || 0;
@@ -129,12 +117,11 @@ function updateCartTotal() {
 
 // Remove item
 function removeItem(index) {
-
   const items = getCartData();
   items.splice(index, 1);
   localStorage.setItem("cart", JSON.stringify(items));
   displayCartItems();
-  updateCartBadge()
+  updateCartBadge();
 }
 
 // Clear cart
@@ -145,7 +132,6 @@ function clearCart() {
 }
 
 function addCartButtonListeners() {
-
   document.querySelector(".clear-cart-btn button").onclick = clearCart;
 }
 

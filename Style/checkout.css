@@ -369,6 +369,7 @@ header h1 {
   background-color: #821e57;
   color: var(--colo-white-1);
 }
+
 /* responsive design  */
 @media (max-width: 768px) {
   .checkout-box-container {

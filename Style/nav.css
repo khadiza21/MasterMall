@@ -425,8 +425,8 @@ ul {
   top: 0;
   right: -100%;
   height: 100%;
- max-width: 95%;
- min-width: 20%;
+  max-width: 95%;
+  min-width: 20%;
   background: #fff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease-in-out;
@@ -514,23 +514,25 @@ ul {
   margin-right: 10px;
   border-radius: 5px;
 }
-.favorite_modal_li_box_left small i{
+
+.favorite_modal_li_box_left small i {
   background: linear-gradient(to right, #33001b, #ff0084);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 
-.favorite_modal_li_box_right h5{
+.favorite_modal_li_box_right h5 {
   margin-bottom: 1rem;
   background: linear-gradient(to right, #33001b, #ff0084);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
 }
-.favorite_modal_li_box_right h6{
-color: #33001b;
-font-weight: bold;
+
+.favorite_modal_li_box_right h6 {
+  color: #33001b;
+  font-weight: bold;
 }
 
 

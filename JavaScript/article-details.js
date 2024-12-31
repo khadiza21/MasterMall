@@ -1,35 +1,36 @@
 const urlParams = new URLSearchParams(window.location.search);
-const articleId = Number(urlParams.get('id'));
-
+const articleId = Number(urlParams.get("id"));
 
 let articles = [];
-fetch('../datasets/article.json')
-  .then(response => response.json())
-  .then(data => {
+fetch("../datasets/article.json")
+  .then((response) => response.json())
+  .then((data) => {
     articles = data;
-    displayArticles(articles)
-    displayArticlesTitle(articles)
-
+    displayArticles(articles);
+    displayArticlesTitle(articles);
   })
-  .catch(error => console.error('Error:', error));
-
+  .catch((error) => console.error("Error:", error));
 
 function displayArticlesTitle(articles) {
   const articleIdAsNumber = Number(articleId);
-  const article = articles.find(a => a.id === articleId || a.id === articleIdAsNumber);
-  const articleDetailTitle = document.querySelectorAll('.article-details-title');
+  const article = articles.find(
+    (a) => a.id === articleId || a.id === articleIdAsNumber
+  );
+  const articleDetailTitle = document.querySelectorAll(
+    ".article-details-title"
+  );
 
-  articleDetailTitle.forEach(el => {
-    el.innerText = article ? ` ${article.title} ` : 'Title';
+  articleDetailTitle.forEach((el) => {
+    el.innerText = article ? ` ${article.title} ` : "Title";
   });
 }
 
-
-
 function displayArticles(articles) {
   const articleIdAsNumber = Number(articleId);
-  const article = articles.find(a => a.id === articleId || a.id === articleIdAsNumber);
-  const articleDetail = document.querySelector('.article-detail');
+  const article = articles.find(
+    (a) => a.id === articleId || a.id === articleIdAsNumber
+  );
+  const articleDetail = document.querySelector(".article-detail");
 
   if (article) {
     // URL encode the article title and link
@@ -109,6 +110,6 @@ function displayArticles(articles) {
       </div>
     `;
   } else {
-    articleDetail.innerHTML = '<p>Article not found.</p>';
+    articleDetail.innerHTML = "<p>Article not found.</p>";
   }
 }

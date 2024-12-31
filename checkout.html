@@ -1,175 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MasterMall | Checkout</title>
-    <link rel="stylesheet" href="Style/checkout.css" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MasterMall | Checkout</title>
+        <link rel="stylesheet" href="Style/checkout.css" />
+    </head>
 
-<body>
+    <body>
 
-    <!-- header part start -->
-    <header>
-        <nav>
-            <div class="container nav_container">
-                <div>
-                    <a href="/index.html" class="nav_logo"><img src="image/logo/logo.png" alt="" /></a>
+        <!-- header part start -->
+        <header>
+            <nav>
+                <div class="container nav_container">
+                    <div>
+                        <a href="/index.html" class="nav_logo"><img
+                                src="image/logo/logo.png" alt /></a>
+                    </div>
+                    <div class="nav-checkout-cart">
+                        <a href="/cart.html"> <i
+                                class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
                 </div>
-                <div class="nav-checkout-cart">
-                    <a href="/cart.html"> <i class="fa-solid fa-bag-shopping"></i></a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- header part end -->
+            </nav>
+        </header>
+        <!-- header part end -->
 
+        <!-- main part start -->
+        <main>
 
-    <!-- main part start -->
-    <main>
-
-
-        <!-- checkout section start -->
-        <section class="section">
-            <div class="container">
-                <div class="checkout-box-container">
-                    <!-- checkout form  -->
-                    <div class="checkout-form">
-                        <!-- Contact and Delivery Form Section -->
-                        <div>
-                            <div class="checkout-form-header">
-                                <h2>Contact</h2>
-                                <a href="/login.html"><small>LogIn</small></a>
-                            </div>
-
-                            <input type="text" placeholder="Email or mobile phone number" />
-
-
-
-
-                            <label class="form-control">
-                                <input type="checkbox" name="checkbox" />
-                                <span class="checkmark"></span>
-                                Email me with news and offers
-                            </label>
-
-                        </div>
-
-                        <div>
+            <!-- checkout section start -->
+            <section class="section">
+                <div class="container">
+                    <div class="checkout-box-container">
+                        <!-- checkout form  -->
+                        <div class="checkout-form">
+                            <!-- Contact and Delivery Form Section -->
                             <div>
-                                <h2>Delivery</h2>
-                            </div>
-                            <div class="delivery-fields">
-                                <select>
-                                    <option>Country/Region</option>
-                                    <option>Bangladesh</option>
-                                    <!-- Add other options here -->
-                                </select>
-                                <input type="text" placeholder="First name (optional)" />
-                                <input type="text" placeholder="Last name" />
-                                <input type="text" placeholder="Address" />
-                                <input type="text" placeholder="Apartment, suite, etc. (optional)" />
-                                <input type="text" placeholder="City" />
-                                <input type="text" placeholder="Postal code (optional)" />
+                                <div class="checkout-form-header">
+                                    <h2>Contact</h2>
+                                    <a
+                                        href="/login.html"><small>LogIn</small></a>
+                                </div>
 
-
+                                <input type="text"
+                                    placeholder="Email or mobile phone number" />
 
                                 <label class="form-control">
                                     <input type="checkbox" name="checkbox" />
                                     <span class="checkmark"></span>
-                                    Save this information for next time
+                                    Email me with news and offers
                                 </label>
 
-
                             </div>
-                        </div>
-                        <div>
+
                             <div>
-                                <h2>Shipping method</h2>
-                            </div>
-                            <div class="shipping-method">
-                                <button>International Shipping <span>$20.00</span></button>
-                            </div>
-                        </div>
-
-                        <div class="payment-section">
-                            <div>
-                                <h2>Payment</h2>
-                            </div>
-                            <p class="secure-note">
-                                All transactions are secure and encrypted.
-                            </p>
-
-                            <div class="payment-disabled">
-                                <div class="icon-placeholder">
-                                    <i class="fa-solid fa-face-frown"></i>
+                                <div>
+                                    <h2>Delivery</h2>
                                 </div>
-                                <p>This store can't accept payments right now.</p>
+                                <div class="delivery-fields">
+                                    <select>
+                                        <option>Country/Region</option>
+                                        <option>Bangladesh</option>
+                                        <!-- Add other options here -->
+                                    </select>
+                                    <input type="text"
+                                        placeholder="First name (optional)" />
+                                    <input type="text"
+                                        placeholder="Last name" />
+                                    <input type="text" placeholder="Address" />
+                                    <input type="text"
+                                        placeholder="Apartment, suite, etc. (optional)" />
+                                    <input type="text" placeholder="City" />
+                                    <input type="text"
+                                        placeholder="Postal code (optional)" />
+
+                                    <label class="form-control">
+                                        <input type="checkbox"
+                                            name="checkbox" />
+                                        <span class="checkmark"></span>
+                                        Save this information for next time
+                                    </label>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <h2>Shipping method</h2>
+                                </div>
+                                <div class="shipping-method">
+                                    <button>International Shipping
+                                        <span>$20.00</span></button>
+                                </div>
                             </div>
 
-                            <button class="pay-now-btn" disabled>Pay now</button>
+                            <div class="payment-section">
+                                <div>
+                                    <h2>Payment</h2>
+                                </div>
+                                <p class="secure-note">
+                                    All transactions are secure and encrypted.
+                                </p>
+
+                                <div class="payment-disabled">
+                                    <div class="icon-placeholder">
+                                        <i class="fa-solid fa-face-frown"></i>
+                                    </div>
+                                    <p>This store can't accept payments right
+                                        now.</p>
+                                </div>
+
+                                <button class="pay-now-btn" disabled>Pay
+                                    now</button>
+                            </div>
+                            <div class="checkout-form-footer">
+                                <hr />
+                                <p>
+                                    All rights reserved The <a
+                                        href="index.html">MasterMall</a>
+                                </p>
+                            </div>
                         </div>
-                        <div class="checkout-form-footer">
-                            <hr />
-                            <p>
-                                All rights reserved The <a href="index.html">MasterMall</a>
-                            </p>
-                        </div>
+                        <!-- checkout form  -->
+
+                        <!-- side cart order summary  -->
+                        <aside class="order-summary">
+                            <h2>Order Summary</h2>
+                            <div>
+                                <div class="spinner" id="loadingSpinner"></div>
+                            </div>
+
+                            <div class="cart-items"></div>
+                            <div class="summary-total">
+                                <div class="subtotal-item-summary">
+                                    <div>
+                                        <p>
+                                            Subtotal <span class="dot">.</span>
+                                            <span class="total-items">0</span>
+                                            items
+                                        </p>
+                                    </div>
+                                    <div><span
+                                            class="sub-total-items">00.00</span></div>
+                                </div>
+                                <div class="shipping-item-summary">
+                                    <div>
+                                        <p>Shipping</p>
+                                    </div>
+                                    <div><span
+                                            class="shipping-cost">0.00</span></div>
+                                </div>
+                                <div class="total-item-summary">
+                                    <div>
+                                        <p>Total</p>
+                                    </div>
+                                    <div>
+                                        <small>USD </small>
+                                        <span class="total-price"> 00.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </aside>
+                        <!-- side cart order summary  -->
                     </div>
-                    <!-- checkout form  -->
-
-                    <!-- side cart order summary  -->
-                    <aside class="order-summary">
-                        <h2>Order Summary</h2>
-                        <div>
-                            <div class="spinner" id="loadingSpinner"></div>
-                        </div>
-
-                        <div class="cart-items"></div>
-                        <div class="summary-total">
-                            <div class="subtotal-item-summary">
-                                <div>
-                                    <p>
-                                        Subtotal <span class="dot">.</span>
-                                        <span class="total-items">0</span> items
-                                    </p>
-                                </div>
-                                <div><span class="sub-total-items">00.00</span></div>
-                            </div>
-                            <div class="shipping-item-summary">
-                                <div>
-                                    <p>Shipping</p>
-                                </div>
-                                <div><span class="shipping-cost">0.00</span></div>
-                            </div>
-                            <div class="total-item-summary">
-                                <div>
-                                    <p>Total</p>
-                                </div>
-                                <div>
-                                    <small>USD </small>
-                                    <span class="total-price"> 00.00</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </aside>
-                    <!-- side cart order summary  -->
                 </div>
-            </div>
-        </section>
-        <!-- checkout section end -->
-    </main>
-    <!-- main part end -->
+            </section>
+            <!-- checkout section end -->
+        </main>
+        <!-- main part end -->
 
-
-    <!-- script link up -->
-    <script src="https://kit.fontawesome.com/346effd3c4.js" crossorigin="anonymous"></script>
-    <script src="JavaScript/nav.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="JavaScript/checkout.js"></script>
-    <script src="JavaScript/scrollReveal.js"></script>
-</body>
+        <!-- script link up -->
+        <script src="https://kit.fontawesome.com/346effd3c4.js"
+            crossorigin="anonymous"></script>
+        <script src="JavaScript/nav.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="JavaScript/checkout.js"></script>
+        <script src="JavaScript/scrollReveal.js"></script>
+    </body>
 
 </html>

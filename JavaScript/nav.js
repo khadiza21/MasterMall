@@ -14,17 +14,14 @@ hamburger.addEventListener("click", () => {
   }
 });
 
-
-document.querySelectorAll('.mobile_menu_dropdown_toggle').forEach((toggle) => {
-  toggle.addEventListener('click', (e) => {
+document.querySelectorAll(".mobile_menu_dropdown_toggle").forEach((toggle) => {
+  toggle.addEventListener("click", (e) => {
     e.preventDefault();
     const dropdownMenu = toggle.nextElementSibling;
     dropdownMenu.style.display =
-      dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      dropdownMenu.style.display === "block" ? "none" : "block";
   });
 });
-
-
 
 document.addEventListener("click", (event) => {
   const isClickInsideNav = mobileNav.contains(event.target);
@@ -136,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modalBackdrop.classList.remove("active");
   };
 
-
   favoriteIcons.forEach((icon) => {
     icon.addEventListener("click", () => {
       console.log("Favorite modal opening...");
@@ -145,14 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
   // Event listener for closing the modal
   closeModal.addEventListener("click", closeModalFn);
 
   // Close modal on outside click
   modalBackdrop.addEventListener("click", closeModalFn);
-
-
 
   // Function to populate favorite modal with items
   const populateFavoriteList = () => {
@@ -177,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
          
          <div class="favorite_modal_li_box_right">
          <h5>${item.title} </h5>
-        <h6> $ ${item.price.toLocaleString() || 0.00}</h6>
+        <h6> $ ${item.price.toLocaleString() || 0.0}</h6>
         <button class="add_to_cart_from_favorite" data-id="${item.id}"
                 data-title="${item.title}"
                 data-image="${item.image}"
@@ -195,12 +188,9 @@ document.addEventListener("DOMContentLoaded", () => {
     updateFavoriteBadge();
   });
 
-
-
   // Remove item from favorite list
   const favoriteList = document.getElementById("favoriteList");
   favoriteList.addEventListener("click", (e) => {
-
     if (e.target.classList.contains("add_to_cart_from_favorite")) {
       const button = e.target;
       const id = button.getAttribute("data-id");
@@ -222,12 +212,5 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCartBadge();
       displayCartItems();
     }
-
   });
-
-
-
 });
-
-
-

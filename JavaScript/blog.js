@@ -1,46 +1,44 @@
 // recent and popular article blog
 let popularArticle = [];
 let latestArticles = [];
-fetch('../datasets/article.json')
-  .then(response => response.json())
-  .then(data => {
-
-
-    popularArticle = data.map(article => ({ ...article, views: Number(article.views) })).sort((a, b) => b.views - a.views);
-    latestArticles = data.map(article => ({
-      ...article,
-      date: new Date(article.date).toLocaleDateString("en-US", {
-        weekday: "short",
-        month: "short",
-        day: "numeric",
-        year: "numeric"
-      })
-    }))
-      .sort((a, b) => new Date(b.date) - new Date(a.date));;
+fetch("../datasets/article.json")
+  .then((response) => response.json())
+  .then((data) => {
+    popularArticle = data
+      .map((article) => ({ ...article, views: Number(article.views) }))
+      .sort((a, b) => b.views - a.views);
+    latestArticles = data
+      .map((article) => ({
+        ...article,
+        date: new Date(article.date).toLocaleDateString("en-US", {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        }),
+      }))
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     displayRecentArticles(latestArticles);
-    displayPopularArticles(popularArticle)
+    displayPopularArticles(popularArticle);
     displayArticles(latestArticles);
-
   })
-  .catch(error => console.error('Error:', error));
-
-
+  .catch((error) => console.error("Error:", error));
 
 function displayRecentArticles(articles) {
-  const containers = document.querySelectorAll('.recent-article-card');
+  const containers = document.querySelectorAll(".recent-article-card");
   displaySideArticles(articles, containers);
 }
 function displayPopularArticles(articles) {
-  const containers = document.querySelectorAll('.popular-article-card');
+  const containers = document.querySelectorAll(".popular-article-card");
   displaySideArticles(articles, containers);
 }
 
 function displaySideArticles(sideArticles, containers) {
-  containers.forEach(container => {
-    sideArticles.slice(0, 3).forEach(article => {
-      const articleDiv = document.createElement('div');
-      articleDiv.classList.add('recent-article');
+  containers.forEach((container) => {
+    sideArticles.slice(0, 3).forEach((article) => {
+      const articleDiv = document.createElement("div");
+      articleDiv.classList.add("recent-article");
       articleDiv.dataset.id = article.id;
 
       articleDiv.innerHTML = `
@@ -61,21 +59,35 @@ function displaySideArticles(sideArticles, containers) {
       </div>
     `;
 
-
-      function addRedirectOnClick(parentElement, elementSelector, articleId, redirectUrl) {
+      function addRedirectOnClick(
+        parentElement,
+        elementSelector,
+        articleId,
+        redirectUrl
+      ) {
         const element = parentElement.querySelector(elementSelector);
         if (element) {
-          element.addEventListener('click', () => {
+          element.addEventListener("click", () => {
             window.location.href = `${redirectUrl}?id=${articleId}`;
           });
         }
       }
 
-      const redirectUrl = 'article-details.html';
+      const redirectUrl = "article-details.html";
 
-      addRedirectOnClick(articleDiv, '.clickable-img', article.id, redirectUrl);
-      addRedirectOnClick(articleDiv, '.clickable-title', article.id, redirectUrl);
-      addRedirectOnClick(articleDiv, '.clickable-more', article.id, redirectUrl);
+      addRedirectOnClick(articleDiv, ".clickable-img", article.id, redirectUrl);
+      addRedirectOnClick(
+        articleDiv,
+        ".clickable-title",
+        article.id,
+        redirectUrl
+      );
+      addRedirectOnClick(
+        articleDiv,
+        ".clickable-more",
+        article.id,
+        redirectUrl
+      );
 
       container.appendChild(articleDiv);
     });
@@ -84,15 +96,15 @@ function displaySideArticles(sideArticles, containers) {
 
 // icon social
 const socialMediaLinks = [
-  { href: 'https://master-mall-bk.netlify.app/', iconClass: 'fa-facebook' },
-  { href: 'https://master-mall-bk.netlify.app/', iconClass: 'fa-twitter' },
-  { href: 'https://master-mall-bk.netlify.app/', iconClass: 'fa-youtube' },
-  { href: 'https://master-mall-bk.netlify.app/', iconClass: 'fa-instagram' },
-  { href: 'https://master-mall-bk.netlify.app/', iconClass: 'fa-tiktok' }
+  { href: "https://master-mall-bk.netlify.app/", iconClass: "fa-facebook" },
+  { href: "https://master-mall-bk.netlify.app/", iconClass: "fa-twitter" },
+  { href: "https://master-mall-bk.netlify.app/", iconClass: "fa-youtube" },
+  { href: "https://master-mall-bk.netlify.app/", iconClass: "fa-instagram" },
+  { href: "https://master-mall-bk.netlify.app/", iconClass: "fa-tiktok" },
 ];
-const socialIconsContainer = document.querySelector('.social-icons');
-let iconsHTML = '';
-socialMediaLinks.forEach(link => {
+const socialIconsContainer = document.querySelector(".social-icons");
+let iconsHTML = "";
+socialMediaLinks.forEach((link) => {
   iconsHTML += `
     <div class="social-icon">
       <a href="${link.href}">
@@ -103,42 +115,39 @@ socialMediaLinks.forEach(link => {
 });
 socialIconsContainer.innerHTML = iconsHTML;
 
-
-
 // products container
-// swiper 
+// swiper
 var swiper = new Swiper(".mySwiper", {
   effect: "flip",
   grabCursor: true,
   pagination: {
-    el: ".swiper-pagination"
+    el: ".swiper-pagination",
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
+    prevEl: ".swiper-button-prev",
+  },
 });
 // products
 let products = [];
-fetch('../datasets/products.json')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data, 'products ');
+fetch("../datasets/products.json")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data, "products ");
     products = data;
-    console.log(products, 'product')
+    console.log(products, "product");
     displayProducts(products);
   })
-  .catch(error => console.error('Error:', error));
+  .catch((error) => console.error("Error:", error));
 
 function displayProducts(products) {
-  const swiperWrapper = document.querySelector('.swiper-wrapper');
+  const swiperWrapper = document.querySelector(".swiper-wrapper");
 
   // Create the HTML string for the product cards
-  let cardsHTML = '';
+  let cardsHTML = "";
 
   // Loop through each product and create the HTML for each card
-  products.slice(0, 6).forEach(product => {
-
+  products.slice(0, 6).forEach((product) => {
     cardsHTML += `
     <div class="swiper-slide best-product-card">
       <div class="best-product-image">
@@ -154,31 +163,27 @@ function displayProducts(products) {
       </div>
     </div>
   `;
-
   });
 
   // Set the innerHTML of the swiper-wrapper container
   swiperWrapper.innerHTML = cardsHTML;
 }
 
-
-
 // articles container with pagination
 function displayArticles(articles) {
-  const articleContainer = document.querySelector('.article-container');
+  const articleContainer = document.querySelector(".article-container");
   const articlesPerPage = 6;
   let currentPage = 1;
-
 
   function renderArticles() {
     const start = (currentPage - 1) * articlesPerPage;
     const end = start + articlesPerPage;
-    articleContainer.innerHTML = '';
+    articleContainer.innerHTML = "";
     const articlesToDisplay = articles.slice(start, end);
 
-    articlesToDisplay.forEach(article => {
-      const articleElement = document.createElement('div');
-      articleElement.classList.add('article');
+    articlesToDisplay.forEach((article) => {
+      const articleElement = document.createElement("div");
+      articleElement.classList.add("article");
       articleElement.dataset.id = article.id;
       articleElement.innerHTML = `
         <div class="article-image">
@@ -208,37 +213,57 @@ function displayArticles(articles) {
         </div>
       `;
 
-
-      function addRedirectOnClick(parentElement, elementSelector, articleId, redirectUrl) {
+      function addRedirectOnClick(
+        parentElement,
+        elementSelector,
+        articleId,
+        redirectUrl
+      ) {
         const element = parentElement.querySelector(elementSelector);
         if (element) {
-          element.addEventListener('click', () => {
+          element.addEventListener("click", () => {
             window.location.href = `${redirectUrl}?id=${articleId}`;
           });
         }
       }
 
-      const redirectUrl = 'article-details.html';
+      const redirectUrl = "article-details.html";
 
-      addRedirectOnClick(articleElement, '.clickable-img', article.id, redirectUrl);
-      addRedirectOnClick(articleElement, '.clickable-comments', article.id, redirectUrl);
-      addRedirectOnClick(articleElement, '.clickable-title', article.id, redirectUrl);
-      addRedirectOnClick(articleElement, '.clickable-more', article.id, redirectUrl);;
-
-
+      addRedirectOnClick(
+        articleElement,
+        ".clickable-img",
+        article.id,
+        redirectUrl
+      );
+      addRedirectOnClick(
+        articleElement,
+        ".clickable-comments",
+        article.id,
+        redirectUrl
+      );
+      addRedirectOnClick(
+        articleElement,
+        ".clickable-title",
+        article.id,
+        redirectUrl
+      );
+      addRedirectOnClick(
+        articleElement,
+        ".clickable-more",
+        article.id,
+        redirectUrl
+      );
 
       articleContainer.appendChild(articleElement);
     });
   }
 
-
   function updatePagination() {
-    const paginationContainer = document.querySelector('.pagination');
-    paginationContainer.innerHTML = '';
+    const paginationContainer = document.querySelector(".pagination");
+    paginationContainer.innerHTML = "";
 
-
-    const prevButton = document.createElement('button');
-    prevButton.innerHTML = '&laquo;';
+    const prevButton = document.createElement("button");
+    prevButton.innerHTML = "&laquo;";
     prevButton.onclick = () => {
       if (currentPage > 1) {
         currentPage--;
@@ -248,14 +273,12 @@ function displayArticles(articles) {
     };
     paginationContainer.appendChild(prevButton);
 
-
     const totalPages = Math.ceil(articles.length / articlesPerPage);
 
-
     for (let i = 1; i <= totalPages; i++) {
-      const pageButton = document.createElement('div');
-      pageButton.classList.add('page-number');
-      if (i === currentPage) pageButton.classList.add('active');
+      const pageButton = document.createElement("div");
+      pageButton.classList.add("page-number");
+      if (i === currentPage) pageButton.classList.add("active");
       pageButton.textContent = i;
       pageButton.onclick = () => {
         currentPage = i;
@@ -264,8 +287,8 @@ function displayArticles(articles) {
       };
       paginationContainer.appendChild(pageButton);
     }
-    const nextButton = document.createElement('button');
-    nextButton.innerHTML = '&raquo;';
+    const nextButton = document.createElement("button");
+    nextButton.innerHTML = "&raquo;";
     nextButton.onclick = () => {
       if (currentPage < totalPages) {
         currentPage++;
@@ -275,7 +298,6 @@ function displayArticles(articles) {
     };
     paginationContainer.appendChild(nextButton);
   }
-
 
   renderArticles();
   updatePagination();

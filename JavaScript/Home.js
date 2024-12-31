@@ -40,30 +40,30 @@ var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination",
-    clickable: true
+    clickable: true,
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+    prevEl: ".swiper-button-prev",
   },
   breakpoints: {
     300: {
       slidesPerView: 1,
-      spaceBetween: 10
+      spaceBetween: 10,
     },
     400: {
       slidesPerView: 2,
-      spaceBetween: 10
+      spaceBetween: 10,
     },
     768: {
       slidesPerView: 3,
-      spaceBetween: 10
+      spaceBetween: 10,
     },
     1240: {
       slidesPerView: 4,
-      spaceBetween: 10
-    }
-  }
+      spaceBetween: 10,
+    },
+  },
 });
 
 // Array of card data
@@ -250,11 +250,9 @@ function displayProducts(products) {
   attachEventListeners();
 }
 
-  // Add to cart functionality
-
+// Add to cart functionality
 
 function attachEventListeners() {
-
   const addToCartButtons = document.querySelectorAll(".add_to_cart");
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -301,7 +299,7 @@ function attachEventListeners() {
           color: icon.getAttribute("data-color"),
           rating: icon.getAttribute("data-rating"),
           reviews: icon.getAttribute("data-reviews"),
-          category: icon.getAttribute("data-category")
+          category: icon.getAttribute("data-category"),
         };
         favorite.push(favoriteItem);
       }
@@ -317,7 +315,9 @@ function attachEventListeners() {
 }
 
 function toggleFavoriteIcon(id) {
-  const allFavoriteIcons = document.querySelectorAll(`.favorite-icon[data-id="${id}"]`);
+  const allFavoriteIcons = document.querySelectorAll(
+    `.favorite-icon[data-id="${id}"]`
+  );
   const favorite = JSON.parse(localStorage.getItem("favorite")) || [];
   const isInFavorites = favorite.some((item) => item.id === id);
 
@@ -333,13 +333,10 @@ function initializeFavoriteIcons() {
   favorite.forEach((item) => toggleFavoriteIcon(item.id));
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  initializeFavoriteIcons(); 
-  attachEventListeners();    
+  initializeFavoriteIcons();
+  attachEventListeners();
 });
-
-
 
 // Example of dynamically re-attaching listeners for new cards:
 function updateDOMWithNewCards(newCardsHTML) {
@@ -398,7 +395,7 @@ fetch("../datasets/article.json")
           weekday: "short",
           month: "short",
           day: "numeric",
-          year: "numeric"
+          year: "numeric",
         }),
       }))
       .sort((a, b) => new Date(b.date) - new Date(a.date));

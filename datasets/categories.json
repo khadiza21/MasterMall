@@ -1,45 +1,44 @@
 [
-    {
-      "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
-      "name": "Trending",
-      "alt": "Trending",
-      "items": 5
-    },
-    {
-      "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
-      "name": "Best Selling",
-      "alt": "Best Selling",
-      "items": 7
-    },
-    {
-        "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
-      "name": "Kids",
-      "alt": "Kids",
-      "items": 8
-    },
-    {
-        "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
-      "name": "Winter",
-      "alt": "Winter",
-      "items": 5
-    },
-    {
-        "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
-      "name": "Men T-Shirt",
-      "alt": "Men T-Shirt",
-      "items": 23
-    },
-    {
-        "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
-      "name": "Featured Jewelry",
-      "alt": "Featured Jewelry",
-      "items": 13
-    },
-    {
-        "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
-      "name": "Featured Fashion",
-      "alt": "Featured Fashion",
-      "items": 34
-    }
-  ]
-  
+  {
+    "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
+    "name": "Trending",
+    "alt": "Trending",
+    "items": 5
+  },
+  {
+    "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
+    "name": "Best Selling",
+    "alt": "Best Selling",
+    "items": 7
+  },
+  {
+    "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
+    "name": "Kids",
+    "alt": "Kids",
+    "items": 8
+  },
+  {
+    "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
+    "name": "Winter",
+    "alt": "Winter",
+    "items": 5
+  },
+  {
+    "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
+    "name": "Men T-Shirt",
+    "alt": "Men T-Shirt",
+    "items": 23
+  },
+  {
+    "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
+    "name": "Featured Jewelry",
+    "alt": "Featured Jewelry",
+    "items": 13
+  },
+  {
+    "image": "../image/category/dummy_600x600_ffffff_cccccc.png",
+    "name": "Featured Fashion",
+    "alt": "Featured Fashion",
+    "items": 34
+  }
+]
