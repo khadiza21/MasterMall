@@ -1,172 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MasterMall | Sign Up</title>
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="Style/nav.css" />
-    <link rel="stylesheet" href="Style/createAccount.css" />
-    <link rel="stylesheet" href="Style/footer.css" />
-  </head>
 
-  <body>
-    <div class="top_nav">
-      <div class="container top_nav_container">
-        <div class="top_nav_wrapper">
-          <p class="tap_nav_p">
-            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%
-          </p>
-          <a class="top_nav_link" href="#"><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span></a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MasterMall | Sign Up</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="Style/nav.css" />
+  <link rel="stylesheet" href="Style/createAccount.css" />
+  <link rel="stylesheet" href="Style/footer.css" />
+</head>
+
+<body>
+  <div class="top_nav">
+    <div class="container top_nav_container">
+      <div class="top_nav_wrapper">
+        <p class="tap_nav_p">
+          Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%
+        </p>
+        <a class="top_nav_link" href="#"><span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span></a>
       </div>
     </div>
-  
-    <nav id="navbar" class="nav">
-      <div class="container nav_container">
-        <a href="https://master-mall-bk.netlify.app/" class="nav_logo"><img src="image/logo/logo.png" alt="navLogo" /></a>
-        <ul class="nav_list">
-          <li class="nav_item">
-            <a href="index.html" class="nav_link">Home</a>
-          </li>
-          <li class="nav_item">
-            <a href="blog.html" class="nav_link">Blog</a>
-          </li>
-          <li class="nav_item">
-            <a href="about.html" class="nav_link">About</a>
-          </li>
-          <li class="nav_item">
-            <a href="contact.html" class="nav_link">Contact</a>
-          </li>
-        </ul>
-        <div class="nav_items">
-          <form action="/" class="nav_form">
-            <input type="text" class="nav_input" placeholder="Search here...." />
-            <i class="fa-solid fa-magnifying-glass nav_search"></i>
-          </form>
-          <a class="nav_heart nav_heart_modal">
-            <i class="fa-regular fa-heart"></i>
-            <span class="favorite_badge favorite_badge_num">0</span>
-          </a>
-          <a href="/cart.html" class="nav_cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="cart_badge cart_badge_num">0</span>
-          </a>
-          <div class="nav_user">
-            <a href=""> <i class="fa-solid fa-user"></i></a>
-            <ul class="bottom_dropdown">
-              <li>
-                <a href="comingSoon.html" class="w3-bar-item w3-button">My Profile</a>
-              </li>
-              <li>
-                <a href="signUp.html" class="w3-bar-item w3-button">Sign Up</a>
-              </li>
-              <li>
-                <a href="/index.html" class="w3-bar-item w3-button">Log Out</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <span class="hamburger">
-          <i class="fa-solid fa-bars"></i>
-        </span>
-      </div>
-    </nav>
-  
-    <nav id="mobile_navbar" class="mobile_nav mobile_nav_hide">
-      <ul class="mobile_nav_list">
-        <li class="mobile_nav_item">
-          <a href="/index.html" class="mobile_nav_link">Home</a>
+  </div>
+
+  <nav id="navbar" class="nav">
+    <div class="container nav_container">
+      <a href="https://master-mall-bk.netlify.app/" class="nav_logo"><img src="image/logo/logo.png" alt="navLogo" /></a>
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="index.html" class="nav_link">Home</a>
         </li>
-        <li class="mobile_nav_item">
-          <a href="/blog.html" class="mobile_nav_link">Blog</a>
+        <li class="nav_item">
+          <a href="blog.html" class="nav_link">Blog</a>
         </li>
-        <li class="mobile_nav_item">
-          <a href="/about.html" class="mobile_nav_link">About</a>
+        <li class="nav_item">
+          <a href="about.html" class="nav_link">About</a>
         </li>
-        <li class="mobile_nav_item">
-          <a href="/contact.html" class="mobile_nav_link">Contact</a>
-        </li>
-        <li class="mobile_nav_item">
-          <a href="/signUp.html" class="mobile_nav_link">Sign Up</a>
-        </li>
-        <li class="mobile_nav_item">
-          <a href="/cart.html" class="mobile_nav_link nav_cart_sm">Cart <span
-              class="cart_badge_sm cart_badge_num">0</span></a>
-        </li>
-        <li class="mobile_nav_item">
-          <a class="mobile_nav_link nav_heart_sm nav_heart_modal">Favorite
-            <span class="favorite_badge_sm favorite_badge_num">0</span></a>
-        </li>
-        <li class="mobile_nav_item mobile_menu_dropdown">
-          <a href="#" class="nav_user_sm mobile_nav_link nav_heart_sm mobile_menu_dropdown_toggle">User</a>
-          <ul class="mobile_menu_dropdown_list">
-            <li>
-              <a href="comingSoon.html" class="w3-bar-item w3-button">My Profile</a>
-            </li>
-            <li>
-              <a href="signUp.html" class="mobile_menu_dropdown_item">Sign Up</a>
-            </li>
-            <li>
-              <a href="/index.html" class="mobile_menu_dropdown_item">Log Out</a>
-            </li>
-          </ul>
+        <li class="nav_item">
+          <a href="contact.html" class="nav_link">Contact</a>
         </li>
       </ul>
-    </nav>
-  
-    <main>
-      <section>
-        <div id="modalBackdrop" class="modal_backdrop"></div>
-        <div id="favoriteModal" class="favorite_modal">
-          <div class="favorite_modal_content">
-            <span class="close_modal">&times;</span>
-            <h2>Your Favorite</h2>
-            <ul id="favoriteList" class="favorite_list">
-              <!-- Favorite items will be appended here dynamically -->
-            </ul>
-  
-            <div class="modal_buttons">
-              <button class="cart_btn" onclick="window.location.href='./cart.html';">
-                View Cart
-              </button>
-  
-              <button class="clear_favorite_modal_btn">Clear</button>
-            </div>
-            <p class="free_shipping_notice">
-              Free Shipping on All Orders Over $20!
-            </p>
-          </div>
-        </div>
-      </section>
-  
-      <div>
-        <div>
-          <button id="scrollToTopBtn">
-            <i class="fa-solid fa-angle-up"></i>
-          </button>
+      <div class="nav_items">
+        <form action="/" class="nav_form">
+          <input type="text" class="nav_input" placeholder="Search here...." />
+          <i class="fa-solid fa-magnifying-glass nav_search"></i>
+        </form>
+        <a class="nav_heart nav_heart_modal">
+          <i class="fa-regular fa-heart"></i>
+          <span class="favorite_badge favorite_badge_num">0</span>
+        </a>
+        <a href="/cart.html" class="nav_cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart_badge cart_badge_num">0</span>
+        </a>
+        <div class="nav_user">
+          <a href> <i class="fa-solid fa-user"></i></a>
+          <ul class="bottom_dropdown">
+            <li>
+              <a href="comingSoon.html" class="w3-bar-item w3-button">My
+                Profile</a>
+            </li>
+            <li>
+              <a href="signUp.html" class="w3-bar-item w3-button">Sign Up</a>
+            </li>
+            <li>
+              <a href="/index.html" class="w3-bar-item w3-button">Log Out</a>
+            </li>
+          </ul>
         </div>
       </div>
-           <!-- contact page header banner part start -->
-           <section id="section">
-            <div class="container">
-              <div class="account_header">
-                <h2>Your Shopping Cart</h2>
-                <p><a href="index.html">Home</a> <span>/</span> Your Shopping Cart</p>
-              </div>
-            </div>
-          </section>
-          <!-- contact page header banner part end -->
+      <span class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </span>
+    </div>
+  </nav>
+
+  <nav id="mobile_navbar" class="mobile_nav mobile_nav_hide">
+    <ul class="mobile_nav_list">
+      <li class="mobile_nav_item">
+        <a href="/index.html" class="mobile_nav_link">Home</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="/blog.html" class="mobile_nav_link">Blog</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="/about.html" class="mobile_nav_link">About</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="/contact.html" class="mobile_nav_link">Contact</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="/signUp.html" class="mobile_nav_link">Sign Up</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="/cart.html" class="mobile_nav_link nav_cart_sm">Cart <span
+            class="cart_badge_sm cart_badge_num">0</span></a>
+      </li>
+      <li class="mobile_nav_item">
+        <a class="mobile_nav_link nav_heart_sm nav_heart_modal">Favorite
+          <span class="favorite_badge_sm favorite_badge_num">0</span></a>
+      </li>
+      <li class="mobile_nav_item mobile_menu_dropdown">
+        <a href="#" class="nav_user_sm mobile_nav_link nav_heart_sm mobile_menu_dropdown_toggle">User</a>
+        <ul class="mobile_menu_dropdown_list">
+          <li>
+            <a href="comingSoon.html" class="w3-bar-item w3-button">My
+              Profile</a>
+          </li>
+          <li>
+            <a href="signUp.html" class="mobile_menu_dropdown_item">Sign
+              Up</a>
+          </li>
+          <li>
+            <a href="/index.html" class="mobile_menu_dropdown_item">Log
+              Out</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <div id="modalBackdrop" class="modal_backdrop"></div>
+      <div id="favoriteModal" class="favorite_modal">
+        <div class="favorite_modal_content">
+          <span class="close_modal">&times;</span>
+          <h2>Your Favorite</h2>
+          <ul id="favoriteList" class="favorite_list">
+            <!-- Favorite items will be appended here dynamically -->
+          </ul>
+
+          <div class="modal_buttons">
+            <button class="cart_btn" onclick="window.location.href='./cart.html';">
+              View Cart
+            </button>
+
+            <button class="clear_favorite_modal_btn">Clear</button>
+          </div>
+          <p class="free_shipping_notice">
+            Free Shipping on All Orders Over $20!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <div>
+        <button id="scrollToTopBtn">
+          <i class="fa-solid fa-angle-up"></i>
+        </button>
+      </div>
+    </div>
+    <!-- contact page header banner part start -->
+    <section id="section">
+      <div class="container">
+        <div class="account_header">
+          <h2>Your Shopping Cart</h2>
+          <p><a href="index.html">Home</a> <span>/</span> Your Shopping
+            Cart</p>
+        </div>
+      </div>
+    </section>
+    <!-- contact page header banner part end -->
     <section class="section">
       <div class="container">
         <div class="auth_container container">
           <div class="auth_content">
             <form action="/" class="auth_form">
-           <div class="form-header">
-            <h2 class="form_title">Create your account</h2>
-            <p class="auth_p">Enter your details below</p>
-           </div>
+              <div class="form-header">
+                <h2 class="form_title">Create your account</h2>
+                <p class="auth_p">Enter your details below</p>
+              </div>
               <div class="form_group">
                 <input type="text" placeholder="Name" class="form_input" />
               </div>
@@ -174,48 +180,42 @@
                 <input type="email" placeholder="Email" class="form_input" />
               </div>
               <div class="form_group form_pass">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  class="form_input"
-                />
+                <input type="password" placeholder="Password" class="form_input" />
               </div>
               <div class="form_group">
                 <button class="form_btn">
-                  <span  class="form_button_text">Create Account</span>
+                  <span class="form_button_text">Create Account</span>
                 </button>
               </div>
               <div class="form_group have-account">
-                <span
-                  >Already have an account?
-                  <a href="login.html" class="form_auth_link">Login</a></span
-                >
+                <span>Already have an account?
+                  <a href="login.html" class="form_auth_link">Login</a></span>
               </div>
             </form>
           </div>
         </div>
       </div>
-    
+
     </section>
   </main>
 
-  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer_container">
+        <div class="col">
+          <div class="footer_logo">
+            <h2>MasterMall</h2>
+            <small>One Stop Every Need</small>
+          </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer_container">
-          <div class="col">
-            <div class="footer_logo">
-              <h2>MasterMall</h2>
-              <small>One Stop Every Need</small>
-            </div>
-  
-            <h4>Contact</h4>
-            <div class="contact">
+          <h4>Contact</h4>
+          <div class="contact">
+            <nav>
               <ul>
                 <li>
                   <p>
-                    <strong><i class="fa-solid fa-location-dot"></i> Address:</strong>
+                    <strong><i class="fa-solid fa-location-dot"></i>
+                      Address:</strong>
                     Dhaka, Bangladesh.
                   </p>
                 </li>
@@ -232,96 +232,109 @@
                   </p>
                 </li>
               </ul>
-            </div>
-  
-            <div class="follow">
-              <h4>Follow us</h4>
-              <div class="icon">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-pinterest-p"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-linkedin"></i>
-              </div>
+            </nav>
+          </div>
+
+          <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-youtube"></i>
+              <i class="fab fa-linkedin"></i>
             </div>
           </div>
-  
-          <div class="col">
-            <h4>About</h4>
+        </div>
+
+        <div class="col">
+          <h4>About</h4>
+          <nav>
             <ul>
               <li>
-                <a href="#"><i class="fa-solid fa-angles-right"></i> About Us</a>
+                <a href="#"><i class="fa-solid fa-angles-right"></i> About
+                  Us</a>
               </li>
               <li>
                 <a href="#"><i class="fa-solid fa-angles-right"></i> Delivery
                   Information</a>
               </li>
               <li>
-                <a href="#"><i class="fa-solid fa-angles-right"></i> Privacy Policy</a>
+                <a href="#"><i class="fa-solid fa-angles-right"></i> Privacy
+                  Policy</a>
               </li>
               <li>
                 <a href="#"><i class="fa-solid fa-angles-right"></i> Terms &
                   Conditions</a>
               </li>
               <li>
-                <a href="#"><i class="fa-solid fa-angles-right"></i> Contact Us</a>
+                <a href="#"><i class="fa-solid fa-angles-right"></i> Contact
+                  Us</a>
               </li>
             </ul>
-          </div>
-  
-          <div class="col">
-            <h4>My Account</h4>
+          </nav>
+        </div>
+
+        <div class="col">
+          <h4>My Account</h4>
+          <nav>
             <ul>
               <li>
-                <a href="#"><i class="fa-solid fa-angles-right"></i> Sign In</a>
+                <a href="#"><i class="fa-solid fa-angles-right"></i> Sign
+                  In</a>
               </li>
               <li>
-                <a href="#"><i class="fa-solid fa-angles-right"></i> View Cart</a>
+                <a href="#"><i class="fa-solid fa-angles-right"></i> View
+                  Cart</a>
               </li>
               <li>
-                <a href="#"><i class="fa-solid fa-angles-right"></i> My Wishlist</a>
+                <a href="#"><i class="fa-solid fa-angles-right"></i> My
+                  Wishlist</a>
               </li>
               <li>
-                <a href="#"><i class="fa-solid fa-angles-right"></i> Track My Order</a>
+                <a href="#"><i class="fa-solid fa-angles-right"></i> Track My
+                  Order</a>
               </li>
               <li>
                 <a href="#"><i class="fa-solid fa-angles-right"></i> Help</a>
               </li>
             </ul>
+          </nav>
+        </div>
+
+        <div class="col install">
+          <h4>Install App</h4>
+          <p>From App Store or Google Play</p>
+          <div class="pay row">
+            <i class="fab fa-apple"></i>
+            <i class="fab fa-google-play"></i>
           </div>
-  
-          <div class="col install">
-            <h4>Install App</h4>
-            <p>From App Store or Google Play</p>
-            <div class="pay row">
-              <i class="fab fa-apple"></i>
-              <i class="fab fa-google-play"></i>
-            </div>
-            <p>Secured Payment Gateway</p>
-            <div class="payment-icons">
-              <i class="fab fa-cc-visa"></i>
-              <i class="fab fa-cc-mastercard"></i>
-              <i class="fab fa-cc-paypal"></i>
-              <i class="fab fa-cc-amex"></i>
-            </div>
+          <p>Secured Payment Gateway</p>
+          <div class="payment-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-amex"></i>
           </div>
         </div>
       </div>
-      <div class="footer_bottom">
-        <div class="container footer_bottom_container">
-          <p class="footer_copy">&copy; Exclusive 2024. All right reserved</p>
-        </div>
+    </div>
+    <div class="footer_bottom">
+      <div class="container footer_bottom_container">
+        <p class="footer_copy">&copy; Exclusive 2024. All right reserved</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="JavaScript/nav.js"></script>
-    <script src="https://kit.fontawesome.com/346effd3c4.js" crossorigin="anonymous"></script>
+  <script src="JavaScript/nav.js"></script>
+  <script src="https://kit.fontawesome.com/346effd3c4.js" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-  
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="JavaScript/createAccount.js"></script>
-    <script src="JavaScript/scrollReveal.js"></script>
-  </body>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="JavaScript/createAccount.js"></script>
+  <script src="JavaScript/scrollReveal.js"></script>
+</body>
+
 </html>
