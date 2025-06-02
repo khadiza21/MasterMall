@@ -8,6 +8,7 @@ fetch("../datasets/article.json")
     articles = data;
     displayArticles(articles);
     displayArticlesTitle(articles);
+    attachCommentFormHandler();
   })
   .catch((error) => console.error("Error:", error));
 
@@ -111,5 +112,23 @@ function displayArticles(articles) {
     `;
   } else {
     articleDetail.innerHTML = "<p>Article not found.</p>";
+  }
+}
+function attachCommentFormHandler() {
+  const commentForm = document.querySelector(".comment-form");
+  if (commentForm) {
+    commentForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      Swal.fire({
+        icon: "success",
+        title: "Comment Submitted!",
+        text: "Thank you for your feedback.",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK",
+      });
+
+    
+      commentForm.reset();
+    });
   }
 }

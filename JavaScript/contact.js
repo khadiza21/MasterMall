@@ -34,7 +34,13 @@ document
   .querySelector("#contact-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
-    alert("Form submitted successfully!");
+    Swal.fire({
+        icon: "success",
+        title: "Form Submitted!",
+        text: "Thank you.",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK",
+      });
   });
 
 document.addEventListener("scroll", function () {
